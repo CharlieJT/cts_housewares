@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # third party apps
-    'django_forms_bootstrap',
+    'crispy_forms',
 
     # my apps
     'account',
@@ -136,3 +136,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_LOCATION = 'static'
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
