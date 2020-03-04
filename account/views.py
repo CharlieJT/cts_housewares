@@ -36,3 +36,6 @@ def login(request):
         login_form = UserLoginForm()
     return render(request, "login.html", { "login_form": login_form })
 
+def registration(request):
+    """ Returns a registration page allowing the user to register for a login account """
+    return render(request, 'registration.html')
