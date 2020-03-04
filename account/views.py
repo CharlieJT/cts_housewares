@@ -1,17 +1,23 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
+from django.contrib.auth.decorators import login_required
 from home.views import home_page
 from account.forms import UserLoginForm
 
 # Create your views here.
+@login_required
 def logout(request):
     """ This is view used to log the user out when they are logged in """
     auth.logout(request)
     messages.success(request, "You have successfully been logged out")
     return redirect(reverse('home_page'))
 
+
 def login(request):
     """ Returns a login page allowing the user to enter their login credentials """
+    if request.user.is_authenticated:
+        return redirect(reverse('home_page'))
+
     login_form = UserLoginForm()
 
     if request.method == "POST":
