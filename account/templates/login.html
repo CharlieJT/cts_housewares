@@ -5,10 +5,19 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<form method="POST">{% csrf_token %}
-    {{ login_form|crispy }}
-    <button type="submit" class="btn btn-secondary"><i class="fas fa-sign-in-alt"></i> Login</button>
-</form>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron">
+                <form method="POST">{% csrf_token %}
+                    {{ login_form|crispy }}
+                    <button type="submit" class="btn btn-secondary">Login <i class="fas fa-sign-in-alt"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% if messages %}
     <div>
         {% for message in messages %}
