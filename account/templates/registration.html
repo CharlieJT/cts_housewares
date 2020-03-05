@@ -5,16 +5,9 @@
 {% block title %}Registration{% endblock %}
 
 {% block content %}
-<!-- <form method="POST">{% csrf_token %}
-    {{ login_form|crispy }}
-    <button type="submit" class="btn btn-secondary">Login</button>
-</form> -->
+<form method="POST">{% csrf_token %}
+    {{ registration_form|crispy }}
+    <button type="submit" class="btn btn-secondary">Register</button>
+</form>
 <p>Already registered? <a href="{% url 'login' %}">Click here to login</a> </p>
-{% if messages %}
-    <div>
-        {% for message in messages %}
-            {{ message }}
-        {% endfor %}
-    </div>
-{% endif %}
 {% endblock %}

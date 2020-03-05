@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from home.views import home_page
-from account.forms import UserLoginForm
+from account.forms import UserLoginForm, UserRegistrationForm
 
 # Create your views here.
 @login_required
@@ -39,4 +39,5 @@ def login(request):
 
 def registration(request):
     """ Returns a registration page allowing the user to register for a login account """
-    return render(request, 'registration.html')
+    registration_form = UserRegistrationForm()
+    return render(request, 'registration.html', {"registration_form": registration_form})
