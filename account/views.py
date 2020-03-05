@@ -9,7 +9,7 @@ from account.forms import UserLoginForm
 def logout(request):
     """ This is view used to log the user out when they are logged in """
     auth.logout(request)
-    messages.success(request, "You have successfully been logged out")
+    messages.success(request, "You have successfully been logged out!")
     return redirect(reverse('home_page'))
 
 
@@ -31,10 +31,11 @@ def login(request):
                 messages.success(request, "You have successfully logged in!")
                 return redirect(reverse('home_page'))
             else:
-                login_form.add_error(None, "Invalid username credidentials")
+                login_form.add_error(None, "Invalid login credidentials")
     else:
         login_form = UserLoginForm()
     return render(request, "login.html", { "login_form": login_form })
+
 
 def registration(request):
     """ Returns a registration page allowing the user to register for a login account """

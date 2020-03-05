@@ -9,7 +9,7 @@
     {{ login_form|crispy }}
     <button type="submit" class="btn btn-secondary">Login</button>
 </form> -->
-<h1>This is where the registration form goes!!!</h1>
+<p>Already registered? <a href="{% url 'login' %}">Click here to login</a> </p>
 {% if messages %}
     <div>
         {% for message in messages %}
