@@ -9,7 +9,7 @@ from account.forms import UserLoginForm, UserRegistrationForm
 def logout(request):
     """ This is view used to log the user out when they are logged in """
     auth.logout(request)
-    messages.success(request, "You have successfully been logged out!")
+    messages.success(request, "You have successfully been logged out")
     return redirect(reverse('home_page'))
 
 
@@ -28,7 +28,7 @@ def login(request):
 
             if user:
                 auth.login(user=user, request=request)
-                messages.success(request, "You have successfully logged in!")
+                messages.success(request, "You have successfully logged in")
                 return redirect(reverse('home_page'))
             else:
                 login_form.add_error(None, "Invalid login credidentials")
@@ -39,5 +39,25 @@ def login(request):
 
 def registration(request):
     """ Returns a registration page allowing the user to register for a login account """
-    registration_form = UserRegistrationForm()
+    if request.user.is_authenticated:
+        return redirect(reverse('home_page'))
+
+    if request.method == "POST":
+        registration_form = UserRegistrationForm(request.POST)
+
+        if registration_form.is_valid():
+            registration_form.save()
+
+            user = auth.authenticate(username=request.POST['username'],
+                                    password=request.POST['password1'])
+
+            if user:
+                auth.login(user=user, request=request)
+                messages.success(request, "You have successfully registered & have logged in")
+                return redirect(reverse('home_page'))
+            else:
+                messages.error(request, "Unable to register account")
+    else:
+        registration_form = UserRegistrationForm()
+
     return render(request, 'registration.html', {"registration_form": registration_form})
