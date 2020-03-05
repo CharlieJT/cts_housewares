@@ -3,6 +3,9 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+    {% if user.is_authenticated %}
+    <p>Hello {{ user }},</p>
+    {% endif %}
     <h1>Home Page</h1>
     
 {% endblock %}

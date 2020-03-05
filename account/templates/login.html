@@ -5,7 +5,7 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
+<div class="container mt-5">
     <div class="row">
         <div class="col">
             <div class="jumbotron">
@@ -18,11 +18,4 @@
     </div>
 </div>
 
-{% if messages %}
-    <div>
-        {% for message in messages %}
-            {{ message }}
-        {% endfor %}
-    </div>
-{% endif %}
 {% endblock %}
