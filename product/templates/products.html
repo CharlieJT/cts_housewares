@@ -20,19 +20,18 @@
             <div class="card" style="width: 18rem;">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">£{{ product.price }}</li>
                     <li class="list-group-item">
                         <form method="POST" action="{% url 'add_to_cart' product.id %}">
                             {% csrf_token %}
                             <div class="input-group">
                                 <input name="quantity" type="number" min="1" class="form-control" placeholder="Quantity">
                                 <span>
-                                    <button class="btn btn-success" type="submit">Add to Cart <i class="far fa-shopping-cart"></i></button>
+                                    <button class="btn btn-success" type="submit">Add to Cart <i class="fas fa-cart-arrow-down"></i></button>
                                 </span>   
                             </div>
                         </form>
