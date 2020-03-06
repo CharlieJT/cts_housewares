@@ -1,22 +1,49 @@
 {% extends 'base.html' %}
 
-{% block title %}Password Reset{% endblock %}
+{% block title %}Poducts{% endblock %}
 
 {% block breadcrumb %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'home_page' %}">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Products</li>
+        <li class="breadcrumb-item"><a href="{% url 'home_page' %}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Products</li>
     </ol>
-  </nav>
+</nav>
 {% endblock %}
 
 {% block content %}
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col">
-                
+<div class="container mt-5">
+    <div class="row">
+        {% if products %}
+        {% for product in products %}
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">
+                        <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                            {% csrf_token %}
+                            <div class="input-group">
+                                <input name="quantity" type="number" min="1" class="form-control" placeholder="Quantity">
+                                <span>
+                                    <button class="btn btn-success" type="submit">Add to Cart <i class="far fa-shopping-cart"></i></button>
+                                </span>   
+                            </div>
+                        </form>
+                    </li>
+                </ul>
             </div>
         </div>
+        {% endfor %}
+        {% else %}
+        <p>No products currently available!</p>
+        {% endif %}
     </div>
+</div>
 {% endblock %}
