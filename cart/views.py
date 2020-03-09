@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse
-
+from product.models import Product
 # Create your views here.
 def view_cart(request):
     """ This view the contents of the cart """
