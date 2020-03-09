@@ -143,6 +143,9 @@ STATICFILES_LOCATION = 'static'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+STRIPE_PUBLISHABLE = os.environ("STRIPE_PUBLISHABLE")
+STRIPE_SECRET = os.environ("STRIPE_SECRET")
+
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
