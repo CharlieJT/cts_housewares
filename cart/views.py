@@ -24,11 +24,13 @@ def adjust_cart(request, id):
     quantity=int(request.POST.get('quantity'))
     cart = request.session.get('cart', {})
 
-    print(quantity)
-    if quantity > 0:
-        cart[id] = quantity
-    else:
-        cart.pop(id)
+    cart[id] = quantity
 
+    request.session['cart'] = cart
+    return redirect(reverse('view_cart'))
+
+def remove_from_cart(request, id):
+    cart = request.session.get('cart', {})
+    cart.pop(str(id))
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
