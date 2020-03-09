@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, reverse
-from product.models import Product
+
 # Create your views here.
 def view_cart(request):
     """ This view the contents of the cart """
@@ -17,7 +17,7 @@ def add_to_cart(request, id):
 
     request.session['cart'] = cart
 
-    return redirect(reverse('home_page'))
+    return redirect(reverse('all_products'))
 
 def adjust_cart(request, id):
     """ This will adjust the cart of a specific product in the basket """

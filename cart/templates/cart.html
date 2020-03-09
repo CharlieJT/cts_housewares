@@ -32,8 +32,8 @@
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon">Qty</div>
-                            <input name="quantity" type="number" value="{{ item.quantity }}" min="1" max="999" class="form-control">
-                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend <i class="far fa-edit"></i></button>
+                            <input name="quantity" type="number" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}" class="form-control">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend <i class="fas fa-cog"></i></button>
                         </div>
                     </div>
                 </form>
@@ -51,15 +51,18 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col">
-        <p>Total</p>
-        <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>£{{ total }}</p>
-        {% if user.is_authenticated %}
-        <a href="/" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign"
-                aria-hidden="true"></span>Checkout</a>
-        {% endif %}
+<div class="container">
+    <div class="row">
+        <div class="col text-right">
+            <p>Total</p>
+            <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>£{{ total }}</p>
+            {% if user.is_authenticated %}
+            <a href="/" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign"
+                    aria-hidden="true"></span>Checkout</a>
+            {% endif %}
+        </div>
     </div>
 </div>
+
 
 {% endblock %}
