@@ -18,7 +18,7 @@
         {% for product in products %}
         <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="{{ product.image }}" class="card-img-top" alt="{{ product.title }}" />
                 <div class="card-body">
                     <h5 class="card-title">{{ product.title }}</h5>
                     <p class="card-text">{{ product.description }}</p>
@@ -32,7 +32,7 @@
                                 <input name="quantity" type="number" value="1" min="1" max="999" class="form-control" placeholder="Quantity">
                                 <span>
                                     <button class="btn btn-success" type="submit">Add to Cart <i class="fas fa-cart-arrow-down"></i></button>
-                                </span>   
+                                </span>
                             </div>
                         </form>
                     </li>
