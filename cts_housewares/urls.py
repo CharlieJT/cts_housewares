@@ -19,11 +19,13 @@ from home.views import home_page
 from account import urls as account_urls
 from cart import urls as cart_urls
 from product import urls as product_urls
+from search import urls as search_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page, name="home_page"),
     path('account/', include(account_urls)),
     path('cart/', include(cart_urls)),
-    path('product/', include(product_urls))
+    path('product/', include(product_urls)),
+    path('search/', include(search_urls))
 ]
