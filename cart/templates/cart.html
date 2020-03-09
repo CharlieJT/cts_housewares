@@ -18,28 +18,29 @@
     <div class="row">
         {% if cart_count > 0 %}
         {% for item in cart_items %}
-        <div class="col">
+        <div class="col-12">
             <div class="product">
                 <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
                 <h3>{{ item.product.name }}</h3>
                 <p>{{ item.product.description }}</p>
                 <p>£{{ item.product.price }}</p>
+                <div class="input-group">
+                    <div class="input-group-addon">Qty: {{item.quantity}}</div>
+                </div>
                 <form method="POST" action="{% url 'adjust_cart' item.id %}">
                     {% csrf_token %}
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-addon">Qty</div>
-                            <input name="quantity" type="number" value="{{ item.quantity }}" min="1" max="999"
-                                class="form-control">
+                            <input name="quantity" type="number" value="{{ item.quantity }}" min="1" max="999" class="form-control">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend <i class="far fa-edit"></i></button>
                         </div>
                     </div>
-                    <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-edit"
-                            aria-hidden="true"></span>Amend</button>
                 </form>
                 <form method="POST" action="{% url 'remove_from_cart' item.id %}">
                     {% csrf_token %}
                     <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-delete"
-                            aria-hidden="true"></span>Remove</button>
+                            aria-hidden="true"></span>Remove <i class="fas fa-trash"></i></button>
                 </form>
             </div>
         </div>
@@ -49,15 +50,16 @@
         {% endif %}
     </div>
 </div>
-{% if user.is_authenticated %}
+
 <div class="row">
     <div class="col">
         <p>Total</p>
         <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>£{{ total }}</p>
-        <a href="/" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
+        {% if user.is_authenticated %}
+        <a href="/" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign"
+                aria-hidden="true"></span>Checkout</a>
+        {% endif %}
     </div>
 </div>
-{% endif %}
-
 
 {% endblock %}
