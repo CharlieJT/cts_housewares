@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Cart{% endblock %}
+
+{% block breadcrumb %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home_page' %}">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="{% url 'view_cart' %}">Register</li>
+    </ol>
+  </nav>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        {% for item in cart_items %}
+        <div class="col">
+            <div class="product">
+                <h3>{{ item.product.name }}</h3>
+                <p>{{ item.product.description }}</p>
+                <p>£{{ item.product.price }}</p>
+                <form method="POST" action="{% url 'adjust_cart' item.id %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="example-input-amount" class-sr-only>New Qty</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">Qty</div>
+                            <input name="quantity" type="number" min="0" max="999" class="form-control">
+                            <div class="input-group-addon">{{ item.quantity }}</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="row">
+    <p>Total</p>
+    <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>£{{ total }}</p>
+    <a href="/" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
+</div>
+
+
+{% endblock %}
