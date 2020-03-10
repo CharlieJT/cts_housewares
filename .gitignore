@@ -125,6 +125,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-.vscode
+**/.vscode/
 
 # End of https://www.gitignore.io/api/django
