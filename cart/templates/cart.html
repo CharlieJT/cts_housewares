@@ -57,7 +57,7 @@
             <p>Total</p>
             <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>£{{ total }}</p>
             {% if user.is_authenticated %}
-            <a href="/" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign"
+            <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign"
                     aria-hidden="true"></span>Checkout</a>
             {% else %}
                 <p><a href="{% url 'login' %}">Checkout requires login</a> </p>
