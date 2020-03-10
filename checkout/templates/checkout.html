@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static from staticfiles %}
+
 {% load crispy_forms_tags %}
 
 {% block title %}Checkout{% endblock %}
@@ -21,6 +23,7 @@
     Stripe.publishableKey = '{{ publishable }}';
     //]]>
 </script>
+<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock head_js %}
 
 {% block content %}
@@ -31,7 +34,8 @@
             <div class="panel-body">
                 <div class="product" style="background-image: ('{{ MEDIA_URL }}{{ item.product.image }}');"></div>
                 <p class="product-description">{{ item.product.name }}</p>
-                <p>{{ item.product.quantity }}</p>
+                <p>{{ item.product.description }}</p>
+                <p>{{ item.quantity }}</p>
                 <p>{{ item.product.price }}</p>
             </div>
         </div>
