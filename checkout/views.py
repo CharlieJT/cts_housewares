@@ -27,13 +27,13 @@ def checkout(request):
             for id, quantity in cart.items():
                 product = get_object_or_404(Product, pk=id)
                 product.stock = product.stock - quantity
-                product.save()
                 total += quantity * product.price
                 order_line_item = OrderLineItem(
                     order=order,
                     product=product,
                     quantity=quantity
                 )
+                product.save()
                 order_line_item.save()
             
             try:
@@ -49,7 +49,7 @@ def checkout(request):
             if customer.paid:
                 messages.error(request, "You have successfully paid")
                 request.session['cart'] = {}
-                return redirect(reverse('home_page'))
+                return redirect(reverse('successful_payment'))
             else:
                 messages.error(request, "Unable to take payment")
         else:
@@ -60,3 +60,8 @@ def checkout(request):
         payment_form = MakePaymentForm()
 
     return render(request, "checkout.html", { 'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
+
+
+def successful_payment(request):
+    """ This will return the successful payment page """
+    return render(request, "successful_payment.html")
