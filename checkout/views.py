@@ -16,7 +16,6 @@ def checkout(request):
     if request.method == "POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
-        print(payment_form.is_valid())
         
         if order_form.is_valid() and payment_form.is_valid():
             order = order_form.save(commit=False)
@@ -27,6 +26,8 @@ def checkout(request):
             total = 0
             for id, quantity in cart.items():
                 product = get_object_or_404(Product, pk=id)
+                product.stock = product.stock - quantity
+                product.save()
                 total += quantity * product.price
                 order_line_item = OrderLineItem(
                     order=order,
@@ -46,9 +47,9 @@ def checkout(request):
                 messages.error(request, "Your card was declined!")
 
             if customer.paid:
-                messages.error(request, "Your have successfully paid")
+                messages.error(request, "You have successfully paid")
                 request.session['cart'] = {}
-                return redirect(reverse('product'))
+                return redirect(reverse('home_page'))
             else:
                 messages.error(request, "Unable to take payment")
         else:
