@@ -73,4 +73,7 @@ def user_profile(request):
     orders = Order.objects.filter(user_id=request.user)
     user = User.objects.get(email=request.user.email)
 
+    for order in orders:
+        print(order)
+
     return render(request, "profile.html", { "profile": user, "orders": orders })

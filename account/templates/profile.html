@@ -18,21 +18,22 @@
     <div class="row">
         <div class="col">
             <div class="jumbotron">
-                <h4>Profile:</h4>
+                <h4><i class="far fa-user-circle"></i> Profile:</h4>
                 <hr>
-                <p>Username: {{ user }}</p>
-                <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
-                <p>Email Address: {{ user.email }}</p>
-                <p>Account Created: {{ user.date_joined }}</p>
-                <h4>All orders made:</h4>
+                <p><i class="far fa-user"></i> <b>Username:</b> {{ user }}</p>
+                <p><i class="fas fa-grip-lines"></i> <b>Name:</b> {{ user.first_name }} {{ user.last_name }}</p>
+                <p><i class="far fa-envelope"></i> <b>Email Address:</b> {{ user.email }}</p>
+                <p><i class="far fa-calendar-check"></i> <b>Account Created:</b> {{ user.date_joined }}</p>
+                <hr>
                 <div class="accordion" id="accordionExample">
                     {% if orders %}
+                        <h4><i class="fas fa-box"></i> Order History:</h4>
                         {% for order in orders %}
                         <div class="card">
                             <div class="card-header" id="heading{{forloop.counter}}">
                             <h2 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
-                                    <p>{{ order }}</p>
+                                    <p>Order Placed: {{ order.date }}</p>
                                 </button>
                             </h2>
                             </div>
@@ -40,7 +41,7 @@
                             <div id="collapse{{forloop.counter}}" class="collapse" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
                                 <div class="card-body">
                                     {% for order_item in order.orderlineitem_set.all %}
-                                        <p>{{ order_item.product }} - x{{ order_item.quantity }}</p>
+                                        <p>{{ order_item.product.description }} - x{{ order_item.quantity }}</p>
                                     {% endfor %}
                                 </div>
                             </div>
