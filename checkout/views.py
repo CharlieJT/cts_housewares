@@ -6,13 +6,14 @@ from django.conf import settings
 from django.utils import timezone
 from product.views import Product
 from .forms import MakePaymentForm, OrderForm
-from.models import OrderLineItem
+from .models import OrderLineItem
 
 # Create your views here.
 stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
 def checkout(request):
+
     if request.method == "POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
@@ -62,7 +63,7 @@ def checkout(request):
 
     return render(request, "checkout.html", { 'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
 
-
+@login_required()
 def successful_payment(request):
     """ This will return the successful payment page """
     return render(request, "successful_payment.html")

@@ -9,6 +9,7 @@ from .forms import UserLoginForm, UserRegistrationForm
 @login_required
 def logout(request):
     """ This is view used to log the user out when they are logged in """
+    
     auth.logout(request)
     messages.success(request, "You have successfully been logged out")
     return redirect(reverse('home_page'))
@@ -16,6 +17,7 @@ def logout(request):
 
 def login(request):
     """ Returns a login page allowing the user to enter their login credentials """
+
     if request.user.is_authenticated:
         return redirect(reverse('home_page'))
 
@@ -40,6 +42,7 @@ def login(request):
 
 def registration(request):
     """ Returns a registration page allowing the user to register for a login account """
+
     if request.user.is_authenticated:
         return redirect(reverse('home_page'))
 
@@ -63,7 +66,9 @@ def registration(request):
 
     return render(request, 'registration.html', {"registration_form": registration_form})
 
+@login_required
 def user_profile(request):
     """ This is where the user's profile will show with all of the user's details """
+
     user = User.objects.get(email=request.user.email)
     return render(request, "profile.html", {"profile": user})
