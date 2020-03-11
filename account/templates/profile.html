@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Profile{% endblock %}
+
+{% block breadcrumb %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home_page' %}">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Profile</li>
+    </ol>
+  </nav>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron">
+                <p>Username: {{ user }}</p>
+                <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+                <p>Email Address: {{ user.email }}</p>
+                <p>Account Created: {{ user.date_joined }}</p>
+                <button class="btn btn-primary">View your orders</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
