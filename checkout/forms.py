@@ -25,6 +25,5 @@ class OrderForm(forms.ModelForm):
             'town_or_city',
             'postcode',
             'country',
-            'phone_number',
-            'date'
+            'phone_number'
         )
