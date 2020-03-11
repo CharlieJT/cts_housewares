@@ -4,12 +4,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from home.views import home_page
 from .forms import UserLoginForm, UserRegistrationForm
+from checkout.models import Order, OrderLineItem
 
 # Create your views here.
 @login_required
 def logout(request):
     """ This is view used to log the user out when they are logged in """
-    
+
     auth.logout(request)
     messages.success(request, "You have successfully been logged out")
     return redirect(reverse('home_page'))
@@ -72,3 +73,9 @@ def user_profile(request):
 
     user = User.objects.get(email=request.user.email)
     return render(request, "profile.html", {"profile": user})
+
+def orders(request):
+    """ This is where you can view all of the orders you've previously made against the user """
+    orders = Order.objects.filter(user_id=request.user)
+
+    return render(request, "orders.html", { "orders": orders })

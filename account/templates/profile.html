@@ -22,7 +22,7 @@
                 <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
                 <p>Email Address: {{ user.email }}</p>
                 <p>Account Created: {{ user.date_joined }}</p>
-                <button class="btn btn-primary">View your orders</button>
+                <a class="btn btn-primary" href="{% url 'orders' %}">View your orders</a>
             </div>
         </div>
     </div>
