@@ -70,12 +70,7 @@ def registration(request):
 @login_required
 def user_profile(request):
     """ This is where the user's profile will show with all of the user's details """
-
-    user = User.objects.get(email=request.user.email)
-    return render(request, "profile.html", {"profile": user})
-
-def orders(request):
-    """ This is where you can view all of the orders you've previously made against the user """
     orders = Order.objects.filter(user_id=request.user)
+    user = User.objects.get(email=request.user.email)
 
-    return render(request, "orders.html", { "orders": orders })
+    return render(request, "profile.html", { "profile": user, "orders": orders })
