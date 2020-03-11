@@ -20,14 +20,16 @@
             <div class="jumbotron">
                 <h4><i class="far fa-user-circle"></i> Profile:</h4>
                 <hr>
-                <p><i class="far fa-user"></i> <b>Username:</b> {{ user }}</p>
-                <p><i class="fas fa-grip-lines"></i> <b>Name:</b> {{ user.first_name }} {{ user.last_name }}</p>
-                <p><i class="far fa-envelope"></i> <b>Email Address:</b> {{ user.email }}</p>
-                <p><i class="far fa-calendar-check"></i> <b>Account Created:</b> {{ user.date_joined }}</p>
+                <ul class="py-3">
+                    <li><p><i class="far fa-user"></i> <b>Username:</b> {{ user }}</p></li>
+                    <li><p><i class="fas fa-grip-lines"></i> <b>Name:</b> {{ user.first_name }} {{ user.last_name }}</p></li>
+                    <li><p><i class="far fa-envelope"></i> <b>Email Address:</b> {{ user.email }}</p></li>
+                    <li><p><i class="far fa-calendar-check"></i> <b>Account Created:</b> {{ user.date_joined }}</p></li>
+                </ul>
                 <hr>
                 <div class="accordion" id="accordionExample">
                     {% if orders %}
-                        <h4><i class="fas fa-box"></i> Order History:</h4>
+                        <h4><i class="fas fa-history mb-3"></i> Order History:</h4>
                         {% for order in orders %}
                         <div class="card">
                             <div class="card-header" id="heading{{forloop.counter}}">
@@ -40,9 +42,11 @@
                         
                             <div id="collapse{{forloop.counter}}" class="collapse" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    {% for order_item in order.orderlineitem_set.all %}
-                                        <p>{{ order_item.product.description }} - x{{ order_item.quantity }}</p>
-                                    {% endfor %}
+                                {% for order_item in order.orderlineitem_set.all %}
+                                    <div>
+                                        <img src="{{ MEDIA_URL }}{{ order_item.product.image }}" width="60" alt=""><span>{{ order_item.product.description }} - x{{ order_item.quantity }}</span>
+                                    </div>
+                                {% endfor %}
                                 </div>
                             </div>
                         </div>

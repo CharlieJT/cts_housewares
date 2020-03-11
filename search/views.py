@@ -12,16 +12,15 @@ def search_products(request):
                                         Q(description__icontains=query) |
                                         Q(about_product__icontains=query))
 
-    page_request_var = "q={}&".format(query)
-    paginator = Paginator(products, 9)
-    page = request.GET.get('page')
+        page_request_var = "q={}&".format(query)
+        paginator = Paginator(products, 9)
+        page = request.GET.get('page')
 
-    try:
-        products = paginator.page(page)
-    except PageNotAnInteger:
-        products = paginator.page(1)
-    except EmptyPage:
-        products = paginator.page(paginator.num_pages)
-
+        try:
+            products = paginator.page(page)
+        except PageNotAnInteger:
+            products = paginator.page(1)
+        except EmptyPage:
+            products = paginator.page(paginator.num_pages)
 
     return render(request, "products.html", {'products': products, "page_request_var": page_request_var})
