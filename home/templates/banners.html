@@ -15,9 +15,9 @@
             {% else %}
             <div class="carousel-item">
             {% endif %}
-                <img class="d-block d-md-none w-100 banner-image" src="{{ MEDIA_URL }}{{ banner.mobile_image }}" alt="">
-                <img class="d-none d-md-block d-lg-none w-100 banner-image d-md-none" src="{{ MEDIA_URL }}{{ banner.tablet_image }}" alt="">
-                <img class="d-none d-lg-block w-100 banner-image" src="{{ MEDIA_URL }}{{ banner.desktop_image }}" alt="">
+                <img class="d-block d-md-none w-100 banner-image" src="{{ MEDIA_URL }}{{ banner.mobile_image }}" alt="{{ banner.brand }}">
+                <img class="d-none d-md-block d-lg-none w-100 banner-image" src="{{ MEDIA_URL }}{{ banner.tablet_image }}" alt="{{ banner.brand }}">
+                <img class="d-none d-lg-block w-100 banner-image" src="{{ MEDIA_URL }}{{ banner.desktop_image }}" alt="{{ banner.brand }}">
             </div>
         {% endfor %}
     </div>
