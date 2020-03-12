@@ -18,3 +18,12 @@ body {
 
 
 /* --------- Navbar -------- */
+
+.form-inline {
+    display: flex;
+    flex-flow: row nowrap;  
+}
+
+.form-control[type=search] {
+    width: 100%;
+}
