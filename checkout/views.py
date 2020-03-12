@@ -33,6 +33,7 @@ def checkout(request):
                 order_line_item = OrderLineItem(
                     order=order,
                     product=product,
+                    price=product.price,
                     quantity=quantity
                 )
                 product.save()
@@ -55,7 +56,6 @@ def checkout(request):
             else:
                 messages.error(request, "Unable to take payment")
         else:
-            print(payment_form.errors)
             messages.error(request, "We were unable to take payment with that card!")
     else:
         order_form = OrderForm()

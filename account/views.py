@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from home.views import home_page
 from .forms import UserLoginForm, UserRegistrationForm
 from checkout.models import Order, OrderLineItem
+from django.db.models import Sum, F
 
 # Create your views here.
 @login_required
@@ -74,6 +75,10 @@ def user_profile(request):
     user = User.objects.get(email=request.user.email)
 
     for order in orders:
-        print(order)
+        order_total_price = 0
+        for order_item in order.orderlineitem_set.all():
+            order_total_price = order_total_price + (order_item.price * order_item.quantity)
+        order.total = order_total_price
+        
 
     return render(request, "profile.html", { "profile": user, "orders": orders })
