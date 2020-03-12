@@ -13,7 +13,7 @@ def search_products(request):
                                         Q(about_product__icontains=query))
 
         page_request_var = "q={}&".format(query)
-        paginator = Paginator(products, 3)
+        paginator = Paginator(products, 12)
         page = request.GET.get('page')
 
         try:

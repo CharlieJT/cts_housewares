@@ -77,7 +77,7 @@ def user_profile(request):
     for order in orders:
         order_total_price = 0
         for order_item in order.orderlineitem_set.all():
-            order_total_price = order_total_price + (order_item.price * order_item.quantity)
+            order_total_price += (order_item.price * order_item.quantity)
         order.total = order_total_price
         
 
