@@ -101,6 +101,37 @@ body {
     max-width: 70px;
 }
 
+.pagination>* {
+    padding: 8px 0;
+}
+
+.pagination>*:hover {
+    cursor: pointer;
+}
+
+.pagination a {
+    color: #000;
+    padding: 7px 13px;
+}
+
+.current-page, .page-selector {
+    border-radius: 5px;
+}
+
+.current-page {
+    background:linear-gradient(#4ea5e8, #35688e);
+    color: #fff;
+    padding: 8px 13px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.page-selector {
+    background-color: #ccc;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
 /* --------- Product Page -------- */
 
 .add-to-cart-input-product {
