@@ -33,7 +33,7 @@ def login(request):
 
             if user:
                 auth.login(user=user, request=request)
-                messages.success(request, "You have successfully logged in")
+                messages.success(request, "You have successfully logged in... Hello {},".format(user.first_name))
                 return redirect(reverse('home_page'))
             else:
                 login_form.add_error(None, "Invalid login credidentials")
@@ -59,7 +59,7 @@ def registration(request):
 
             if user:
                 auth.login(user=user, request=request)
-                messages.success(request, "You have successfully registered & have logged in")
+                messages.success(request, "You have successfully registered & logged in")
                 return redirect(reverse('home_page'))
             else:
                 messages.error(request, "Unable to register account")
