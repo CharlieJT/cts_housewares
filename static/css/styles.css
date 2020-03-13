@@ -13,19 +13,46 @@ body {
     min-height: 100vh;
 }
 
+/* --------- Helpers -------- */
+
+.backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 8;
+}
+
+.backdrop:hover {
+    cursor: pointer;
+}
+
 /* --------- Containers -------- */
+
+.base-container {
+    margin-top: 92px;
+}
 
 .navbar-container {
     position: fixed;
     width: 100%;
-    z-index: 10;
+    z-index: 9;
     top: 0;
     transition: height .17s ease-in;
     height: 92px;
 }
 
-.base-container {
-    margin-top: 92px;
+.mobile-navbar-container {
+    background-color: #fff;
+    top: 92px;
+    width: 70%;
+    right: -70%;
+    max-width: 500px;
+    height: 100vh;
+    transition: right .3s ease-in;
 }
 
 .home-page-container {
@@ -97,6 +124,7 @@ body {
 
 .card:hover {
     transform: scale(1.015);
+    z-index: 5;
     box-shadow: 1px 1px 7px #5f5f5f;
 }
 

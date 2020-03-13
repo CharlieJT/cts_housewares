@@ -24,7 +24,9 @@
 <body>
 
     {% include 'navbar.html' %}
-
+    <!-- Backdrop which will overlap when a sidedrawer is open which will toggle off when clicked -->
+    <div class="backdrop"></div>
+    
     <div class="base-container">
         {% block breadcrumb %}
         {% endblock %}
