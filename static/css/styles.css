@@ -76,6 +76,18 @@ body {
     display: none;
 }
 
+.basket-counter {
+    background-color: red;
+    font-size: 0.75rem;
+    top: 4px;
+    left: 0;
+    height: 15px;
+    line-height: 16px;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 2px 2px 9px #000;
+}
+
 /* --------- Products Page -------- */
 
 .product-image {
