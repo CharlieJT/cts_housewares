@@ -3,6 +3,8 @@
 const navbarContainer = document.getElementsByClassName("navbar-container");
 const navbarLogo = document.getElementsByClassName("navbar-logo");
 const navbarLogoScrolled = document.getElementsByClassName("navbar-logo-scrolled");
+const previousPage = document.getElementsByClassName("previous-page");
+const mainProductImage = document.getElementsByClassName("main-product-image")
 
 $(document).ready(() => {
     // Will check to see if the window has been scrolled 50px from the top.
@@ -18,4 +20,7 @@ $(document).ready(() => {
             $(navbarLogoScrolled).css("display", "none");
         }
     });
+    $(previousPage).on('click', () => {
+        window.history.back(1);
+    })
 });

@@ -32,6 +32,26 @@ body {
     margin-top: 2rem;
 }
 
+/* --------- Bread Crumb -------- */
+
+.breadcrumb-item,.breadcrumb-item>a {
+    color: #000;
+    font-weight: bold;
+}
+
+.breadcrumb-item>a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: ">";
+}
+
+.main-product-image {
+    z-index: 1;
+}
+
 /* --------- Home Page -------- */
 
 .home-page-divider {
@@ -54,4 +74,10 @@ body {
 
 .navbar-logo-scrolled {
     display: none;
+}
+
+/* --------- Product Page -------- */
+
+.add-to-cart-input {
+    width: 250px;
 }

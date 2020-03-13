@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Product{% endblock %}
+
+{% block breadcrumb %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home_page' %}">Home</a></li>
+        <li class="breadcrumb-item previous-page"><a>Products</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ product.description }}</li>
+    </ol>
+</nav>
+{% endblock %}
+{% block content %}
+    <div class="container product-container">
+        <div class="row">
+            <div class="col-xs-12 col-md-5">
+                <div class="main-product-image">
+                    <img src="{{ MEDIA_URL }}{{ product.image }}" class="w-100" alt="{{ product.description }}">
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-7">
+                <p class="text-muted"><b>{{ product.brand }}</b></p>
+                <h2>{{ product.description }}</h2>
+                <p>Item Number: {{ product.item_number }}</p>
+                <h5>Price: <b>£{{ product.price }}</b></h5>
+                <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                    {% csrf_token %}
+                    <div class="input-group add-to-cart-input">
+                        {% if product.stock %}
+                            <input name="quantity" type="number" value="1" min="1" max="{{ product.stock }}" class="form-control mr-2" placeholder="Quantity">
+                            <span>
+                                <button class="btn btn-success previous-page" type="submit">Add to Cart <i class="fas fa-cart-arrow-down"></i></button>
+                            </span>
+                        {% else %}
+                            <p>Item out of stock</p>
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 offset-md-5 col-md-7">
+                <p>{{ product.about_product }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
