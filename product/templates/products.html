@@ -13,6 +13,30 @@
 
 {% block content %}
 <div class="container mt-5">
+    <!-- <div class="row">
+        <div class="col">
+            <form action="GET">
+            {% for product in product_brands %}
+                <p><input type="checkbox" value="{{ product.brand }}"> {{ product.brand }}</p>
+            {% endfor %}
+            <button class="btn btn-primary" type="submit">Apply Filter</button>
+        </form>
+        </div>
+    </div> -->
+    
+    <div class="row">
+        <div class="col">
+            {% if products.paginator.num_pages > 1 %}
+                <p class="text-muted float-right">(Page {{ products.number }} of {{ products.paginator.num_pages }})</p>
+            {% endif %}
+            {% if query %}
+                <p>Found <b>'{{ product_count }}'</b> products for <b>'{{ query }}'</b></p>
+            {% else %}
+                <p>Found <b>'{{ product_count }}'</b> products</p>
+            {% endif %}
+        </div>
+    </div>
+    
     <div class="row">
         {% if products %}
         {% for product in products %}
@@ -54,7 +78,7 @@
     <div class="row">
         <div class="col pagination-col">
             <div class="text-center">
-                <p>(Page {{ products.number }} of {{ products.paginator.num_pages }})</p>
+                <p class="text-muted">(Page {{ products.number }} of {{ products.paginator.num_pages }})</p>
             </div>
             <div class="pagination d-flex justify-content-center">
                 <!-- Previous Pages -->

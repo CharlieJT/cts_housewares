@@ -7,6 +7,8 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 def all_products(request):
 
     products = Product.objects.all()
+
+    product_count = products.count()
     
     paginator = Paginator(products, 12)
     page = request.GET.get('page')
@@ -18,4 +20,4 @@ def all_products(request):
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
 
-    return render(request, "products.html", {"products": products})
+    return render(request, "products.html", { "products": products, "product_count": product_count })
