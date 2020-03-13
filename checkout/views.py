@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib  import messages
+from django.contrib import messages
 import stripe
 from django.conf import settings
 from django.utils import timezone
@@ -13,6 +13,10 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required
 def checkout(request):
+    """ 
+    This is where you can make a checkout, depending on whether you have entered valid inputs will determind
+    whether you make a successful payment
+    """
 
     if request.method == "POST":
         order_form = OrderForm(request.POST)
@@ -50,7 +54,7 @@ def checkout(request):
                 messages.error(request, "Your card was declined!")
 
             if customer.paid:
-                messages.error(request, "You have successfully paid")
+                messages.success(request, "You have successfully paid")
                 request.session['cart'] = {}
                 return redirect(reverse('successful_payment'))
             else:
