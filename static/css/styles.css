@@ -76,8 +76,33 @@ body {
     display: none;
 }
 
+/* --------- Products Page -------- */
+
+.product-image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 200px;
+}
+
+.card-description {
+    height: 60px;
+}
+
+.products-link, .products-link:hover {
+    color: #000;
+}
+
+.add-to-cart-input-products {
+    min-width: 250px;
+}
+
+.add-to-cart-input-products>input[name=quantity] {
+    max-width: 70px;
+}
+
 /* --------- Product Page -------- */
 
-.add-to-cart-input {
+.add-to-cart-input-product {
     width: 250px;
 }
