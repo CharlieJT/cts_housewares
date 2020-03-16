@@ -250,10 +250,18 @@ body {
     width: 100%;
 }
 
+.amend-quantity {
+    max-width: 110px;
+}
+
+
 /* --------- Media Queries -------- */
 
 @media only screen and (min-width: 992px) {
     .basket-counter {
         left: 0;
+    }
+    .remove-item-from-cart {
+        order: 1;
     }
 }

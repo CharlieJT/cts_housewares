@@ -7,8 +7,6 @@ from product.models import Product
 def view_cart(request):
     """ This view the contents of the cart """
     cart = request.session.get('cart', {})
-    for cart_item in cart:
-        print(cart_item)
     
     return render(request, "cart.html")
 
@@ -48,5 +46,5 @@ def remove_from_cart(request, id):
     product = get_object_or_404(Product, pk=id)
     cart.pop(str(id))
     request.session['cart'] = cart
-    messages.success(request, "Item '{}' has been removed from your cart".format(product.description))
+    messages.success(request, "Item '{}' has been removed from your cart!".format(product.description))
     return redirect(reverse('view_cart'))
