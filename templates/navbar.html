@@ -5,9 +5,11 @@
         <img class="navbar-logo" src="{% static 'img/ctshousewareslogo.PNG' %}" width="130" alt="Navbar logo">
         <img class="navbar-logo-scrolled ml-4" src="{% static 'img/ctshousewaresscrolled.PNG' %}" width="70" alt="Navbar logo">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    <button class="navbar-toggler position-relative" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <div class="burger-icon-1"></div>
+        <div class="burger-icon-2"></div>
+        <div class="burger-icon-3"></div>
     </button>
 
     <!-- Desktop Navbar -->
@@ -90,19 +92,19 @@
                         </a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'profile' %}"><i class="far fa-user-circle"></i></i> Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'registration' %}"><i class="far fa-address-card"></i> Register</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'profile' %}"><i class="far fa-user-circle"></i></i> Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'registration' %}"><i class="far fa-address-card"></i> Register</a>
+                        </li>
                     {% endif %}
                 </ul>
             </div>

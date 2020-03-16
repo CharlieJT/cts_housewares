@@ -17,16 +17,14 @@
     <!-- My Styles -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
 
-   
-
     <title>CT's Housewares | {% block title %}{% endblock %}</title>
 </head>
 <body>
 
     {% include 'navbar.html' %}
     <!-- Backdrop which will overlap when a sidedrawer is open which will toggle off when clicked -->
-    <div class="backdrop"></div>
-    
+    <div class="backdrop d-lg-none"></div>
+
     <div class="base-container">
         {% block breadcrumb %}
         {% endblock %}

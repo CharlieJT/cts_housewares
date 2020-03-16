@@ -8,6 +8,9 @@ const mainProductImage = document.getElementsByClassName("main-product-image");
 const navbarToggler = document.getElementsByClassName("navbar-toggler");
 const mobileNavbarContainer = document.getElementsByClassName("mobile-navbar-container");
 const backdrop = document.getElementsByClassName("backdrop");
+const burgerIcon1 = document.getElementsByClassName("burger-icon-1");
+const burgerIcon2 = document.getElementsByClassName("burger-icon-2");
+const burgerIcon3 = document.getElementsByClassName("burger-icon-3");
 
 
 $(document).ready(() => {
@@ -36,9 +39,15 @@ $(document).ready(() => {
         if ($(navbarToggler).hasClass("collapsed")) {
             $(mobileNavbarContainer).css("right", "-70%");
             $(backdrop).css("display", "none");
+            $(burgerIcon1).css("transform", "translateY(-3px) rotate(0deg)");
+            $(burgerIcon2).css({"transform": "translateX(0px)", "opacity": "1"});
+            $(burgerIcon3).css("transform", "translateY(3px) rotate(0deg)");
         } else {
             $(mobileNavbarContainer).css("right", "0");
             $(backdrop).css("display", "block");
+            $(burgerIcon1).css("transform", "translateY(4px) rotate(-135deg)");
+            $(burgerIcon2).css({"transform": "translateX(-50px)", "opacity": "0"});
+            $(burgerIcon3).css("transform", "translateY(-4px) rotate(135deg)");
         }
     });
 });
