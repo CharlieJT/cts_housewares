@@ -53,6 +53,7 @@ body {
     max-width: 500px;
     height: 100vh;
     transition: right .3s ease-in;
+    transition: top .17s ease-in;
 }
 
 .home-page-container {
