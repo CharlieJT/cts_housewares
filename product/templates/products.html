@@ -43,16 +43,19 @@
                         <li class="list-group-item px-0">
                             <form method="POST" action="{% url 'add_to_cart' product.id %}">
                                 {% csrf_token %}
+                                
+                                {% if product.stock %}
                                 <div class="input-group add-to-cart-input-products d-md-flex justify-content-between justify-content-sm-start justify-content-md-between">
-                                    {% if product.stock %}
-                                        <input name="quantity" type="number" value="1" min="1" max="{{ product.stock }}" class="form-control" placeholder="Quantity">
-                                        <span>
-                                            <button class="btn btn-success" type="submit">Add to Cart <i class="fas fa-cart-arrow-down"></i></button>
-                                        </span>
-                                    {% else %}
-                                        <p>Item out of stock</p>
-                                    {% endif %}
+                                    <input name="quantity" type="number" value="1" min="1" max="{{ product.stock }}" class="form-control" placeholder="Quantity">
+                                    <span>
+                                        <button class="btn btn-success" type="submit">Add to Cart <i class="fas fa-cart-arrow-down"></i></button>
+                                    </span>
                                 </div>
+                                {% else %}
+                                <div class="input-group d-flex justify-content-center">
+                                    <p class="item-out-of-stock text-center mb-0"><i>Item out of stock</i></p>
+                                </div>
+                                {% endif %}
                             </form>
                         </li>
                     </ul>

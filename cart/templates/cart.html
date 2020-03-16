@@ -23,7 +23,7 @@
                 <div class="container d-none d-lg-block cart-title">
                     <div class="row p-2">
                         <div class="col-xs-12 col-lg-5">
-                            <h5 class="text-center">Product</h5>
+                            <h5 class="text-center">Total of {{ cart_count }} items</h5>
                         </div>
                         <div class="col-xs-12 col-lg-1">
                             <h5 class="text-center">Price</h5>
@@ -36,6 +36,13 @@
                         </div>
                         <div class="col-xs-12 col-lg-2">
                             <h5 class="text-center">Remove</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row d-lg-none total-items-mobile py-2">
+                        <div class="col">
+                            <h5 class="text-center">Total of {{ cart_count }} items</h5>
                         </div>
                     </div>
                 </div>
@@ -59,20 +66,24 @@
                                     <div class="form-group mb-0 mb-lg-3">
                                         <div class="input-group amend-quantity mx-auto">
                                             <input name="quantity" type="number" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}" class="form-control">
-                                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <i class="fas fa-cog"></i></button>
+                                            <abbr title="Change value then click button to update cart">
+                                                <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <i class="fas fa-cog"></i></button>
+                                            </abbr>
                                         </div>
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-xs-12 col-lg-2">
-                                <p class="text-center"><span class="d-lg-none"><b>Line Total: </b></span>£{{ item.product.price|mul:item.quantity }}</p>
+                            <div class="col-xs-12 col-lg-2 text-center mb-2">
+                                <span class="d-lg-none"><b>Line Total: </b></span><span class="cart-line-total">{{ item.product.price|mul:item.quantity }}</span>
                             </div>
                             <div class="col-xs-12 col-lg-2 remove-item-from-cart">
                                 <form method="POST" action="{% url 'remove_from_cart' item.id %}">
                                     {% csrf_token %}
                                     <div class="form-group d-flex justify-content-center">
+                                        <abbr title="Remove item from cart">
                                         <button class="btn btn-danger remove-item-button" type="submit"><span class="glyphicon glyphicon-delete"
                                             aria-hidden="true"><span class="d-lg-none">Remove </span></span><i class="fas fa-trash"></i></button>
+                                        </abbr>
                                     </div>
                                 </form>
                             </div>
@@ -90,8 +101,8 @@
     <div class="row">
         <div class="col text-right">
             <div class="mb-2">
-                <span><b>Total</b></span>
-                <span><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>£{{ total }}</span>
+                <span><b>Total: </b></span>
+                <span id="cart-total">{{ total }}</span>
             </div>
             {% if user.is_authenticated %}
                 {% if cart_count > 0 %}

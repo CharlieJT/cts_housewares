@@ -11,10 +11,13 @@ const backdrop = document.getElementsByClassName("backdrop");
 const burgerIcon1 = document.getElementsByClassName("burger-icon-1");
 const burgerIcon2 = document.getElementsByClassName("burger-icon-2");
 const burgerIcon3 = document.getElementsByClassName("burger-icon-3");
-
+const cartTotal = document.getElementById("cart-total");
+const cartLineTotal = document.getElementsByClassName("cart-line-total");
 
 $(document).ready(() => {
+
     // Will check to see if the window has been scrolled 50px from the top.
+
     $(window).scroll(() => {
         if ($(document).scrollTop() > 50) {
             $(navbarContainer).css({ "height": "66px", "box-shadow": "0 2px 5px #5f5f5f" });
@@ -29,12 +32,22 @@ $(document).ready(() => {
             $(mobileNavbarContainer).css("top", "92px");
         }
     });
+
+    // When this is clicked, this will take you back to the page you were previously on.
+
     $(previousPage).on('click', () => {
         window.history.back(1);
     });
+
+    /*
+    When the mobile sidedrawer is opened, a backdrop will appear. When this is clicked,
+    it reacts the same asif the burger icon has been clicked, closing the sidedrawer.
+    */
     $(backdrop).on("click", () => {
         $(navbarToggler).click();
     });
+
+
     $(navbarToggler).on('click', () => {
         if ($(navbarToggler).hasClass("collapsed")) {
             $(mobileNavbarContainer).css("right", "-70%");
@@ -50,4 +63,29 @@ $(document).ready(() => {
             $(burgerIcon3).css("transform", "translateY(-4px) rotate(-405deg)");
         }
     });
+
+    // This function will take a value & will add a comma between each 3 digits of the value.
+    const addCommas = price => {
+        price += '';
+        let x = price.split('.');
+        let x1 = x[0];
+        let x2 = x.length > 1 ? '.' + x[1] : '';
+        let rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1)) {
+                x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        }
+        return x1 + x2;
+    }
+
+    /*
+    This is where all of the pricing in the cart is handled with commas, each value is given a new variable
+    & run through the 'addCommas' function & when added back to the value of their specific HTML text.
+    */
+
+    const cartTotalWithCommas = addCommas(cartTotal.innerHTML);
+    $(cartTotal).text(`£${cartTotalWithCommas}`);
+    for (let i=0; i < cartLineTotal.length; i++) {
+        let cartLineTotalWithCommas = addCommas(cartLineTotal[i].innerHTML);
+        $(cartLineTotal[i]).text(`£${cartLineTotalWithCommas}`);
+    }
 });

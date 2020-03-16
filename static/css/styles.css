@@ -225,7 +225,13 @@ body {
     margin-right: 2px;
 }
 
+.item-out-of-stock {
+    color: red;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
 
+/* --------- Product -------- */
 
 .add-to-cart-input-product {
     width: 250px;
@@ -237,7 +243,8 @@ body {
     border: 1px solid #ccc;
 }
 
-.cart-title {
+.cart-title,
+.total-items-mobile {
     border-bottom: 1px solid #ccc;
 }
 
@@ -252,6 +259,10 @@ body {
 
 .amend-quantity {
     max-width: 110px;
+}
+
+.cart-total {
+    font-size: 1.2rem;
 }
 
 
