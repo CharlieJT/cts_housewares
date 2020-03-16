@@ -43,10 +43,15 @@ $(document).ready(() => {
     When the mobile sidedrawer is opened, a backdrop will appear. When this is clicked,
     it reacts the same asif the burger icon has been clicked, closing the sidedrawer.
     */
+
     $(backdrop).on("click", () => {
         $(navbarToggler).click();
     });
 
+    /* 
+    This is handing whether the sidedrawer is open or closed. Which is handling specific CSS such as the sliding
+    of the sidedrawer, the backdrop being visible upon sidedrawer being open & the positioning of each of the burger icons
+    */
 
     $(navbarToggler).on('click', () => {
         if ($(navbarToggler).hasClass("collapsed")) {
@@ -65,6 +70,7 @@ $(document).ready(() => {
     });
 
     // This function will take a value & will add a comma between each 3 digits of the value.
+
     const addCommas = price => {
         price += '';
         let x = price.split('.');
@@ -80,12 +86,17 @@ $(document).ready(() => {
     /*
     This is where all of the pricing in the cart is handled with commas, each value is given a new variable
     & run through the 'addCommas' function & when added back to the value of their specific HTML text.
+    An if has been added to each so that they are only being run if they are being targetted.
     */
 
-    const cartTotalWithCommas = addCommas(cartTotal.innerHTML);
-    $(cartTotal).text(`£${cartTotalWithCommas}`);
-    for (let i=0; i < cartLineTotal.length; i++) {
-        let cartLineTotalWithCommas = addCommas(cartLineTotal[i].innerHTML);
-        $(cartLineTotal[i]).text(`£${cartLineTotalWithCommas}`);
+    if (cartTotal) {
+        const cartTotalWithCommas = addCommas(cartTotal.innerHTML);
+        $(cartTotal).text(`£${cartTotalWithCommas}`);
+    }
+    if (cartLineTotal) {
+        for (let i=0; i < cartLineTotal.length; i++) {
+            let cartLineTotalWithCommas = addCommas(cartLineTotal[i].innerHTML);
+            $(cartLineTotal[i]).text(`£${cartLineTotalWithCommas}`);
+        }
     }
 });
