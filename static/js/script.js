@@ -45,9 +45,9 @@ $(document).ready(() => {
         } else {
             $(mobileNavbarContainer).css("right", "0");
             $(backdrop).css("display", "block");
-            $(burgerIcon1).css("transform", "translateY(4px) rotate(-135deg)");
+            $(burgerIcon1).css("transform", "translateY(4px) rotate(-315deg)");
             $(burgerIcon2).css({"transform": "translateX(-50px)", "opacity": "0"});
-            $(burgerIcon3).css("transform", "translateY(-4px) rotate(135deg)");
+            $(burgerIcon3).css("transform", "translateY(-4px) rotate(-405deg)");
         }
     });
 });

@@ -30,6 +30,10 @@ body {
     cursor: pointer;
 }
 
+.carousel-indicators {
+    z-index: 8;
+}
+
 /* --------- Containers -------- */
 
 .base-container {
@@ -52,8 +56,7 @@ body {
     right: -70%;
     max-width: 500px;
     height: 100vh;
-    transition: right .3s ease-in;
-    transition: top .17s ease-in;
+    transition: right .3s ease-in, top .17s ease-in;
 }
 
 .home-page-container {
@@ -61,6 +64,10 @@ body {
 }
 
 /* --------- Bread Crumb -------- */
+
+.breadcrumb {
+    margin-bottom: 0;
+}
 
 .breadcrumb-item,.breadcrumb-item>a {
     color: #000;
@@ -100,6 +107,10 @@ body {
     width: 100%;
 }
 
+.form-control[type=search]:focus {
+    box-shadow: none;
+}
+
 .navbar-logo-scrolled {
     display: none;
 }
@@ -108,7 +119,7 @@ body {
     background-color: red;
     font-size: 0.75rem;
     top: 4px;
-    left: 0;
+    left: -8px;
     height: 15px;
     line-height: 16px;
     color: #fff;
@@ -214,8 +225,35 @@ body {
     margin-right: 2px;
 }
 
-/* --------- Product Page -------- */
+
 
 .add-to-cart-input-product {
     width: 250px;
+}
+
+/* --------- Cart -------- */
+
+.cart {
+    border: 1px solid #ccc;
+}
+
+.cart-title {
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-title h5 {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+
+.product-cart-image {
+    width: 100%;
+}
+
+/* --------- Media Queries -------- */
+
+@media only screen and (min-width: 992px) {
+    .basket-counter {
+        left: 0;
+    }
 }
