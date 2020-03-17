@@ -1,1 +1,1 @@
-web: gunicorn cts-housewares.wsgi:application
+web: gunicorn cts_housewares.wsgi:application
