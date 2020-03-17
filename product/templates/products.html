@@ -44,7 +44,6 @@
                         <li class="list-group-item px-0">
                             <form method="POST" action="{% url 'add_to_cart' product.id %}">
                                 {% csrf_token %}
-
                                 {% if product.stock %}
                                 <div
                                     class="input-group add-to-cart-input-products d-md-flex justify-content-between justify-content-sm-start justify-content-md-between">

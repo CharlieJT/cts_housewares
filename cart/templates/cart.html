@@ -54,16 +54,16 @@
                             </div>
                             <div class="col-xs-12 col-lg-3">
                                 <p class="cart-item-number text-muted text-center font-weight-bold mb-0"><i>{{ item.product.item_number }}</i></p>
-                                <p class="text-center">{{ item.product.description }}</p>
+                                <p class="cart-description text-center mb-1 mb-lg-1">{{ item.product.description }}</p>
                             </div>
                             <div class="col-xs-12 col-lg-1">
-                                <p class="text-center"><span class="d-lg-none"><b>Price: </b></span>£{{ item.product.price }}</p>
+                                <p class="text-center mb-1"><span class="d-lg-none"><b>Price: </b></span>£{{ item.product.price }}</p>
                             </div>
                             <div class="col-xs-12 col-lg-2 d-flex justify-content-center align-items-center mb-3 mb-lg-0">
                                 <span class="d-lg-none"><b>Quantity/Amend:</b> </span>
                                 <form method="POST" action="{% url 'adjust_cart' item.id %}">
                                     {% csrf_token %}
-                                    <div class="form-group mb-0 mb-lg-3">
+                                    <div class="form-group mb-0 mb-lg-1">
                                         <div class="input-group amend-quantity mx-auto">
                                             <input name="quantity" type="number" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}" class="form-control">
                                             <abbr title="Change value then click button to update cart">
@@ -79,7 +79,7 @@
                             <div class="col-xs-12 col-lg-2 remove-item-from-cart">
                                 <form method="POST" action="{% url 'remove_from_cart' item.id %}">
                                     {% csrf_token %}
-                                    <div class="form-group d-flex justify-content-center">
+                                    <div class="form-group d-flex justify-content-center mb-0 mb-lg-1">
                                         <abbr title="Remove item from cart">
                                         <button class="btn btn-danger remove-item-button" type="submit"><span class="glyphicon glyphicon-delete"
                                             aria-hidden="true"><span class="d-lg-none">Remove </span></span><i class="fas fa-trash"></i></button>

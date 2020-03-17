@@ -20,7 +20,7 @@ def add_to_cart(request, id):
     cart = request.session.get('cart', {})
     if cart.get(id, None):
         cart[id] = int(cart[id]) + quantity
-        messages.success(request, "Added '{}' extra items of '{}' in your cart!".format(quantity, product.description)) 
+        messages.success(request, "Added '{}' extra item(s) of '{}' to your cart!".format(quantity, product.description)) 
     else:
         cart[id] = cart.get(id, quantity)
         messages.success(request, "Added '{}' item(s) of '{}' to your cart!".format(quantity, product.description))

@@ -266,10 +266,14 @@ body {
     max-width: 110px;
 }
 
-.cart-total {
+.cart-total,
+.cart-description {
     font-size: 1.2rem;
 }
 
+.cart-item-number {
+    font-size: .8rem;
+}
 
 /* --------- Media Queries -------- */
 
@@ -279,5 +283,8 @@ body {
     }
     .remove-item-from-cart {
         order: 1;
+    }
+    .cart-description {
+        font-size: 1rem;
     }
 }

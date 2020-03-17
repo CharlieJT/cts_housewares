@@ -7,12 +7,9 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 def all_products(request):
 
     products = Product.objects.all()
-
     product_count = products.count()
-    
     paginator = Paginator(products, 12)
     page = request.GET.get('page')
-
     try:
         products = paginator.page(page)
     except PageNotAnInteger:
