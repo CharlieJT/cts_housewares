@@ -15,15 +15,18 @@ def add_to_cart(request, id):
     quantity=int(request.POST.get('quantity'))
     
     product = get_object_or_404(Product, pk=id)
+    id = str(id)
 
     cart = request.session.get('cart', {})
-    if id in cart:
-        cart[id] = int(cart[id]) + quantity      
+    if cart.get(id, None):
+        cart[id] = int(cart[id]) + quantity
+        messages.success(request, "Added '{}' extra items of '{}' in your cart!".format(quantity, product.description)) 
     else:
         cart[id] = cart.get(id, quantity)
+        messages.success(request, "Added '{}' item(s) of '{}' to your cart!".format(quantity, product.description))
 
     request.session['cart'] = cart
-    messages.success(request, "Added '{}' item(s) of '{}' to your cart!".format(quantity, product.description))
+    
 
     return redirect(request.META['HTTP_REFERER'])
 
