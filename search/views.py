@@ -10,6 +10,7 @@ def search_products(request):
     if request.GET:
         query = request.GET.get('q', '')
         products = Product.objects.filter(Q(item_number__icontains=query) |
+                                        Q(brand__icontains=query) |
                                         Q(description__icontains=query) |
                                         Q(about_product__icontains=query))
 
