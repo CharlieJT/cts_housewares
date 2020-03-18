@@ -15,9 +15,13 @@
             {% else %}
             <div class="carousel-item">
             {% endif %}
-                <img class="d-block d-md-none w-100 banner-image" src="{{ MEDIA_URL }}{{ banner.mobile_image }}" alt="{{ banner.brand }}">
-                <img class="d-none d-md-block d-lg-none w-100 banner-image" src="{{ MEDIA_URL }}{{ banner.tablet_image }}" alt="{{ banner.brand }}">
-                <img class="d-none d-lg-block w-100 banner-image" src="{{ MEDIA_URL }}{{ banner.desktop_image }}" alt="{{ banner.brand }}">
+                <form method="GET" action="{% url 'all_products' %}" class="form-inline m-0 p-0">
+                    <button class="btn banner-button m-0 p-0 w-100" type="submit" name="brand" value="{{ banner.brand }}">
+                        <img class="d-block d-md-none w-100 banner-image" src="{{ MEDIA_URL }}{{ banner.mobile_image }}" alt="{{ banner.brand }}">
+                        <img class="d-none d-md-block d-lg-none w-100 banner-image" src="{{ MEDIA_URL }}{{ banner.tablet_image }}" alt="{{ banner.brand }}">
+                        <img class="d-none d-lg-block w-100 banner-image" src="{{ MEDIA_URL }}{{ banner.desktop_image }}" alt="{{ banner.brand }}">
+                    </button>
+                </form>
             </div>
         {% endfor %}
     </div>

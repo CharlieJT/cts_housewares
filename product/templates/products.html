@@ -20,6 +20,8 @@
             {% endif %}
             {% if query %}
             <p>Found <b>'{{ product_count }}'</b> products for <b>'{{ query }}'</b></p>
+            {% elif brand %}
+            <p>Found <b>'{{ product_count }}'</b> products for <b>'{{ brand }}'</b></p>
             {% else %}
             <p>Found <b>'{{ product_count }}'</b> products</p>
             {% endif %}

@@ -27,6 +27,12 @@ def search_products(request):
         except EmptyPage:
             products = paginator.page(paginator.num_pages)
 
+        content = { 
+            "products": products, 
+            "page_request_var": page_request_var, 
+            "product_count": product_count, 
+            "query": query 
+        }
         
 
-    return render(request, "products.html", { "products": products, "page_request_var": page_request_var, "product_count": product_count, "query": query })
+    return render(request, "products.html", content)
