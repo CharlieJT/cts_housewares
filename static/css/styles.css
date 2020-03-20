@@ -159,6 +159,10 @@ body {
     transform: translateY(3px);
 }
 
+#dropdown-menu-desktop {
+    min-width: 12rem;
+}
+
 /* --------- Products Page -------- */
 
 .card {

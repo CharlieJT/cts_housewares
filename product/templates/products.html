@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
+<!-- Products Title -->
 {% block title %}Products{% endblock %}
 
+<!-- Products Breadcrumb -->
 {% block breadcrumb %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb mb-0">
@@ -11,8 +13,10 @@
 </nav>
 {% endblock %}
 
+<!-- Products -->
 {% block content %}
 <div class="container mt-5">
+    <!-- Message to inform user of what they're querying & for how many items there are of that query -->
     <div class="row">
         <div class="col">
             {% if products.paginator.num_pages > 1 %}
@@ -23,14 +27,16 @@
             {% elif brand %}
             <p>Found <b>'{{ product_count }}'</b> products for <b>'{{ brand }}'</b></p>
             {% else %}
-            <p>Found <b>'{{ product_count }}'</b> products</p>
+            <p>List of all <b>'{{ product_count }}'</b> products</p>
             {% endif %}
         </div>
     </div>
 
+    <!-- Products List -->
     <div class="row">
         {% if products %}
         {% for product in products %}
+        <!-- Each item in the products list -->
         <div class="col-xs-12 col-sm-6 col-lg-4">
             <div class="card mb-5">
                 <div class="card-body">

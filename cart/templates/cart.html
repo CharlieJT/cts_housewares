@@ -4,8 +4,10 @@
 
 {% load mathfilters %}
 
+<!-- Cart Title -->
 {% block title %}Cart{% endblock %}
 
+<!-- Breadcrumb -->
 {% block breadcrumb %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -15,11 +17,13 @@
 </nav>
 {% endblock %}
 
+<!-- Cart -->
 {% block content %}
 <div class="container mt-4">
     <div class="row mt-5">
         {% if cart_count > 0 %}
             <div class="col-12 cart p-0">
+                <!-- Cart Titles -->
                 <div class="container d-none d-lg-block cart-title">
                     <div class="row p-2">
                         <div class="col-xs-12 col-lg-5">
@@ -47,6 +51,7 @@
                     </div>
                 </div>
                 {% for item in cart_items %}
+                    <!-- Each Item in the cart -->
                     <div class="container">
                         <div class="row d-flex align-items-center p-2">
                             <div class="col-xs-12 col-lg-2">
@@ -96,6 +101,7 @@
         {% endif %}
     </div>
 </div>
+
 
 <div class="container mt-5">
     <div class="row">

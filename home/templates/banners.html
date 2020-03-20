@@ -1,4 +1,6 @@
+<!-- Home Page Carousel -->
 <div id="carouselExampleIndicators" class="carousel slide banners-container" data-ride="carousel">
+    <!-- Carousel Indicators -->
     <ol class="carousel-indicators">
         {% for banner in banners %}
             {% if forloop.counter == 1 %}
@@ -8,6 +10,7 @@
             {% endif %}
         {% endfor %}
     </ol>
+    <!-- Carousel Banners -->
     <div class="carousel-inner">
         {% for banner in banners %}
             {% if forloop.counter == 1 %}
@@ -15,6 +18,7 @@
             {% else %}
             <div class="carousel-item">
             {% endif %}
+            <!-- Banners showing are clickable, they link you to the products page showing their relative brand's -->
                 <form method="GET" action="{% url 'all_products' %}" class="form-inline m-0 p-0">
                     <button class="btn banner-button m-0 p-0 w-100" type="submit" name="brand" value="{{ banner.brand }}">
                         <img class="d-block d-md-none w-100 banner-image" src="{{ MEDIA_URL }}{{ banner.mobile_image }}" alt="{{ banner.brand }}">
@@ -25,10 +29,12 @@
             </div>
         {% endfor %}
     </div>
+    <!-- Previous Carousel Button -->
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
+    <!-- Next Carousel Button -->
     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>

@@ -4,8 +4,10 @@
 
 {% load crispy_forms_tags %}
 
+<!-- Checkout Title -->
 {% block title %}Checkout{% endblock %}
 
+<!-- Checkout Breadcrumb -->
 {% block breadcrumb %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -16,6 +18,7 @@
 </nav>
 {% endblock %}
 
+<!-- Stripe Script tags to enabled payment -->
 {% block head_js %}
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
@@ -25,6 +28,7 @@
 </script>
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock head_js %}
+
 
 {% block content %}
 <div class="container mt-5">
@@ -49,6 +53,8 @@
         </div>
     </div>
 </div>
+
+<!-- Order Form & Payment Form -->
 <form role="form" method="POST" id="payment-form" action="{% url 'checkout' %}">
     <legend>Payment Details</legend>
     <div id="credit-card-errors" style="display: none">
