@@ -65,7 +65,13 @@ def checkout(request):
         order_form = OrderForm()
         payment_form = MakePaymentForm()
 
-    return render(request, "checkout.html", { 'order_form': order_form, 'payment_form': payment_form, 'publishable': settings.STRIPE_PUBLISHABLE})
+    content =  { 
+        'order_form': order_form, 
+        'payment_form': payment_form, 
+        'publishable': settings.STRIPE_PUBLISHABLE
+    }
+
+    return render(request, "checkout.html", content)
 
 @login_required()
 def successful_payment(request):

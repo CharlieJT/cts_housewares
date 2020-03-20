@@ -80,5 +80,9 @@ def user_profile(request):
             order_total_price += (order_item.price * order_item.quantity)
         order.total = order_total_price
         
-
-    return render(request, "profile.html", { "profile": user, "orders": orders })
+    content = { 
+        "profile": user, 
+        "orders": orders 
+    }
+    
+    return render(request, "profile.html", content)

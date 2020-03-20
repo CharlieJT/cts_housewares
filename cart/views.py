@@ -27,7 +27,6 @@ def add_to_cart(request, id):
 
     request.session['cart'] = cart
     
-
     return redirect(request.META['HTTP_REFERER'])
 
 def adjust_cart(request, id):

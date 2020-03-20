@@ -32,7 +32,7 @@
         {% for item in cart_items %}
         <div class="col-12">
             <div class="panel-body">
-                <div class="product" style="background-image: ('{{ MEDIA_URL }}{{ item.product.image }}');"></div>
+                <div class="product-image" style="background-image: ('{{ MEDIA_URL }}{{ item.product.image }}');"></div>
                 <p class="product-description">{{ item.product.name }}</p>
                 <p>{{ item.product.description }}</p>
                 <p>{{ item.quantity }}</p>
