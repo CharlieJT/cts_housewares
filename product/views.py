@@ -14,7 +14,7 @@ def all_products(request):
         page_request_var = "brand={}&".format(brand)
     else:
         products = Product.objects.all()
-        page_request_var = None
+        page_request_var = ''
 
     
     product_count = products.count()
