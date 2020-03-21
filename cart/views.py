@@ -19,8 +19,11 @@ def add_to_cart(request, id):
 
     cart = request.session.get('cart', {})
     if cart.get(id, None):
-        cart[id] = int(cart[id]) + quantity
-        messages.success(request, "Added '{}' extra item(s) of '{}' to your cart!".format(quantity, product.description)) 
+        if cart[id] + quantity > product.stock:
+            messages.error(request, "Unable to add an extra '{}' of this item to your cart as it will exceed the number of stock!".format(quantity)) 
+        else:
+            cart[id] = int(cart[id]) + quantity
+            messages.success(request, "Added '{}' extra item(s) of '{}' to your cart!".format(quantity, product.description)) 
     else:
         cart[id] = cart.get(id, quantity)
         messages.success(request, "Added '{}' item(s) of '{}' to your cart!".format(quantity, product.description))

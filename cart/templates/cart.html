@@ -70,7 +70,7 @@
                                     {% csrf_token %}
                                     <div class="form-group mb-0 mb-lg-1">
                                         <div class="input-group amend-quantity mx-auto">
-                                            <input name="quantity" type="number" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}" class="form-control">
+                                            <input class="form-control" name="quantity" type="number" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}">
                                             <abbr title="Change value then click button to update cart">
                                                 <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <i class="fas fa-cog"></i></button>
                                             </abbr>
@@ -79,7 +79,7 @@
                                 </form>
                             </div>
                             <div class="col-xs-12 col-lg-2 text-center mb-2">
-                                <span class="d-lg-none"><b>Line Total: </b></span><span class="cart-line-total">{{ item.product.price|mul:item.quantity }}</span>
+                                <span class="d-lg-none"><b>Line Total: </b></span><span class="cart-line-total price-with-commas">{{ item.product.price|mul:item.quantity }}</span>
                             </div>
                             <div class="col-xs-12 col-lg-2 remove-item-from-cart">
                                 <form method="POST" action="{% url 'remove_from_cart' item.id %}">
@@ -108,7 +108,7 @@
         <div class="col text-right">
             <div class="mb-2">
                 <span><b>Total: </b></span>
-                <span id="cart-total">{{ total }}</span>
+                <span id="cart-total" class="price-with-commas">{{ total }}</span>
             </div>
             {% if user.is_authenticated %}
                 {% if cart_count > 0 %}

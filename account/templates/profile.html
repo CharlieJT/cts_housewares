@@ -49,10 +49,11 @@
                                 <div class="card-body">
                                 {% for order_item in order.orderlineitem_set.all %}
                                     <div>
-                                        <img src="{{ MEDIA_URL }}{{ order_item.product.image }}" width="60" alt=""><span>{{ order_item.product.description }} - x{{ order_item.quantity }} - £{{ order_item.price }}</span>
+                                        <img src="{{ MEDIA_URL }}{{ order_item.product.image }}" width="60" alt="Order Item"><span>{{ order_item.product.description }} - x{{ order_item.quantity }} - £{{ order_item.price }}</span>
                                     </div>
                                 {% endfor %}
-                                <p>Total Price: £{{ order.total }}</p>
+                                <span><b>Total Price: </b></span>
+                                <span id="cart-total" class="price-with-commas">{{ order.total }}</span>
                                 </div>
                             </div>
                         </div>

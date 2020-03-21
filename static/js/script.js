@@ -11,8 +11,7 @@ const backdrop = document.getElementsByClassName("backdrop");
 const burgerIcon1 = document.getElementsByClassName("burger-icon-1");
 const burgerIcon2 = document.getElementsByClassName("burger-icon-2");
 const burgerIcon3 = document.getElementsByClassName("burger-icon-3");
-const cartTotal = document.getElementById("cart-total");
-const cartLineTotal = document.getElementsByClassName("cart-line-total");
+const priceWithCommas = document.getElementById("price-with-commas");
 
 $(document).ready(() => {
 
@@ -89,14 +88,10 @@ $(document).ready(() => {
     An if has been added to each so that they are only being run if they are being targetted.
     */
 
-    if (cartTotal) {
-        const cartTotalWithCommas = addCommas(cartTotal.innerHTML);
-        $(cartTotal).text(`£${cartTotalWithCommas}`);
-    }
-    if (cartLineTotal) {
-        for (let i=0; i < cartLineTotal.length; i++) {
-            let cartLineTotalWithCommas = addCommas(cartLineTotal[i].innerHTML);
-            $(cartLineTotal[i]).text(`£${cartLineTotalWithCommas}`);
+    if (pricesWithCommas) {
+        for (let i=0; i < pricesWithCommas.length; i++) {
+            let priceWithCommas = addCommas(pricesWithCommas[i].innerHTML);
+            $(pricesWithCommas[i]).text(`£${priceWithCommas}`);
         }
     }
 });
