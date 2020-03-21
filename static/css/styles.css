@@ -34,6 +34,10 @@ body {
     z-index: 8;
 }
 
+.red-background {
+    background-color: red;
+}
+
 /* --------- Containers -------- */
 
 .base-container {
