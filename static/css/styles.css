@@ -34,9 +34,57 @@ body {
     z-index: 8;
 }
 
-.red-background {
-    background-color: red;
+/* ---------- Back to top icon ----------*/
+
+.to-top {
+    color: white;
+    padding-top: 1.8em;
+    display: inline-block;
+    /* or block */
+    position: fixed;
+    bottom: 30px;
+    right: 45px;
+    text-decoration: none;
+    -webkit-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    opacity: 0;
+    z-index: 1000;
 }
+
+.to-top:before {
+    content: url(../img/chevronup.png);
+    font-size: 1.9em;
+    position: absolute;
+    text-align: center;
+    background-color: #00000050;
+    top: 0;
+    left: 50%;
+    margin-left: -.7em;
+    border: solid .13em white;
+    border-radius: 10em;
+    width: 1.6em;
+    height: 1.6em;
+    line-height: 1.3em;
+    border-color: inherit;
+    -webkit-transition: -webkit-transform .5s ease-in;
+    transition: -webkit-transform .5s ease-in;
+    -o-transition: transform .5s ease-in;
+    transition: transform .5s ease-in;
+    transition: transform .5s ease-in, -webkit-transform .5s ease-in;
+}
+
+.to-top:hover {
+    border-color: #42a5f5;
+}
+
+.to-top:hover:before {
+    content: url(../img/chevronupblue.png);
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
 
 /* --------- Containers -------- */
 

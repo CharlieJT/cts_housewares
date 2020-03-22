@@ -12,6 +12,7 @@ const burgerIcon1 = document.getElementsByClassName("burger-icon-1");
 const burgerIcon2 = document.getElementsByClassName("burger-icon-2");
 const burgerIcon3 = document.getElementsByClassName("burger-icon-3");
 const priceWithCommas = document.getElementById("price-with-commas");
+const toTop = document.getElementsByClassName("to-top");
 
 $(document).ready(() => {
 
@@ -23,12 +24,14 @@ $(document).ready(() => {
             $(navbarLogo).css("display", "none");
             $(navbarLogoScrolled).css("display", "block");
             $(mobileNavbarContainer).css("top", "66px");
+            $(toTop).css({'opacity': '1', "pointer-events": "all"});
         }
         else {
             $(navbarContainer).css({ "height": "92px", "box-shadow": "none" });
             $(navbarLogo).css("display", "block");
             $(navbarLogoScrolled).css("display", "none");
             $(mobileNavbarContainer).css("top", "92px");
+            $(toTop).css({'opacity': '0', "pointer-events": "none"});
         }
     });
 
