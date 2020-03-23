@@ -11,7 +11,7 @@ const backdrop = document.getElementsByClassName("backdrop");
 const burgerIcon1 = document.getElementsByClassName("burger-icon-1");
 const burgerIcon2 = document.getElementsByClassName("burger-icon-2");
 const burgerIcon3 = document.getElementsByClassName("burger-icon-3");
-const priceWithCommas = document.getElementById("price-with-commas");
+const pricesWithCommas = document.getElementsByClassName("price-with-commas");
 const toTop = document.getElementsByClassName("to-top");
 
 $(document).ready(() => {
