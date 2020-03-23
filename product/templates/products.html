@@ -16,6 +16,25 @@
 <!-- Products -->
 {% block content %}
 <div class="container mt-5">
+    <!-- Brand select list -->
+    <div class="row">
+        <div class="col">
+            <form method="GET" action="{% url 'all_products' %}" class="form-inline m-0 mb-3 p-0 justify-content-end">
+                <label class="mr-2 mb-0" for="brand">Select Brand: </label>
+                <select class="select-brand mr-1" name="brand" id="brand" value="{{ brand }}">
+                    <option value="" selected disabled>-- Select a brand --</option>
+                    {% for brand_item in brand_list %}
+                    {% if brand_item.brand == brand %}
+                    <option value="{{ brand_item.brand }}" selected>{{ brand_item.brand }}</option>
+                    {% else %}
+                    <option value="{{ brand_item.brand }}">{{ brand_item.brand }}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+                <button class="btn btn-primary select-brand-button p-0 px-2" type="submit">Go!</button>
+            </form>
+        </div>
+    </div>
     <!-- Message to inform user of what they're querying & for how many items there are of that query -->
     <div class="row">
         <div class="col">

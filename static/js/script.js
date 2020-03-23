@@ -88,7 +88,7 @@ $(document).ready(() => {
     /*
     This is where all of the pricing in the cart is handled with commas, each value is given a new variable
     & run through the 'addCommas' function & when added back to the value of their specific HTML text.
-    An if has been added to each so that they are only being run if they are being targetted.
+    An if has been added so that they are only being run if they are being targetted.
     */
 
     if (pricesWithCommas) {
@@ -97,4 +97,5 @@ $(document).ready(() => {
             $(pricesWithCommas[i]).text(`£${priceWithCommas}`);
         }
     }
+
 });

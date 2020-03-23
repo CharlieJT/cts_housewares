@@ -7,7 +7,7 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 def all_products(request):
     """ This will return all of the products & only bring back 12 items on which ever page that you're on """
-    
+
     brand = request.GET.get('brand', '')
     if brand:
         products = Product.objects.filter(Q(brand__icontains=brand))
@@ -15,8 +15,8 @@ def all_products(request):
     else:
         products = Product.objects.all()
         page_request_var = ''
-
     
+    brand_list = Product.objects.values('brand').distinct()
     product_count = products.count()
     paginator = Paginator(products, 12)
     page = request.GET.get('page')
@@ -32,6 +32,7 @@ def all_products(request):
         "product_count": product_count, 
         "page_request_var": page_request_var,
         "brand": brand,
+        "brand_list": brand_list
     }
 
     return render(request, "products.html", content)

@@ -217,6 +217,11 @@ body {
 
 /* --------- Products Page -------- */
 
+.select-brand,
+.select-brand-button {
+    height: 2rem;
+}
+
 .card {
     border-radius: 10px;
     transition: all 0.15s ease-in;

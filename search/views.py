@@ -15,7 +15,7 @@ def search_products(request):
                                         Q(about_product__icontains=query))
 
         product_count = products.count()
-
+        brand_list = Product.objects.values('brand').distinct()
         page_request_var = "q={}&".format(query)
         paginator = Paginator(products, 12)
         page = request.GET.get('page')
@@ -31,7 +31,8 @@ def search_products(request):
             "products": products, 
             "page_request_var": page_request_var, 
             "product_count": product_count, 
-            "query": query 
+            "query": query,
+            "brand_list": brand_list
         }
         
 
