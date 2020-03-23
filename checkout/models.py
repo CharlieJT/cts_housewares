@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
+from product.models import Product
 
 # Create your models here.
-from product.models import Product
 
 class Order(models.Model):
     user_id = models.ForeignKey(User, null=False, on_delete=models.CASCADE)

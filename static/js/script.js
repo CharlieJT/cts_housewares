@@ -13,6 +13,7 @@ const burgerIcon2 = document.getElementsByClassName("burger-icon-2");
 const burgerIcon3 = document.getElementsByClassName("burger-icon-3");
 const pricesWithCommas = document.getElementsByClassName("price-with-commas");
 const toTop = document.getElementsByClassName("to-top");
+const productImageSlider = document.getElementsByClassName("product-image-slider");
 
 $(document).ready(() => {
 
@@ -98,4 +99,7 @@ $(document).ready(() => {
         }
     }
 
+    if ($(productImageSlider).hasClass("active")) {
+        $(this).css("box-shadow", "2px 2px 4px #bbb");
+    }
 });

@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Product
+from .models import Product, Image
 from django.db.models import Q
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
@@ -15,6 +15,7 @@ def all_products(request):
     else:
         products = Product.objects.all()
         page_request_var = ''
+
     
     brand_list = Product.objects.values('brand').distinct()
     product_count = products.count()

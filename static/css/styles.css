@@ -304,6 +304,12 @@ body {
     max-width: 400px;
 }
 
+.product-image-slider {
+    max-width: 100px;
+    cursor: pointer;
+}
+
+
 /* --------- Cart -------- */
 
 .cart {

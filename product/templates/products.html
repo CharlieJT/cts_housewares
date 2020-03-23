@@ -60,8 +60,11 @@
             <div class="card mb-5">
                 <div class="card-body">
                     <a class="products-link" href="{% url 'product' product.id %}">
-                        <div class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')">
-                        </div>
+                        {% for product_image in product.image_set.all %}
+                        {% if forloop.counter == 1 %}
+                            <div class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ product_image.image }}')"></div>
+                        {% endif %}
+                        {% endfor %}
                         <div class="card-description">
                             <p class="card-text text-center">{{ product.description }}</p>
                         </div>
