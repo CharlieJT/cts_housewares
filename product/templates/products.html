@@ -16,11 +16,12 @@
 <!-- Products -->
 {% block content %}
 <div class="container mt-5">
-    <!-- Brand select list -->
+    <!-- Brand Select List -->
     <div class="row">
         <div class="col">
             <form method="GET" action="{% url 'all_products' %}" class="form-inline m-0 mb-3 p-0 justify-content-end">
                 <label class="mr-2 mb-0" for="brand">Select Brand: </label>
+                <!-- Brand Select Dropdown -->
                 <select class="select-brand mr-1" name="brand" id="brand" value="{{ brand }}">
                     <option value="" selected disabled>-- Select a brand --</option>
                     {% for brand_item in brand_list %}
@@ -31,6 +32,7 @@
                     {% endif %}
                     {% endfor %}
                 </select>
+                <!-- Brand Select Button -->
                 <button class="btn btn-primary select-brand-button p-0 px-2" type="submit">Go!</button>
             </form>
         </div>
@@ -42,10 +44,13 @@
             <p class="text-muted float-right">(Page {{ products.number }} of {{ products.paginator.num_pages }})</p>
             {% endif %}
             {% if query %}
+            <!-- Search Message -->
             <p>Found <b>'{{ product_count }}'</b> products for <b>'{{ query }}'</b></p>
             {% elif brand %}
+            <!-- Brand Message -->
             <p>Found <b>'{{ product_count }}'</b> products for <b>'{{ brand }}'</b></p>
             {% else %}
+            <!-- All Products Message -->
             <p>List of all <b>'{{ product_count }}'</b> products</p>
             {% endif %}
         </div>
@@ -55,36 +60,43 @@
     <div class="row">
         {% if products %}
         {% for product in products %}
-        <!-- Each item in the products list -->
+        <!-- Each Item In The Products List -->
         <div class="col-xs-12 col-sm-6 col-lg-4">
             <div class="card mb-5">
                 <div class="card-body">
                     <a class="products-link" href="{% url 'product' product.id %}">
+                        <!-- Product Image -->
                         {% for product_image in product.image_set.all %}
                         {% if forloop.counter == 1 %}
                             <div class="product-image" style="background-image: url('{{ MEDIA_URL }}{{ product_image.image }}')"></div>
                         {% endif %}
                         {% endfor %}
+                        <!-- Product Description -->
                         <div class="card-description">
                             <p class="card-text text-center">{{ product.description }}</p>
                         </div>
                     </a>
                     <ul class="list-group list-group-flush">
+                        <!-- Product Price -->
                         <li class="list-group-item"><b>£{{ product.price }}</b></li>
+                        <!-- Add To Cart -->
                         <li class="list-group-item px-0">
                             <form method="POST" action="{% url 'add_to_cart' product.id %}">
                                 {% csrf_token %}
                                 {% if product.stock %}
-                                <div
-                                    class="input-group add-to-cart-input-products d-md-flex justify-content-between justify-content-sm-start justify-content-md-between">
+                                <div class="input-group add-to-cart-input-products d-md-flex justify-content-between justify-content-sm-start justify-content-md-between">
+                                    <!-- Adjust Quantity -->
                                     <input name="quantity" type="number" value="1" min="1" max="{{ product.stock }}"
                                         class="form-control" placeholder="Quantity">
+                                    <!-- Add To Cart Button -->
                                     <span>
-                                        <button class="btn btn-success" type="submit">Add to Cart <i
-                                                class="fas fa-cart-arrow-down"></i></button>
+                                        <button class="btn btn-success" type="submit">
+                                            Add to Cart <i class="fas fa-cart-arrow-down"></i>
+                                        </button>
                                     </span>
                                 </div>
                                 {% else %}
+                                <!-- Item Out Of Stock -->
                                 <div class="input-group d-flex justify-content-center">
                                     <p class="item-out-of-stock text-center mb-0"><i>Item out of stock</i></p>
                                 </div>
@@ -97,6 +109,7 @@
         </div>
         {% endfor %}
         {% else %}
+        <!-- No Products Available -->
         <p>No products currently available!</p>
         {% endif %}
     </div>
