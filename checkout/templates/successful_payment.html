@@ -16,6 +16,7 @@
 {% endblock %}
 
 <!-- Order Progress -->
+{% if user.is_authenticated %}
 {% block order_progress %}
 <!-- Order Progress Bar -->
 <div class="progress position-relative mt-5">
@@ -48,6 +49,7 @@
     </div>
 </div>
 {% endblock %}
+{% if user.is_authenticated %}
 
 <!-- Payment Confirm Message -->
 {% block content %}

@@ -182,7 +182,7 @@ body {
 }
 
 .status-done {
-    background-color: #417bff !important;
+    background:linear-gradient(#4ea5e8, #35688e) !important;
 }
 
 .checkout-status {

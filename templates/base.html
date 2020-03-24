@@ -52,10 +52,8 @@
         {% endif %}
 
         <!-- Order Progress -->
-        {% if user.is_authenticated and cart_count > 0 %}
         {% block order_progress %}
         {% endblock %}
-        {% endif %}
         
         <!-- Content -->
         {% block content %}
