@@ -446,6 +446,13 @@ body {
     max-width: 700px;
 }
 
+/* --------- Checkout -------- */
+
+.successful-payment-icon {
+    font-size: 4rem;
+    color: #6bc527;
+}
+
 /* --------- Media Queries -------- */
 
 @media only screen and (min-width: 992px) {
