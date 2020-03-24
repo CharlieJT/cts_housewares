@@ -363,8 +363,16 @@ body {
 
 /* --------- Profile -------- */
 
+.profile-information {
+    list-style: none;
+}
+
 .order-titles {
     border-bottom: 1px solid #ccc;
+}
+
+.order-titles>div {
+    justify-content: center;
 }
 
 .order-titles h5 {

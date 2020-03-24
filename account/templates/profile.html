@@ -26,7 +26,7 @@
                 <h4><i class="far fa-user-circle"></i> Profile:</h4>
                 <hr>
                 <!-- Profile Information -->
-                <ul class="py-3">
+                <ul class="py-3 profile-information">
                     <li>
                         <p><i class="far fa-user"></i> <b>Username:</b> {{ user }}</p>
                     </li>
@@ -56,13 +56,12 @@
                                 </button>
                             </h2>
                         </div>
-
                         <div id="collapse{{forloop.counter}}" class="collapse"
                             aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
                             <div class="card-body">
                                 <div class="container order-container">
                                     <div class="row order-titles p-3">
-                                        <div class="col-xs-12 col-lg-6">
+                                        <div class="col-xs-12 d-flex col-lg-6">
                                             <h5 class="text-center">Total of {{ order.orderlineitem_set.all.count }} item(s)</h5>
                                         </div>
                                         <div class="col-xs-12 d-none d-lg-flex col-lg-2">
