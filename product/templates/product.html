@@ -18,62 +18,70 @@
 
 <!-- Product -->
 {% block content %}
-    <div class="container product-container mt-4">
-        <div class="row">
-            <div class="col-xs-12 col-lg-5">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
-                    <div class="carousel-inner">
-                      {% for product_image in product.image_set.all %}
-                        {% if forloop.counter == 1 %}
-                        <div class="carousel-item text-center active">
-                            <img class="product-img p-1" src="{{ MEDIA_URL }}{{ product_image.image }}" alt="{{ product.description }}">
-                        </div>
-                        {% else %}
-                        <div class="carousel-item text-center">
-                            <img class="product-img p-1" src="{{ MEDIA_URL }}{{ product_image.image }}" alt="{{ product.description }}">
-                        </div>
-                        {% endif %}
-                        {% endfor %}
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                </div>
-                <div class="carousel-indicators position-relative m-0">
+<div class="container product-container mt-4">
+    <div class="row">
+        <div class="col-xs-12 col-lg-5">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner">
                     {% for product_image in product.image_set.all %}
-                    <div class="product-image-slider" data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter0 }}">
-                        <img class="product-img p-1" src="{{ MEDIA_URL }}{{ product_image.image }}" alt="{{ product.description }}">
+                    {% if forloop.counter == 1 %}
+                    <div class="carousel-item product-carousel-item text-center active">
+                    {% else %}
+                    <div class="carousel-item product-carousel-item text-center">
+                    {% endif %}
+                        <img class="product-img product-main-image p-1" src="{{ MEDIA_URL }}{{ product_image.image }}"
+                            alt="{{ product.description }}">
                     </div>
                     {% endfor %}
                 </div>
+                {% if product.image_set.all.count > 1 %}
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon mr-4" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon ml-4" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                {% endif %}
             </div>
-            
-            <div class="col-xs-12 col-lg-7">
-                <p class="text-muted"><b>{{ product.brand }}</b></p>
-                <h2 class="mb-4">{{ product.description }}</h2>
-                <p>Item Number: {{ product.item_number }}</p>
-                <h5 class="mb-3">Price: <b>£{{ product.price }}</b></h5>
-                <!-- Add to Cart -->
-                <form class="mb-5" method="POST" action="{% url 'add_to_cart' product.id %}">
-                    {% csrf_token %}
-                    <div class="input-group add-to-cart-input-product mb-3">
-                        {% if product.stock %}
-                            <input name="quantity" type="number" value="1" min="1" max="{{ product.stock }}" class="form-control mr-2" placeholder="Quantity">
-                            <span>
-                                <button class="btn btn-success previous-page" type="submit">Add to Cart <i class="fas fa-cart-arrow-down"></i></button>
-                            </span>
-                        {% else %}
-                            <p class="item-out-of-stock text-center"><i>Item out of stock</i></p>
-                        {% endif %}
-                    </div>
-                </form>
-                <p class="mt-5">{{ product.about_product }}</p>
+            <div class="carousel-indicators product-carousel-indicators position-relative m-0">
+                {% if product.image_set.all.count > 1 %}
+                {% for product_image in product.image_set.all %}
+                <div data-target="#carouselExampleIndicators"
+                    data-slide-to="{{ forloop.counter0 }}">
+                    <img class="product-img product-indicator-image p-1" src="{{ MEDIA_URL }}{{ product_image.image }}"
+                        alt="{{ product.description }}">
+                </div>
+                {% endfor %}
+                {% endif %}
             </div>
         </div>
+
+        <div class="col-xs-12 col-lg-7">
+            <p class="text-muted"><b>{{ product.brand }}</b></p>
+            <h2 class="mb-4">{{ product.description }}</h2>
+            <p>Item Number: {{ product.item_number }}</p>
+            <h5 class="mb-3">Price: <b>£{{ product.price }}</b></h5>
+            <!-- Add to Cart -->
+            <form class="mb-5" method="POST" action="{% url 'add_to_cart' product.id %}">
+                {% csrf_token %}
+                <div class="input-group add-to-cart-input-product mb-3">
+                    {% if product.stock %}
+                    <input name="quantity" type="number" value="1" min="1" max="{{ product.stock }}"
+                        class="form-control mr-2" placeholder="Quantity">
+                    <span>
+                        <button class="btn btn-success previous-page" type="submit">
+                            Add to Cart <i class="fas fa-cart-arrow-down"></i>
+                        </button>
+                    </span>
+                    {% else %}
+                    <p class="item-out-of-stock text-center"><i>Item out of stock</i></p>
+                    {% endif %}
+                </div>
+            </form>
+            <p class="mt-5">{{ product.about_product }}</p>
+        </div>
     </div>
+</div>
 {% endblock %}

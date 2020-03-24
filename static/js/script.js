@@ -1,3 +1,9 @@
+// Constants
+
+const scaleSize = 2;
+const navbarHeightNotScrolled = "66px";
+const navbarHeightScrolled = "92px";
+
 // Constants used to target specific class names needed for jQuery
 
 const navbarContainer = document.getElementsByClassName("navbar-container");
@@ -13,7 +19,8 @@ const burgerIcon2 = document.getElementsByClassName("burger-icon-2");
 const burgerIcon3 = document.getElementsByClassName("burger-icon-3");
 const pricesWithCommas = document.getElementsByClassName("price-with-commas");
 const toTop = document.getElementsByClassName("to-top");
-const productImageSlider = document.getElementsByClassName("product-image-slider");
+const productMainImage = document.getElementsByClassName("product-main-image");
+
 
 $(document).ready(() => {
 
@@ -21,18 +28,18 @@ $(document).ready(() => {
 
     $(window).scroll(() => {
         if ($(document).scrollTop() > 50) {
-            $(navbarContainer).css({ "height": "66px", "box-shadow": "0 2px 5px #5f5f5f" });
+            $(navbarContainer).css({ "height": navbarHeightScrolled, "box-shadow": "0 2px 5px #5f5f5f" });
             $(navbarLogo).css("display", "none");
             $(navbarLogoScrolled).css("display", "block");
-            $(mobileNavbarContainer).css("top", "66px");
-            $(toTop).css({'opacity': '1', "pointer-events": "all"});
+            $(mobileNavbarContainer).css("top", navbarHeightScrolled);
+            $(toTop).css({ 'opacity': '1', "pointer-events": "all" });
         }
         else {
-            $(navbarContainer).css({ "height": "92px", "box-shadow": "none" });
+            $(navbarContainer).css({ "height": navbarHeightNotScrolled, "box-shadow": "none" });
             $(navbarLogo).css("display", "block");
             $(navbarLogoScrolled).css("display", "none");
-            $(mobileNavbarContainer).css("top", "92px");
-            $(toTop).css({'opacity': '0', "pointer-events": "none"});
+            $(mobileNavbarContainer).css("top", navbarHeightNotScrolled);
+            $(toTop).css({ 'opacity': '0', "pointer-events": "none" });
         }
     });
 
@@ -61,13 +68,13 @@ $(document).ready(() => {
             $(mobileNavbarContainer).css("right", "-70%");
             $(backdrop).css("display", "none");
             $(burgerIcon1).css("transform", "translateY(-3px) rotate(0deg)");
-            $(burgerIcon2).css({"transform": "translateX(0px)", "opacity": "1"});
+            $(burgerIcon2).css({ "transform": "translateX(0px)", "opacity": "1" });
             $(burgerIcon3).css("transform", "translateY(3px) rotate(0deg)");
         } else {
             $(mobileNavbarContainer).css("right", "0");
             $(backdrop).css("display", "block");
             $(burgerIcon1).css("transform", "translateY(4px) rotate(-315deg)");
-            $(burgerIcon2).css({"transform": "translateX(-50px)", "opacity": "0"});
+            $(burgerIcon2).css({ "transform": "translateX(-50px)", "opacity": "0" });
             $(burgerIcon3).css("transform", "translateY(-4px) rotate(-405deg)");
         }
     });
@@ -81,7 +88,7 @@ $(document).ready(() => {
         let x2 = x.length > 1 ? '.' + x[1] : '';
         let rgx = /(\d+)(\d{3})/;
         while (rgx.test(x1)) {
-                x1 = x1.replace(rgx, '$1' + ',' + '$2');
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
         }
         return x1 + x2;
     }
@@ -93,13 +100,23 @@ $(document).ready(() => {
     */
 
     if (pricesWithCommas) {
-        for (let i=0; i < pricesWithCommas.length; i++) {
+        for (let i = 0; i < pricesWithCommas.length; i++) {
             let priceWithCommas = addCommas(pricesWithCommas[i].innerHTML);
             $(pricesWithCommas[i]).text(`£${priceWithCommas}`);
         }
     }
 
-    if ($(productImageSlider).hasClass("active")) {
-        $(this).css("box-shadow", "2px 2px 4px #bbb");
-    }
+    /*
+    This is where an image with increase to 2 times it's original size when hovered over,
+    This is so the user can get a better look at each of the images of the products
+    */
+
+    $(productMainImage).on('mouseover', function () {
+        $(this).css({ 'transform': `scale(${scaleSize})` });
+    }).on('mouseout', function () {
+        $(this).css({ 'transform': 'scale(1)' });
+    }).on('mousemove', function (e) {
+        $(this).css({ 'transform-origin': ((e.pageX - $(this).offset().left) / $(this).width()) * (1 / scaleSize * 100) + '% ' + ((e.pageY - $(this).offset().top) / $(this).height()) * (1 / scaleSize * 100) + '%' });
+    });
+
 });
