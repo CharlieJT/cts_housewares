@@ -17,10 +17,44 @@
 </nav>
 {% endblock %}
 
+<!-- Order Progress -->
+{% block order_progress %}
+<!-- Order Progress Bar -->
+<div class="progress position-relative mt-5">
+    <div class="progress-bar w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<!-- Order Step Indicator -->
+<div class="position-relative d-flex justify-content-between progression-labels">
+    <div class="position-absolute progression-labels-section d-flex justify-content-between w-100">
+        <div class="cart-status-label status-done item d-flex justify-content-center align-items-center">
+            <div class="cart-status-page">1</div>
+        </div>
+        <div class="checkout-status-label d-flex justify-content-center align-items-center text-muted">
+            <div class="checkout-status-page">2</div>    
+        </div>
+        <div class="payment-status-label d-flex justify-content-center align-items-center text-muted">
+            <div class="payment-status-page">3</div>
+        </div>
+    </div>
+</div>
+<!-- Order Status -->
+<div class="position-relative d-flex justify-content-between progression-labels">
+    <div class="cart-status font-weight-bold">
+        <p>Cart</p>
+    </div>
+    <div class="checkout-status text-muted">
+        <p class="text-right">Checkout</p>
+    </div>
+    <div class="payment-status text-muted">
+        <p>Payment</p>
+    </div>
+</div>
+{% endblock %}
+
 <!-- Cart -->
 {% block content %}
 <div class="container mt-4">
-    <div class="row mt-5">
+    <div class="row">
         {% if cart_count > 0 %}
             <div class="col-12 cart p-0">
                 <!-- Cart Titles -->

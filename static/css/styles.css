@@ -143,6 +143,57 @@ body {
     z-index: 1;
 }
 
+/* --------- Order Progress Bar -------- */
+
+.progress,
+.progression-labels {
+    margin: auto;
+}
+
+.progress,
+.cart-status-label,
+.checkout-status-label,
+.payment-status-label {
+    width: 90%;
+    height: 3px;
+    max-width: 700px;
+}
+
+.progression-labels {
+    width: 93%;
+    max-width: 740px;
+}
+
+.cart-status,
+.checkout-status,
+.payment-status {
+    margin-top: 14px;
+}
+
+.progression-labels-section {
+    top: -19px;
+}
+
+.progression-labels-section>div {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #ddd;
+}
+
+.status-done {
+    background-color: #417bff !important;
+}
+
+.checkout-status {
+    width: 97px;
+}
+
+.progression-labels-section div {
+    color: #fff;
+}
+
+
 /* --------- Home Page -------- */
 
 .home-page-divider {
