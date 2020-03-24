@@ -115,6 +115,10 @@ body {
     margin-top: 2rem;
 }
 
+.order-container {
+    border: 1px solid #ccc;
+}
+
 /* --------- Bread Crumb -------- */
 
 .breadcrumb {
@@ -329,12 +333,12 @@ body {
     border: 1px solid #ccc;
 }
 
-.cart-title,
+.cart-titles,
 .total-items-mobile {
     border-bottom: 1px solid #ccc;
 }
 
-.cart-title h5 {
+.cart-titles h5 {
     margin-bottom: 0;
     font-size: 1.1rem;
 }
@@ -355,6 +359,20 @@ body {
 .cart-item-number {
     font-size: .8rem;
 }
+
+
+/* --------- Profile -------- */
+
+.order-titles {
+    border-bottom: 1px solid #ccc;
+}
+
+.order-titles h5 {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+
+
 
 /* --------- Media Queries -------- */
 

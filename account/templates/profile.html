@@ -2,6 +2,8 @@
 
 {% load crispy_forms_tags %}
 
+{% load mathfilters %}
+
 <!-- Profile Title -->
 {% block title %}Profile{% endblock %}
 
@@ -9,10 +11,10 @@
 {% block breadcrumb %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'home_page' %}">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Profile</li>
+        <li class="breadcrumb-item"><a href="{% url 'home_page' %}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Profile</li>
     </ol>
-  </nav>
+</nav>
 {% endblock %}
 
 <!-- Profile -->
@@ -25,39 +27,99 @@
                 <hr>
                 <!-- Profile Information -->
                 <ul class="py-3">
-                    <li><p><i class="far fa-user"></i> <b>Username:</b> {{ user }}</p></li>
-                    <li><p><i class="fas fa-grip-lines"></i> <b>Name:</b> {{ user.first_name }} {{ user.last_name }}</p></li>
-                    <li><p><i class="far fa-envelope"></i> <b>Email Address:</b> {{ user.email }}</p></li>
-                    <li><p><i class="far fa-calendar-check"></i> <b>Account Created:</b> {{ user.date_joined }}</p></li>
+                    <li>
+                        <p><i class="far fa-user"></i> <b>Username:</b> {{ user }}</p>
+                    </li>
+                    <li>
+                        <p><i class="fas fa-grip-lines"></i> <b>Name:</b> {{ user.first_name }} {{ user.last_name }}</p>
+                    </li>
+                    <li>
+                        <p><i class="far fa-envelope"></i> <b>Email Address:</b> {{ user.email }}</p>
+                    </li>
+                    <li>
+                        <p><i class="far fa-calendar-check"></i> <b>Account Created:</b> {{ user.date_joined }}</p>
+                    </li>
                 </ul>
                 <hr>
                 <div class="accordion" id="accordionExample">
                     <!-- Order History -->
                     {% if orders %}
-                        <h4><i class="fas fa-history mb-3"></i> Order History:</h4>
-                        {% for order in orders %}
-                        <div class="card">
-                            <div class="card-header" id="heading{{forloop.counter}}">
+                    <h4><i class="fas fa-history mb-3"></i> Order History:</h4>
+                    {% for order in orders %}
+                    <div class="card">
+                        <div class="card-header" id="heading{{forloop.counter}}">
                             <h2 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapse{{forloop.counter}}" aria-expanded="true"
+                                    aria-controls="collapse{{forloop.counter}}">
                                     <p>Order Placed: {{ order.date }}</p>
                                 </button>
                             </h2>
-                            </div>
-                        
-                            <div id="collapse{{forloop.counter}}" class="collapse" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
-                                <div class="card-body">
-                                {% for order_item in order.orderlineitem_set.all %}
-                                    <div>
-                                        <img src="{{ MEDIA_URL }}{{ order_item.product.image }}" width="60" alt="Order Item"><span>{{ order_item.product.description }} - x{{ order_item.quantity }} - £{{ order_item.price }}</span>
+                        </div>
+
+                        <div id="collapse{{forloop.counter}}" class="collapse"
+                            aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="container order-container">
+                                    <div class="row order-titles p-3">
+                                        <div class="col-xs-12 col-lg-6">
+                                            <h5 class="text-center">Total of {{ order.orderlineitem_set.all.count }} item(s)</h5>
+                                        </div>
+                                        <div class="col-xs-12 d-none d-lg-flex col-lg-2">
+                                            <h5 class="text-center">Price</h5>
+                                        </div>
+                                        <div class="col-xs-12 d-none d-lg-flex col-lg-2">
+                                            <h5 class="text-center">Quantity</h5>
+                                        </div>
+                                        <div class="col-xs-12 d-none d-lg-flex col-lg-2">
+                                            <h5 class="text-center">Line Total</h5>
+                                        </div>
                                     </div>
-                                {% endfor %}
-                                <span><b>Total Price: </b></span>
-                                <span id="cart-total" class="price-with-commas">{{ order.total }}</span>
+                                    {% for order_item in order.orderlineitem_set.all %}
+                                    <div class="row d-flex align-items-center p-3 mb-4">
+                                        <div class="col-xs-12 col-lg-2">
+                                            <div class="mb-0 text-center">
+                                                {% for product_image in order_item.product.image_set.all %}
+                                                {% if forloop.counter == 1 %}
+                                                <img src="{{ MEDIA_URL }}{{ product_image.image }}" width="100"
+                                                    alt="Order Item">
+                                                {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-lg-4">
+                                            <p class="mb-0 text-center">{{ order_item.product.description }}</p>
+                                        </div>
+                                        <div class="col-xs-12 col-lg-2">
+                                            <div class="text-center">
+                                                <span class="d-lg-none"><b>Price: </b></span>
+                                                <span class="price-with-commas mb-0 text-center">{{ order_item.price }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-lg-2">
+                                            <div class="text-center">
+                                                <span class="d-lg-none"><b>Quantity: </b> </span>
+                                                <span class="mb-0 text-center">{{ order_item.quantity }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-lg-2">
+                                            <div class="text-center">
+                                                <span class="d-lg-none"><b>Line Total: </b></span>
+                                                <span class="price-with-commas mb-0 text-center">{{ order_item.price|mul:order_item.quantity }}</span>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="text-right m-4">
+                                    <span><b>Total Price: </b></span>
+                                    <span id="cart-total" class="price-with-commas">{{ order.total }}</span>
                                 </div>
                             </div>
                         </div>
-                        {% endfor %}
+                    </div>
+                    {% endfor %}
                     {% endif %}
                 </div>
             </div>
