@@ -31,44 +31,33 @@
 
 
 {% block content %}
-<div class="container mt-5">
-    <div class="row row-flex">
-        {% for item in cart_items %}
-        <div class="col-12">
-            <div class="panel-body">
-                <div class="product-image" style="background-image: ('{{ MEDIA_URL }}{{ item.product.image }}');"></div>
-                <p class="product-description">{{ item.product.name }}</p>
-                <p>{{ item.product.description }}</p>
-                <p>{{ item.quantity }}</p>
-                <p>{{ item.product.price }}</p>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</div>
+<!-- Payment Details -->
 <div class="container">
     <div class="row">
         <div class="col">
-            <p>Total : £{{ total }}</p>
+            <div class="jumbotron payment-jumbotron mt-5">
+                <form role="form" method="POST" id="payment-form" action="{% url 'checkout' %}">
+                    <legend>Payment Details</legend>
+                    <hr>
+                    <div id="credit-card-errors" style="display: none">
+                        <div class="alert-message block-message error" id="stripe-error-message"></div>
+                    </div>
+                    <!-- Order Form -->
+                    <div class="form-group">
+                        {{ order_form|crispy }}
+                    </div>
+                    <!-- Payment Form -->
+                    <div class="form-group">
+                        {{ payment_form|crispy }}
+                    </div>
+                    {% csrf_token %}
+                    <!-- Submit Payment -->
+                    <div class="form-group col-md-12">
+                        <button class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit">Submit Payment <i class="far fa-credit-card"></i></button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-
-<!-- Order Form & Payment Form -->
-<form role="form" method="POST" id="payment-form" action="{% url 'checkout' %}">
-    <legend>Payment Details</legend>
-    <div id="credit-card-errors" style="display: none">
-        <div class="alert-message block-message error" id="stripe-error-message"></div>
-    </div>
-    <div class="form-group col-md-6">
-        {{ order_form|crispy }}
-    </div>
-    <div class="form-group col-md-6">
-        {{ payment_form|crispy }}
-    </div>
-    {% csrf_token %}
-    <div class="form-group col-md-12">
-        <button class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit">Submit Payment <i class="far fa-credit-card"></i></button>
-    </div>
-</form>
 {% endblock %}
