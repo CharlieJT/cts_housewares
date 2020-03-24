@@ -302,6 +302,7 @@ body {
 .product-img {
     width: 90%;
     max-width: 400px;
+    max-height: 400px;
 }
 
 .product-main-image:hover {
