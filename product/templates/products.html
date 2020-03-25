@@ -19,21 +19,23 @@
     <!-- Brand Select List -->
     <div class="row">
         <div class="col">
-            <form method="GET" action="{% url 'all_products' %}" class="form-inline m-0 mb-3 p-0 justify-content-end">
+            <form method="GET" action="{% url 'all_products' %}" class="form-inline flex-wrap m-0 mb-3 p-0 justify-content-end">
                 <label class="mr-2 mb-0" for="brand">Select Brand: </label>
                 <!-- Brand Select Dropdown -->
-                <select class="select-brand mr-1" name="brand" id="brand" value="{{ brand }}">
-                    <option value="" selected disabled>-- Select a brand --</option>
-                    {% for brand_item in brand_list %}
-                    {% if brand_item.brand == brand %}
-                    <option value="{{ brand_item.brand }}" selected>{{ brand_item.brand }}</option>
-                    {% else %}
-                    <option value="{{ brand_item.brand }}">{{ brand_item.brand }}</option>
-                    {% endif %}
-                    {% endfor %}
-                </select>
-                <!-- Brand Select Button -->
-                <button class="btn btn-primary select-brand-button p-0 px-2" type="submit">Go!</button>
+                <div>
+                    <select class="select-brand mr-1" name="brand" id="brand" value="{{ brand }}">
+                        <option value="" selected disabled>-- Select a brand --</option>
+                        {% for brand_item in brand_list %}
+                        {% if brand_item.brand == brand %}
+                        <option value="{{ brand_item.brand }}" selected>{{ brand_item.brand }}</option>
+                        {% else %}
+                        <option value="{{ brand_item.brand }}">{{ brand_item.brand }}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                    <!-- Brand Select Button -->
+                    <button class="btn btn-primary select-brand-button p-0 px-2" type="submit">Go!</button>
+                </div>
             </form>
         </div>
     </div>

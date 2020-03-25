@@ -21,7 +21,6 @@ const pricesWithCommas = document.getElementsByClassName("price-with-commas");
 const toTop = document.getElementsByClassName("to-top");
 const productMainImage = document.getElementsByClassName("product-main-image");
 
-
 $(document).ready(() => {
 
     // Will check to see if the window has been scrolled 50px from the top.
@@ -107,8 +106,8 @@ $(document).ready(() => {
     }
 
     /*
-    This is where an image with increase to 2 times it's original size when hovered over,
-    This is so the user can get a better look at each of the images of the products
+    This is where an image will increase to 2 times it's original size when hovered over & will move along
+    with the cursor, this is so the user can get a better look at each of the images of the products.
     */
 
     $(productMainImage).on('mouseover', function () {
@@ -118,5 +117,4 @@ $(document).ready(() => {
     }).on('mousemove', function (e) {
         $(this).css({ 'transform-origin': ((e.pageX - $(this).offset().left) / $(this).width()) * (1 / scaleSize * 100) + '% ' + ((e.pageY - $(this).offset().top) / $(this).height()) * (1 / scaleSize * 100) + '%' });
     });
-
 });

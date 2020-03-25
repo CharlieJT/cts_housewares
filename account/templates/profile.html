@@ -34,25 +34,25 @@
                     <li><p><i class="far fa-calendar-check"></i> <b>Account Created:</b> {{ user.date_joined }}</p></li>
                 </ul>
                 <hr>
-                <div class="accordion" id="accordionExample">
+                <div class="accordion order-accordion" id="accordionExample">
                     <!-- Order History -->
                     {% if orders %}
                     <h4><i class="fas fa-history mb-3"></i> Order History:</h4>
                     {% for order in orders %}
                     <!-- Order Accordion -->
-                    <div class="card">
+                    <div class="card card{{ forloop.counter }}">
                         <!-- Order Accordion Item -->
-                        <div class="card-header" id="heading{{forloop.counter}}">
+                        <div class="card-header p-0" id="heading{{forloop.counter}}">
                             <h2 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                <button class="btn btn-link order-history-button w-100 p-3" type="button" data-toggle="collapse"
                                     data-target="#collapse{{forloop.counter}}" aria-expanded="true"
                                     aria-controls="collapse{{forloop.counter}}">
-                                    <p>Order Placed: {{ order.date }}</p>
+                                    <span class="mb-0">Order Placed: {{ order.date }}</span>
                                 </button>
                             </h2>
                         </div>
                         <!-- Order Accordion Information -->
-                        <div id="collapse{{forloop.counter}}" class="collapse"
+                        <div id="collapse{{forloop.counter}}" class="order-body collapse"
                             aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionExample">
                             <div class="card-body">
                                 <div class="container order-container">

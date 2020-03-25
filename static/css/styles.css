@@ -154,6 +154,10 @@ body {
     margin: auto;
 }
 
+.progress-bar {
+    background-color: #4286bb;
+}
+
 .progress,
 .cart-status-label,
 .checkout-status-label,
@@ -452,6 +456,11 @@ body {
     list-style: none;
 }
 
+.order-history-button {
+    color: black;
+    font-weight: 700;
+}
+
 .order-titles {
     border-bottom: 1px solid #ccc;
 }
@@ -491,7 +500,6 @@ body {
 
 .view-orders-button>a {
     color: #fff;
-    padding: 10px;
 }
 /* --------- Media Queries -------- */
 
