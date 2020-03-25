@@ -489,6 +489,10 @@ body {
     color: #6bc527;
 }
 
+.view-orders-button>a {
+    color: #fff;
+    padding: 10px;
+}
 /* --------- Media Queries -------- */
 
 @media only screen and (min-width: 992px) {

@@ -76,4 +76,6 @@ def checkout(request):
 @login_required()
 def successful_payment(request):
     """ This will return the successful payment page """
-    return render(request, "successful_payment.html")
+    brand_list = Product.objects.values('brand').distinct()
+
+    return render(request, "successful_payment.html", {"brand_list": brand_list})

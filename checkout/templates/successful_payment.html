@@ -58,9 +58,53 @@
     <div class="row">
         <div class="col">
             <div class="jumbotron">
+                <!-- Order Information -->
                 <p class="d-flex justify-content-center"><i class="far fa-check-circle successful-payment-icon"></i></p>
-                <p class="text-center font-weight-bold">Thank you for your order!</p>
-                <p class="text-center">Click here to <a href="{% url 'all_products' %}">keep shopping</a></p>
+                <h5 class="text-center font-weight-bold">Thank you for your order!</h5>
+                <p class="text-center">Your order has been added below your account details on the profile page along with any order that have been made previously.</p>
+                <!-- View Orders Button -->
+                <div class="text-center mb-5">
+                    <a href="{% url 'profile' %}">
+                        <button class="btn btn-primary view-orders-button">Click here to view your orders!</button>
+                    </a>
+                </div>
+                <hr>
+                <!-- Brand Select List -->
+                <p class="text-center">Select one of the brands below to carry on shopping!</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <form method="GET" action="{% url 'all_products' %}" class="form-inline flex-wrap m-0 mb-5 p-0 justify-content-center">
+                                <label class="mr-2 mb-1 font-weight-bold" for="brand">Select Brand: </label>
+                                <!-- Brand Select Dropdown -->
+                                <div>
+                                    <select class="select-brand mr-1" name="brand" id="brand" value="{{ brand }}">
+                                        <option value="" selected disabled>-- Select a brand --</option>
+                                        <option value="">All</option>
+                                        {% for brand_item in brand_list %}
+                                        {% if brand_item.brand == brand %}
+                                        <option value="{{ brand_item.brand }}" selected>{{ brand_item.brand }}</option>
+                                        {% else %}
+                                        <option value="{{ brand_item.brand }}">{{ brand_item.brand }}</option>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </select>
+                                    <!-- Brand Select Button -->
+                                    <button class="btn btn-primary select-brand-button p-0 px-2" type="submit">Go!</button>
+                                </div>
+                            </form>
+                            <hr>
+                            <!-- Home Page -->
+                            <p class="text-center">Click here to go back to the home page!</p>
+                            <!-- Home Page Button -->
+                            <div class="text-center">
+                                <a href="{% url 'home_page' %}">
+                                    <button class="btn btn-primary">Home Page</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
