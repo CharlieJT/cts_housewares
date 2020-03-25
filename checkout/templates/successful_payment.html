@@ -16,8 +16,8 @@
 {% endblock %}
 
 <!-- Order Progress -->
-{% if user.is_authenticated %}
 {% block order_progress %}
+{% if user.is_authenticated %}
 <!-- Order Progress Bar -->
 <div class="progress position-relative mt-5">
     <div class="progress-bar w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
@@ -25,13 +25,13 @@
 <!-- Order Step Indicator -->
 <div class="position-relative d-flex justify-content-between progression-labels">
     <div class="position-absolute progression-labels-section d-flex justify-content-between w-100">
-        <div class="cart-status-label status-done item d-flex justify-content-center align-items-center">
+        <div class="cart-status-label status-done">
             <div class="cart-status-page">1</div>
         </div>
-        <div class="checkout-status-label status-done d-flex justify-content-center align-items-center text-muted">
+        <div class="checkout-status-label status-done">
             <div class="checkout-status-page">2</div>    
         </div>
-        <div class="payment-status-label status-done d-flex justify-content-center align-items-center text-muted">
+        <div class="payment-status-label status-done">
             <div class="payment-status-page">3</div>
         </div>
     </div>
@@ -48,8 +48,9 @@
         <p>Payment</p>
     </div>
 </div>
-{% endblock %}
 {% endif %}
+{% endblock %}
+
 
 <!-- Payment Confirm Message -->
 {% block content %}

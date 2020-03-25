@@ -163,6 +163,14 @@ body {
     max-width: 700px;
 }
 
+.cart-status-label,
+.checkout-status-label,
+.payment-status-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .progression-labels {
     width: 93%;
     max-width: 740px;
