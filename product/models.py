@@ -27,3 +27,10 @@ class Specification(models.Model):
 
     def __str__(self):
         return self.product.item_number
+
+class Dimension(models.Model):
+    product = models.ForeignKey(Product, null=False, on_delete=models.CASCADE)
+    dimension = models.CharField(max_length=250)
+
+    def __str__(self):
+        return self.product.item_number

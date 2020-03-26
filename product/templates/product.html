@@ -88,29 +88,41 @@
                         {% endif %}
                     </div>
                 </form>
-                <!-- About Product -->
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <!-- Product About/Specifications/Dimensions -->
+                <ul class="nav nav-tabs product-tab d-flex" id="myTab" role="tablist">
+                    <!-- About -->
                     <li class="nav-item">
-                        <a class="nav-link product-nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                            aria-controls="home" aria-selected="true">About Product</a>
+                        <a class="nav-link product-nav-link active" id="about-tab" data-toggle="tab" href="#about" role="tab"
+                            aria-controls="about" aria-selected="true">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link product-nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
-                            aria-controls="profile" aria-selected="false">Product Specification</a>
+                        <a class="nav-link product-nav-link" id="specification-tab" data-toggle="tab" href="#specification" role="tab"
+                            aria-controls="specification" aria-selected="false">Specifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link product-nav-link" id="dimension-tab" data-toggle="tab" href="#dimension" role="tab"
+                            aria-controls="dimension" aria-selected="false">Dimensions</a>
                     </li>
                 </ul>
-                <div class="tab-content mb-3" id="myTabContent">
-                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="tab-content px-3 py-2 mb-3" id="myTabContent">
+                    <!-- Tab Content -->
+                    <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
                         <p class="mt-3">{{ product.about_product }}</p>
                     </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="tab-pane fade" id="specification" role="tabpanel" aria-labelledby="specification-tab">
                         <div class="mt-4">
                         {% for product_specification in product.specification_set.all %}
                             <p>{{ product_specification.specification }}</p>
                         {% endfor %}
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                    <div class="tab-pane fade" id="dimension" role="tabpanel" aria-labelledby="dimension-tab">
+                        <div class="mt-4">
+                        {% for product_dimension in product.dimension_set.all %}
+                            <p>{{ product_dimension.dimension }}</p>
+                        {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
