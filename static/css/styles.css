@@ -195,13 +195,16 @@ body {
     width: 35px;
     height: 35px;
     border-radius: 50%;
+}
+
+.status-to-be-done {
     background-color: #ddd;
 }
 
 .status-done {
-    background:-webkit-gradient(linear, left top, left bottom, from(#4ea5e8), to(#35688e)) !important;
-    background:-o-linear-gradient(#4ea5e8, #35688e) !important;
-    background:linear-gradient(#4ea5e8, #35688e) !important;
+    background:-webkit-gradient(linear, left top, left bottom, from(#4ea5e8), to(#35688e));
+    background:-o-linear-gradient(#4ea5e8, #35688e);
+    background:linear-gradient(#4ea5e8, #35688e);
 }
 
 .checkout-status {
