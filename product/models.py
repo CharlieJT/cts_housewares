@@ -12,9 +12,18 @@ class Product(models.Model):
     def __str__(self):
         return self.item_number
 
+
 class Image(models.Model):
     product = models.ForeignKey(Product, null=False, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='images', blank=True, null=True)
+
+    def __str__(self):
+        return self.product.item_number
+
+
+class Specification(models.Model):
+    product = models.ForeignKey(Product, null=False, on_delete=models.CASCADE)
+    specification = models.CharField(max_length=250)
 
     def __str__(self):
         return self.product.item_number
