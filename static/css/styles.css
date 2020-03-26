@@ -188,6 +188,7 @@ body {
 
 .progression-labels-section {
     top: -19px;
+    height: 36px;
 }
 
 .progression-labels-section>div {
