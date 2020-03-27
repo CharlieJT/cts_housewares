@@ -8,9 +8,12 @@ html, body {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     position: relative;
     height: 100%;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* --------- Helpers -------- */
@@ -90,6 +93,7 @@ body {
 
 .base-container {
     margin-top: 92px;
+    min-height: 100%;
 }
 
 .navbar-container {
@@ -115,6 +119,10 @@ body {
     transition: right .3s ease-in, top .17s ease-in;
 }
 
+.footer-container {
+    margin-top: auto;
+}
+
 .home-page-container {
     margin-top: 2rem;
 }
@@ -122,6 +130,8 @@ body {
 .order-container {
     border: 1px solid #ccc;
 }
+
+
 
 /* --------- Bread Crumb -------- */
 
@@ -302,6 +312,16 @@ body {
 
 #dropdown-menu-desktop {
     min-width: 12rem;
+}
+
+/* --------- Footer -------- */
+
+.footer-base-row {
+    background-color: rgba(0, 0, 0, 0.8);
+} 
+
+.footer-base-text {
+    color: #fff;
 }
 
 /* --------- Products Page -------- */
