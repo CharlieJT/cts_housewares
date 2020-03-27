@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Image, Specification, Dimension
+from .models import Product, Image, Specification
 
 # Register your models here.
 
@@ -9,11 +9,8 @@ class ImageInline(admin.TabularInline):
 class SpecificationInline(admin.TabularInline):
     model = Specification
 
-class DimensionInline(admin.TabularInline):
-    model = Dimension
-
 class ProductAdmin(admin.ModelAdmin):
-    inlines = (ImageInline, SpecificationInline, DimensionInline, )
+    inlines = (ImageInline, SpecificationInline, )
 
 
 admin.site.register(Product, ProductAdmin)

@@ -8,6 +8,12 @@ class Product(models.Model):
     about_product = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=1000, decimal_places=2)
     stock = models.IntegerField(blank=True, null=True)
+    item_height = models.DecimalField(max_digits=1000, decimal_places=2, default=0.00)
+    item_length = models.DecimalField(max_digits=1000, decimal_places=2, default=0.00)
+    item_width = models.DecimalField(max_digits=1000, decimal_places=2, default=0.00)
+    package_height = models.DecimalField(max_digits=1000, decimal_places=2, default=0.00)
+    package_length = models.DecimalField(max_digits=1000, decimal_places=2, default=0.00)
+    package_width = models.DecimalField(max_digits=1000, decimal_places=2, default=0.00)
 
     def __str__(self):
         return self.item_number
@@ -24,13 +30,6 @@ class Image(models.Model):
 class Specification(models.Model):
     product = models.ForeignKey(Product, null=False, on_delete=models.CASCADE)
     specification = models.CharField(max_length=250)
-
-    def __str__(self):
-        return self.product.item_number
-
-class Dimension(models.Model):
-    product = models.ForeignKey(Product, null=False, on_delete=models.CASCADE)
-    dimension = models.CharField(max_length=250)
 
     def __str__(self):
         return self.product.item_number
