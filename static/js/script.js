@@ -30,14 +30,12 @@ $(document).ready(() => {
             $(navbarContainer).css({ "height": navbarHeightNotScrolled, "box-shadow": "0 2px 5px #5f5f5f" });
             $(navbarLogo).css("display", "none");
             $(navbarLogoScrolled).css("display", "block");
-            $(mobileNavbarContainer).css("top", navbarHeightNotScrolled);
             $(toTop).css({ 'opacity': '1', "pointer-events": "all" });
         }
         else {
             $(navbarContainer).css({ "height": navbarHeightScrolled, "box-shadow": "none" });
             $(navbarLogo).css("display", "block");
             $(navbarLogoScrolled).css("display", "none");
-            $(mobileNavbarContainer).css("top", navbarHeightScrolled);
             $(toTop).css({ 'opacity': '0', "pointer-events": "none" });
         }
     });

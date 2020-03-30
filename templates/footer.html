@@ -1,14 +1,39 @@
 <!-- Footer -->
-<div class=" container-fluid footer-container">
+<div class="container-fluid footer-container p-0">
+    
     <div class="row">
         <div class="col">
-            <p>This is upper footer</p>
-        </div>
-    </div>
-    </div>
-    <div class="row footer-base-row">
-        <div class="col text-center">
-            <p class="footer-base-text mb-0">&copy; CT's Housewares 2020</p>
+            <div class="container-fluid footer-upper-container p-0">
+                <hr class="m-0 footer-top-divider">
+                <div class="row footer-upper-row py-5 mx-auto">
+                    <div class="col-12 col-sm-6 footer-column-1">
+                        <h4>CT's Housewares</h4>
+                        <p class="mb-4">CT's Housewares is a website you can browse for different housewares products of your choice whether that's by searching or by brand name. 
+                            You also have the ability to resgister & login to an account & reset your password if you've forgotten it. There is also a profile page
+                         with all of the users account details. After you are happy with your cart, you can go to the checkout page & submit a payment, after payment
+                         is successful, you can view your order in the 'Order History' section in your Profile</p>
+                    </div>
+                    <div class="col-12 col-sm-6 footer-column-2">
+                        <h4>Product Brands</h4>
+                       <form method="GET" action="{% url 'all_products' %}" class="form-block m-0 p-0">
+                            <button class="btn footer-button text-left m-0 pl-2 pr-0 w-100" type="submit" name="brand" value="Ice Diamond">Ice Diamond</button>
+                            <button class="btn footer-button text-left m-0 pl-2 pr-0 w-100" type="submit" name="brand" value="Smeg">Smeg</button>
+                            <button class="btn footer-button text-left m-0 pl-2 pr-0 w-100" type="submit" name="brand" value="Numatic">Numatic</button>
+                            <button class="btn footer-button text-left m-0 pl-2 pr-0 w-100" type="submit" name="brand" value="Akai">Akai</button>
+                            <button class="btn footer-button text-left m-0 pl-2 pr-0 w-100" type="submit" name="brand" value="Carmen">Carmen</button>
+                            <button class="btn footer-button text-left m-0 pl-2 pr-0 w-100" type="submit" name="brand" value="Emma Bridgewater">Emma Bridgewater</button>
+                        </form>
+                    </div>
+                </div>
+                <hr class="m-0 footer-bottom-divider">
+            </div>
+            <div class="container-fluid">
+                <div class="row footer-base-row">
+                    <div class="col text-center">
+                        <p class="footer-base-text mb-0">CT's Housewares 2020 &copy; Copyright!</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

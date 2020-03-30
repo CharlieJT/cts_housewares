@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700&display=swap');
 
+
 /* --------- HTML & body -------- */
 
 html, body {
@@ -14,7 +15,9 @@ body {
     height: 100%;
     min-height: 100vh;
     overflow-x: hidden;
+    margin-bottom: 15px;
 }
+
 
 /* --------- Helpers -------- */
 
@@ -37,13 +40,13 @@ body {
     z-index: 8;
 }
 
+
 /* ---------- Back to top icon ----------*/
 
 .to-top {
     color: white;
     padding-top: 1.8em;
     display: inline-block;
-    /* or block */
     position: fixed;
     bottom: 30px;
     right: 45px;
@@ -52,7 +55,7 @@ body {
     -o-transition: all .3s ease-out;
     transition: all .3s ease-out;
     opacity: 0;
-    z-index: 1000;
+    z-index: 8;
 }
 
 .to-top:before {
@@ -109,7 +112,7 @@ body {
 
 .mobile-navbar-container {
     background-color: #fff;
-    top: 92px;
+    top: 0;
     width: 70%;
     right: -70%;
     max-width: 500px;
@@ -119,18 +122,26 @@ body {
     transition: right .3s ease-in, top .17s ease-in;
 }
 
+.mobile-navbar-row {
+    margin-top: 50px;
+}
+
+.navbar-toggler {
+    z-index: 10;
+}
+
 .footer-container {
     margin-top: auto;
 }
 
 .home-page-container {
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .order-container {
     border: 1px solid #ccc;
 }
-
 
 
 /* --------- Bread Crumb -------- */
@@ -156,6 +167,7 @@ body {
 .main-product-image {
     z-index: 1;
 }
+
 
 /* --------- Order Progress Bar -------- */
 
@@ -314,7 +326,49 @@ body {
     min-width: 12rem;
 }
 
+
 /* --------- Footer -------- */
+
+.footer-upper-container {
+    background:-webkit-gradient(linear, left top, left bottom, from(#4ea5e8), to(#35688e));
+    background:-o-linear-gradient(#4ea5e8, #35688e);
+    background:linear-gradient(#4ea5e8, #35688e);
+    color: #fff;
+}
+
+.footer-top-divider,
+.footer-bottom-divider {
+    background-color: #fff;
+    height: 3px;
+}
+
+.footer-top-divider {
+    border-top: 10px solid #53a5e7;
+}
+
+.footer-bottom-divider {
+    border-top: none;
+    border-bottom: 10px solid #36688e;
+}
+
+.footer-upper-row {
+    width: 90vw;
+}
+
+.footer-column-1,
+.footer-column-2 {
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.footer-button {
+    padding: 0;
+    color: #fff;
+}
+
+.footer-button:hover {
+    text-decoration: underline;
+}
 
 .footer-base-row {
     background-color: rgba(0, 0, 0, 0.8);
@@ -323,6 +377,7 @@ body {
 .footer-base-text {
     color: #fff;
 }
+
 
 /* --------- Products Page -------- */
 
@@ -531,12 +586,14 @@ body {
     font-size: 1.2rem;
 }
 
+
 /* --------- Checkout -------- */
 
 .payment-jumbotron {
     width: 90%;
     max-width: 700px;
 }
+
 
 /* --------- Successful Payment -------- */
 
@@ -549,7 +606,15 @@ body {
     color: #fff;
 }
 
+
 /* --------- Media Queries -------- */
+
+@media only screen and (min-width: 576px) {
+    .footer-column-2 {  
+        border-left: none;
+    }   
+}
+
 
 @media only screen and (min-width: 992px) {
     .basket-counter {
@@ -562,5 +627,8 @@ body {
     }
     .cart-description {
         font-size: 1rem;
+    }
+    .footer-upper-row {
+        width: 75vw;
     }
 }
