@@ -17,7 +17,6 @@ const backdrop = document.getElementsByClassName("backdrop");
 const burgerIcon1 = document.getElementsByClassName("burger-icon-1");
 const burgerIcon2 = document.getElementsByClassName("burger-icon-2");
 const burgerIcon3 = document.getElementsByClassName("burger-icon-3");
-const pricesWithCommas = document.getElementsByClassName("price-with-commas");
 const toTop = document.getElementsByClassName("to-top");
 const productMainImage = document.getElementsByClassName("product-main-image");
 
@@ -75,33 +74,6 @@ $(document).ready(() => {
             $(burgerIcon3).css("transform", "translateY(-4px) rotate(-405deg)");
         }
     });
-
-    // This function will take a value & will add a comma between each 3 digits of the value.
-
-    const addCommas = price => {
-        price += '';
-        let x = price.split('.');
-        let x1 = x[0];
-        let x2 = x.length > 1 ? '.' + x[1] : '';
-        let rgx = /(\d+)(\d{3})/;
-        while (rgx.test(x1)) {
-            x1 = x1.replace(rgx, '$1' + ',' + '$2');
-        }
-        return x1 + x2;
-    }
-
-    /*
-    This is where all of the pricing in the cart is handled with commas, each value is given a new variable
-    & run through the 'addCommas' function & when added back to the value of their specific HTML text.
-    An if has been added so that they are only being run if they are being targetted.
-    */
-
-    if (pricesWithCommas) {
-        for (let i = 0; i < pricesWithCommas.length; i++) {
-            let priceWithCommas = addCommas(pricesWithCommas[i].innerHTML);
-            $(pricesWithCommas[i]).text(`£${priceWithCommas}`);
-        }
-    }
 
     /*
     This is where an image will increase to 2 times it's original size when hovered over & will move along

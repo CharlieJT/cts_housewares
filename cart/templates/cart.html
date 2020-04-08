@@ -4,6 +4,8 @@
 
 {% load mathfilters %}
 
+{% load humanize %}
+
 <!-- Cart Title -->
 {% block title %}Cart{% endblock %}
 
@@ -110,7 +112,7 @@
                             <div class="col-xs-12 col-lg-1">
                                 <div class="text-center mb-1">
                                     <span class="d-lg-none"><b>Price: </b></span>
-                                    <span>£{{ item.product.price }}</span>
+                                    <span>£{{ item.product.price|intcomma }}</span>
                                 </div>
                             </div>
                             <!-- Cart Item Quantity & Amend Quantity -->
@@ -122,7 +124,7 @@
                                         <div class="input-group amend-quantity mx-auto">
                                             <input class="form-control" name="quantity" type="number" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}">
                                             <abbr title="Change value then click button to update cart">
-                                                <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <i class="fas fa-cog"></i></button>
+                                                <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <i class="fas fa-sync"></i></button>
                                             </abbr>
                                         </div>
                                     </div>
@@ -131,7 +133,7 @@
                             <!-- Cart Item Line Total -->
                             <div class="col-xs-12 col-lg-2 text-center mb-2">
                                 <span class="d-lg-none"><b>Line Total: </b></span>
-                                <span class="cart-line-total price-with-commas">{{ item.product.price|mul:item.quantity }}</span>
+                                <span class="cart-line-total">{{ item.product.price|mul:item.quantity|intcomma }}</span>
                             </div>
                             <!-- Cart Item Remove From Cart Button -->
                             <div class="col-xs-12 col-lg-2 remove-item-from-cart">
@@ -151,7 +153,7 @@
             </div>
         {% else %}
         <!-- No Items in Cart -->
-            <p>There are currently no items in your cart!</p>
+            <h3>There are currently no items in your cart!</h3>
         {% endif %}
     </div>
 </div>
@@ -163,12 +165,12 @@
             <!-- Cart Total Price -->
             <div class="mb-2">
                 <span><b>Total: </b></span>
-                <span id="cart-total" class="price-with-commas">{{ total }}</span>
+                <span id="cart-total">{{ total|intcomma }}</span>
             </div>
             <!-- Checkout -->
             {% if user.is_authenticated %}
                 {% if cart_count > 0 %}
-                    <a href="{% url 'checkout' %}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout <i class="far fa-check-circle"></i></a>
+                    <a href="{% url 'checkout' %}" class="btn btn-success mb-4" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout <i class="far fa-check-circle"></i></a>
                 {% else %}
                     <p>No items to checkout</p>
                 {% endif %}

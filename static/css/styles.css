@@ -15,7 +15,6 @@ body {
     height: 100%;
     min-height: 100vh;
     overflow-x: hidden;
-    margin-bottom: 15px;
 }
 
 
@@ -343,12 +342,12 @@ body {
 }
 
 .footer-top-divider {
-    border-top: 10px solid #53a5e7;
+    border-top: 20px solid #53a5e7;
 }
 
 .footer-bottom-divider {
     border-top: none;
-    border-bottom: 10px solid #36688e;
+    border-bottom: 20px solid #36688e;
 }
 
 .footer-upper-row {
