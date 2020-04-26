@@ -6,5 +6,6 @@ from .views import search_products
 class TestUrls(SimpleTestCase):
 
     def test_search_url_is_resolved(self):
+
         url = reverse('search')
         self.assertEqual(resolve(url).func, search_products)
