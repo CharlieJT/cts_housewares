@@ -20,3 +20,5 @@ class TestUrls(SimpleTestCase):
     def test_user_profile_url_is_resolved(self):
         url = reverse('profile')
         self.assertEqual(resolve(url).func, user_profile)
+
+        
