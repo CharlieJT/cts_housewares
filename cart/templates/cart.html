@@ -133,7 +133,7 @@
                             <!-- Cart Item Line Total -->
                             <div class="col-xs-12 col-lg-2 text-center mb-2">
                                 <span class="d-lg-none"><b>Line Total: </b></span>
-                                <span class="cart-line-total">{{ item.product.price|mul:item.quantity|intcomma }}</span>
+                                <span class="cart-line-total">£{{ item.product.price|mul:item.quantity|intcomma }}</span>
                             </div>
                             <!-- Cart Item Remove From Cart Button -->
                             <div class="col-xs-12 col-lg-2 remove-item-from-cart">
@@ -165,7 +165,7 @@
             <!-- Cart Total Price -->
             <div class="mb-2">
                 <span><b>Total: </b></span>
-                <span id="cart-total">{{ total|intcomma }}</span>
+                <span id="cart-total">£{{ total|intcomma }}</span>
             </div>
             <!-- Checkout -->
             {% if user.is_authenticated %}

@@ -96,7 +96,7 @@
                                         <div class="col-xs-12 col-lg-2">
                                             <div class="text-center">
                                                 <span class="d-lg-none"><b>Price: </b></span>
-                                                <span class="mb-0 text-center">{{ order_item.price|intcomma }}</span>
+                                                <span class="mb-0 text-center">£{{ order_item.price|intcomma }}</span>
                                             </div>
                                         </div>
                                         <!-- Order Item Quantity -->
@@ -110,7 +110,7 @@
                                         <div class="col-xs-12 col-lg-2">
                                             <div class="text-center">
                                                 <span class="d-lg-none"><b>Line Total: </b></span>
-                                                <span class="mb-0 text-center">{{ order_item.price|mul:order_item.quantity|intcomma }}</span>
+                                                <span class="mb-0 text-center">£{{ order_item.price|mul:order_item.quantity|intcomma }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -119,7 +119,7 @@
                                 <!-- Order Total -->
                                 <div class="text-right m-4">
                                     <span><b>Total Price: </b></span>
-                                    <span id="cart-total">{{ order.total|intcomma }}</span>
+                                    <span id="cart-total">£{{ order.total|intcomma }}</span>
                                 </div>
                             </div>
                         </div>
