@@ -110,7 +110,7 @@ The design of the website was to give a clean & intuitive look & feel ensuring t
 
    <b>Hex Value: #ff0000;</b>
 
-    This is used for the text when an item is out of stock & also used for the notification of how many items there are in you basket.
+    This is used for the text when an item is out of stock & also used for the notification of how many items there are in your cart.
 
 
     - <div style="background-color: #fff; width: 50px; height: 50px; border: 1px solid #000;"><div>
@@ -119,3 +119,35 @@ The design of the website was to give a clean & intuitive look & feel ensuring t
 
     This colour was used for the rest of the website including backgrounds & text when needed to contrast with backgrounds.
     
+- #### Styling
+
+    Styles have been made to give a professional, strong look. With the help of the CSS framework
+    [Materialize!](https://materializecss.com/), I was able to implement a nice looking & well animated
+    website without going over the top.
+    
+    **Special styles include:**
+    
+    - **Input fields -** Input fields were produced with the help of materialize to give a nice
+    subtle animation when the user clicks on a field, the placeholder will bounce to the top of the field,
+    change the bottom border & text to blue & allow the user to input text.
+    
+    - **Buttons** Buttons have been styled using bootstrap & colours have been picked using the bootstrap colour scheme.
+    
+    - **Pagination** Pagination consists of a "First Page" Button, "Previous Page" Button, "Next Page" Button, "Last Page" Button, "Current Page" Button & page numbers of pages if the page exists 2 before or 2 after Button. These have been styled so that the previous & first page indicator will not show is a user is on the first page & the last & next page indicators will not show if a user is on the last page. The previous & next page indicators have been styled grey with black text & the current page indicator has been styled blue with white text to give a better indicator of which page the user is currently on.
+    
+    - **Up chevron -** When a user scrolls 50 pixels down from the top of any page, an 'up' chevron will appear
+    in the bottom left-hand corner of the screen. When hovered over on desktop, it will rotate 360° &
+    border & chevron colour will change to blue. When clicked on mobile & tablet, it will perform the animation
+    as the page is scrolling back to the top. When clicked it will smooth scroll back to the top & the icon will
+    disappear. The logic behind it can be found [here!](https://freefrontend.com/css-arrows/).
+    
+    - **Navbar shrinking -** When a user scrolls 50 pixels down from the top of any page, the user will notice that
+    the logo will shrink in size and the background of the navbar be sticky and have a dark background, this is to make sure it doesn't take up too much space & so it can still be seen by the user.
+
+    - **Product Images -** When a user has clicked on an individual product page, they will be presented with an image slider which will allow the user to select an image if there is more than one image. Also, if a user hovers over the image that has been selected, it will zoom in on the picture allowing them to get a better look at the product.
+
+    - **Product Tabs -** When a user has clicked on an individual product page, they will be presented with a tab section where they can view a brief description of the product, a specifications section & a dimensions section.
+
+    - **Order History Accordion -** After a user has placed a successful order, an Order History will appear in the user profile allwoing the user to be able to see the date & time the order was placed. If a user clicks one of the headings in the accordion, they can see what items were purchased with quantity, price, line total & total.
+
+     - **Payment Progress Bar -** A user will notice that in the cart, checkout & successful payment pages, when an item is in the basket, a progress bar will appear at the top which will highlight '1' when on the cart page, '2' when on the checkout page & '3' when a successful order has been made. This has been added so that the user has a good understanding of the steps it takes to go from start to finish in placing an order.
