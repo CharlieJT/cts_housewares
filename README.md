@@ -64,4 +64,58 @@ delete their recipe permanently.
 - Log in & Registration has been implemented into the website to create a sense of security to the website.
 
 
+### User Stories
 
+- #### As a user, I'd like to see:
+    - A professional and strong looking website to draw the user into using the website.
+    - Navigations which are simple & informative which don't leave the user unsure of how to get to the page they want to get to.
+    - Images of the products that are available on the website as soon as a user goes to the website.
+    - Buttons which are simple but informative & give a good indication of their purpose.
+    - Subtle animations to not overcomplicate the website, but to give a strong professional look & feel.
+    - Icons that give the user a better indication of what their specific action is.
+    - I have all of the relevant information given to me at the appropriate time.
+
+
+### Design Ideas
+
+The design of the website was to give a clean & intuitive look & feel ensuring the user gets the best experience along with appropriate & catching imagery to draw the user in to making a purchase.
+
+- #### Fonts
+
+    - The font **'Roboto'** was chosen as the primary font to ensure it had a professional look.
+
+- #### Colours
+
+    - <div style="background-color: #666666; width: 50px; height: 50px; border: 1px solid #000;"><div>
+    <b>Hex Value: #666666;</b>
+
+    This colour was used for the icons & text in the navbar.
+
+
+    - <div style="background-color: #53a5e7; width: 50px; height: 50px; border: 1px solid #000;"><div>
+
+   <b>Hex Value: #53a5e7;</b>
+
+    This colour was used for the logo, the footer, the payment progress bar & some of the buttons throughout the website. It was also used to colour the back to top button when you hover over it.
+
+
+    - <div style="background-color: #218838; width: 50px; height: 50px; border: 1px solid #000;"><div>
+
+   <b>Hex Value: #218838;</b>
+
+    This colour was used the "add to cart" button & the "checkout" button.
+
+
+     - <div style="background-color: #ff0000; width: 50px; height: 50px; border: 1px solid #000;"><div>
+
+   <b>Hex Value: #ff0000;</b>
+
+    This is used for the text when an item is out of stock & also used for the notification of how many items there are in you basket.
+
+
+    - <div style="background-color: #fff; width: 50px; height: 50px; border: 1px solid #000;"><div>
+
+   <b>Hex Value: #fff;</b>
+
+    This colour was used for the rest of the website including backgrounds & text when needed to contrast with backgrounds.
+    
