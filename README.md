@@ -329,3 +329,10 @@ Every feature must react to it's intended purpose.
 - **Progress Bar** - A progress bar will appear at the top of the page which contains 3 steps, Cart, Checkout & Payment. Depending on what stage the user is there in their progress, the number will show in blue at the stage that they are at.
 
 - **Successful Payment Box** - When a successful payment has been made, you will be navigated to the successful payment page where you will be notified that your order has been placed this will include a link to view your orders in your Profile, An option to select a brand you want to view again & a button which will navigate you back to the home page.
+
+
+#### Profile Page:
+
+- **Profile Box** - When a user is logged in, they can view their profile on the profile, this will tell them their Username, Name which consists of their first name & last name, their email address & the date & time the account was created.
+
+- **Order History** - If a user has placed at least 1 order, thdey will be able to view an order history section underneath thei profile, this will show an accordion with orders that have been placed with ther date & time of the order. If clicked on, it will open & show them the full order.
