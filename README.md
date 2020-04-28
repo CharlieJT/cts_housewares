@@ -335,4 +335,19 @@ Every feature must react to it's intended purpose.
 
 - **Profile Box** - When a user is logged in, they can view their profile on the profile, this will tell them their Username, Name which consists of their first name & last name, their email address & the date & time the account was created.
 
-- **Order History** - If a user has placed at least 1 order, thdey will be able to view an order history section underneath thei profile, this will show an accordion with orders that have been placed with ther date & time of the order. If clicked on, it will open & show them the full order.
+- **Order History Accordion** - If a user has placed at least 1 order, they will be able to view an order history section underneath their profile, this will show an accordion with orders that have been placed with the date & time of the order. If clicked on, it will open & show them the full order.
+
+
+### Features Left to Implement
+
+1. #### Extra Filtering
+
+- Additional would be nice to implement on the website such as colour, item type & Sort By sections. This could be a filter bar that could be put down the left side of the products page. This would help the user really narrow down their search.
+
+1. #### Extra Filtering
+
+- A rating's section would be nice to implent as it gives the user a good understanding of what products are selling well.
+
+1. #### Collections
+
+- Collections would be also be great to add so that the user can see what items are related to add items they are currently searching.
