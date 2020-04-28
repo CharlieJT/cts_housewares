@@ -40,6 +40,14 @@ Full Stack Frameworks - Milestone Project 4 - CT's Housewares - Charlie Tipton
         - [Product Rating](#product-rating)
         - [Collections](#collections)
         - [Discount Codes](#discount-codes)
+
+
+3. [**Database**](database)
+    - [**Database Choice**](#database-choice)
+    - [**Database Tables**](#database-tables)
+        - [User](#user)
+
+
 ## UX
 
 ### Project Purpose
@@ -372,3 +380,27 @@ Every feature must react to it's intended purpose.
 - Another great feature would be to add discount codes to enter to get money off their overall price.
 
 
+## Database
+
+
+### Database Choice
+
+- As default, **sqlite3** is installed with Django so that was the choice of database to work with in development.
+- When deployed to Heroku, I used **PostgreSQL** database which was provided by Heroku.
+
+
+### Database Tables
+
+#### User
+
+User already comes as standard through `django.contrib.auth.models`.
+
+#### Banners
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Brand | brand | max_length=100 | CharField
+Link | link | max_length=200 | CharField
+Image 1 | product_image1 | upload_to='images' | ImageField
+Image 2 | product_image2 | upload_to='images' | ImageField
+Image 3 | product_image3 | upload_to='images' | ImageField
