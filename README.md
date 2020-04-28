@@ -21,6 +21,10 @@ Full Stack Frameworks - Milestone Project 4 - CT's Housewares - Charlie Tipton
     - [**Wireframes**](#wireframes)
     - [**Developer and Business Purpose**](#developer-and-business-purpose)
 
+2. [**Features**](#features)
+    - [**Existing Features**](#existing-features)
+    - [**Features Left to Implement**](#features-left-to-implement)
+
 ## UX
 
 ### Project Purpose
@@ -200,3 +204,50 @@ Wireframes were made using [Balsamiq](https://balsamiq.com/) for a clean looking
     - [Successful Payment Page Page 1 - Mobile Display](https://i.ibb.co/q9NKb7n/mobile-successful-payment-page-1.png)
     - [Profile Page 1 - Mobile Display](https://i.ibb.co/ysMKJBQ/mobile-profile-page-1.png)
     - [Profile Page 2 - Mobile Display](https://i.ibb.co/CbsBxm2/mobile-profile-page-2.png)
+
+### Developer and Business Purpose
+
+- Should be prepared for any double click, fast clicking or clicking different parts of the website.
+Every feature must react to it's intended purpose.
+
+- Must show clear & professional examples of HTML, CSS, JavaScript, jQuery & Python.
+
+- Must show a good use of Django knowledge.
+
+- A great example project to put as part of a portfolio.
+
+
+## Features
+ 
+### Existing Features
+
+
+#### Navbar:
+
+<div align="center">
+    <img src="https://i.ibb.co/ysgyfs3/cts-housewares-navbar.png" alt="CT's Housewares navbar for desktop" aria-label="CT's Housewares navbar for desktop" />
+</div>
+
+- The navbar is features on every page of the website which has been made sticky so that when you scroll down the page, it will not dissapear, also when scroll down more than 50px from the top of the page, the navbar logo will loose the CT's Housewares text & shrink in size, this is so that it's not taking up too much room at the top of the page.
+
+
+- **Desktop** In the top left hand corner, a "CT's Housewares logo has been added which will navigate you back to the home page when clicked.
+
+- In the center on the left, there is a dropdown of product. The options you can pick from are to view all of the products & to view particular brands of your choice.
+
+- In the center on the right, there is a search bar which will link you to the products & use the search filter to filter products due to the key word that was entered, it will query the search for words found in item number, brand, description & about.
+
+- On the right hand, you will find cart which will navigate you to the cart. Also when there is a product in the cart, a red circle will appear just above & to the left of the link to notify how many products are in the cart. This will how many 'products' there are & not the total amount of quantity.
+
+- Also on the right hand side you will the 'login' link & the 'register' link. You can click each one of those which will take you to their respective page.
+
+- When a user is logged in, instead of there being 'login' & 'register', you will see 'profile' & 'logout'. Clicking the link will navigate you to their respective page.
+
+
+<div align="center">
+    <img src="https://i.ibb.co/PGc9F8M/cts-housewares-navbar-mobile.png" alt="CT's Housewares navbar for tablet & mobile" aria-label="CT's Housewares navbar for tablet & mobile" />
+</div>
+
+- **Tablet & Mobile** In the top left hand corner, a "CT's Housewares logo has been added which will navigate you back to the home page when clicked.
+
+- In the top right hand corner, a burger icon is shown which when clicked will animate into a close symbol & slide out a side drawer, It will also create a darkened overlay on the rest of the page & when clicked, it will slide the side drawer closed again. The links found in the side drawer are the same which are seen in the desktop nabvar.
