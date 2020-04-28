@@ -150,7 +150,7 @@ Wireframes were made using [Balsamiq](https://balsamiq.com/) for a clean looking
 
 - #### Desktop Wireframes
 
-    - [Home Page 1 - Desktop Display](static/images/wireframes/desktop/desktop_home_page_1.PNG)
+    - [Home Page 1 - Desktop Display](https://i.ibb.co/vHdd0Zt/desktop-home-page-1.png)
 
 - #### Tablet Wireframes
 
