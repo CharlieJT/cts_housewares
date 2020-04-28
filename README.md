@@ -298,3 +298,8 @@ Every feature must react to it's intended purpose.
 - **Add to Cart** - Add to cart has been added so that the user can add products to the cart. If a user was to add a product to the cart which was already in the cart, it will simply add the number you add to the number of items already in the cart of that product. You cannot add more than the stock quantity to the basket & if the items you add to the cart + the amount of items you already have in your cart of that particular item comes to more than the overall quantity of that item, you will get notified that you can not add that may items to the cart.
 
 - **Tab Section** - A Tab section has been added for each product so that the user can flick between "About", "Specifications" & "Dimensions" of the product. This helps so that everything is all clumped together & gives the page a more styled look.
+
+
+#### Login Page:
+
+- **Login Form** - A Login form has been added so that the user has somewhere to login to the website. The has a section where you can navigate to the register page & also has the fields where you can enter "Username" &  "Password" to login to the website. If a user enter invalid credentials, you will get flagged. Also both fields are required so if the user leaves any of the fields empty, they will also get flagged.
