@@ -275,18 +275,26 @@ Every feature must react to it's intended purpose.
 
 #### Home Page:
 
-- **Brand Carousel** - The first thing you are presented with on the home page is a brand carousel where you will find banners with brands you can view throughout the website. These are responsive & will change size due to one device they are viewed on. Carousel autoplays after a set time but you can flick from left to right to view different brands. Each image is also clickable & will take you to that partilcular brand's products when clicked on.
+- **Brand Carousel** - The first thing you are presented with on the home page is a brand carousel where you will find banners with brands you can view throughout the website. These are responsive & will change size due to one device they are viewed on. Carousel will autoplay after a set time but you can flick from left to right to view different brands. Each image is also clickable & will take you to that particular brand's products when clicked on.
 
-- **Brief Statement** - Underneath the carousel, you will find a brief statement which is essencially a sales pitch letting you know what you are going to find when browsing throughout the website.
+- **Brief Statement** - Underneath the carousel, you will find a brief statement which is essentially a sales pitch letting you know what you are going to find when browsing throughout the website.
 
 
 #### Product Page:
 
-- **Brand Selector** - At the top of the brands page, you have the option to select a brand from the select dropdown, simply choose which brand you'd like to view & click "Go!".
+- **Brand Selector** - At the top of the brands' page, you have the option to select a brand from the select dropdown, simply choose which brand you'd like to view & click "Go!".
 
 - **Pagination** - - Pagination has been included in the products page to keep data cleaner & to limit the amount of data shown at one time, this can help quite substantially with loading time if there are lots of products. Simply flick from page to page to view more products. When a new brand or search query has been made, you still begin at page 1. If a user is on page 1, the first & previous buttons will not be visible & if the user is on the last page, the next & last buttons will not be visible. Also, the current page has been coloured blue to signify which page the user is on.
 
-- **Product Cards** - Each product has it's own card which will consist of an image of the product, product description, price & the option to add to cart. If a product is out of stock, instead of there being add to cart, there will be item out of stock.
+- **Product Cards** - Each product has it's own card which will consist of an image of the product, product description, price & the option to add to cart. If a product is out of stock, instead of there being "add to cart", there will be "item out of stock".
 
-- **Quick Add to Cart** - Add to cart has been added to each of the cards to speed up the process of adding to cart. You also have a quantity selector which will go as high as the quantity in stock. If a user was the add a product to the cart which was already in the cart, it will simply add the number you add to the number of items already in the cart of that product. You cannot add more than the stock quantity to the basket & if the items you add to the cart + the amount of items you already have in your cart of that particular item comes to more than the overall quantity of that item, you will get notified that you can not add that may items to the cart. 
+- **Quick Add to Cart** - Add to cart has been added to each of the cards to speed up the process of adding to cart. You also have a quantity selector which will go as high as the quantity in stock. If a user was to add a product to the cart which was already in the cart, it will simply add the number you add to the number of items already in the cart of that product. You cannot add more than the stock quantity to the basket & if the items you add to the cart + the amount of items you already have in your cart of that particular item comes to more than the overall quantity of that item, you will get notified that you can not add that may items to the cart. 
 
+
+#### Individual Product Page:
+
+- **Product Slider** - When there is more than on image on a page, there will be an image slider implemented so that the user can flick between images to see more examples of the product, There are smaller images you can click below the main image to choose from. Also, when you hover over the large image, it will zoom in so you can get a better look at the product.
+
+- **Add to Cart** - Add to cart has been added so that the user can add products to the cart. If a user was to add a product to the cart which was already in the cart, it will simply add the number you add to the number of items already in the cart of that product. You cannot add more than the stock quantity to the basket & if the items you add to the cart + the amount of items you already have in your cart of that particular item comes to more than the overall quantity of that item, you will get notified that you can not add that may items to the cart.
+
+- **Tab Section** - A Tab section has been added for each product so that the user can flick between "About", "Specifications" & "Dimensions" of the product. This helps so that everything is all clumped together & gives the page a more styled look.
