@@ -23,8 +23,23 @@ Full Stack Frameworks - Milestone Project 4 - CT's Housewares - Charlie Tipton
 
 2. [**Features**](#features)
     - [**Existing Features**](#existing-features)
+        - [Navbar](#navbar)
+        - [Footer](#footer)
+        - [Up Arrow](#up-arrow)
+        - [Home Page](#home-page)
+        - [Product Page](#product-page)
+        - [Individual Product Page](#individual-product-page)
+        - [Login Page](#login-page)
+        - [Registration Page](#registration-page)
+        - [Cart Page](#cart-page)
+        - [Checkout Page](#checkout-page)
+        - [Successful Payment Page](#successful-payment-page)
+        - [Profile Page](#profile-page)
     - [**Features Left to Implement**](#features-left-to-implement)
-
+        - [Extra Filtering](#extra-filtering)
+        - [Product Rating](#product-rating)
+        - [Collections](#collections)
+        - [Discount Codes](#discount-codes)
 ## UX
 
 ### Project Purpose
@@ -321,7 +336,7 @@ Every feature must react to it's intended purpose.
 
 - **Progress Bar** - A progress bar will appear at the top of the page which contains 3 steps, Cart, Checkout & Payment. Depending on what stage the user is there in their progress, the number will show in blue at the stage that they are at.
 
-- **Checkout Form** - A Checkout form has been added so that the user has somewhere to checkout their items for payment. The fields consist of First Name, Last Name, Address Line 1, Address Line 2, Address Line 3, Town or city, Postcode, Country, Phone Number, Credit Card Number, Security Code (CVV), Month & Year. An Asterisk has been placed next to the name of a required field & if you leave it blank, you will be flagged. You must enter the details corrently to make a successful payment.
+- **Checkout Form** - A Checkout form has been added so that the user has somewhere to checkout their items for payment. The fields consist of First Name, Last Name, Address Line 1, Address Line 2, Address Line 3, Town or city, Postcode, Country, Phone Number, Credit Card Number, Security Code (CVV), Month & Year. An Asterisk has been placed next to the name of a required field & if you leave it blank, you will be flagged. You must enter the details corrently to make a successful payment. Using Stripe, the user will be able to successfully make a payment.
 
 
 #### Successful Payment Page:
@@ -340,14 +355,20 @@ Every feature must react to it's intended purpose.
 
 ### Features Left to Implement
 
-1. #### Extra Filtering
+#### Extra Filtering
 
 - Additional would be nice to implement on the website such as colour, item type & Sort By sections. This could be a filter bar that could be put down the left side of the products page. This would help the user really narrow down their search.
 
-1. #### Product Rating
+#### Product Rating
 
 - A rating's section would be nice to implent as it gives the user a good understanding of what products are selling well.
 
-1. #### Collections
+#### Collections
 
 - Collections would be also be great to add so that the user can see what items are related to add items they are currently searching.
+
+#### Discount Codes
+
+- Another great feature would be to add discount codes to enter to get money off their overall price.
+
+
