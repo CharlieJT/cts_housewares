@@ -167,6 +167,20 @@ Wireframes were made using [Balsamiq](https://balsamiq.com/) for a clean looking
 
 - #### Tablet Wireframes
 
-
+    - [Home Page 1 - Tablet Display](https://i.ibb.co/JxVxs4f/tablet-home-page-1.png)
+    - [Home Page 2 - Tablet Display](https://i.ibb.co/Wchr1zK/tablet-home-page-2.png)
+    - [Home Page (Side Drawer open) - Tablet Display](https://i.ibb.co/hFYVJtk/tablet-home-page-1-side-drawer-open.png)  
+    - [Product Page 1 - Tablet Display](https://i.ibb.co/t239fvj/tablet-product-page-1.png)
+    - [Product Page 2 - Tablet Display](https://i.ibb.co/T1hwvXJ/tablet-product-page-2.png)
+    - [Individual Product Page 1 - Tablet Display](https://i.ibb.co/YbLcrfF/tablet-individual-product-page-1.png)
+    - [Login Page 1 - Tablet Display](https://i.ibb.co/2cbFkLc/tablet-login-page-1.png)
+    - [Registration Page 1 - Tablet Display](https://i.ibb.co/ykXn6SS/tablet-register-page-1.png)
+    - [Password Reset Page 1 - Tablet Display](https://i.ibb.co/5KzSG7x/tablet-password-reset-page-1.png)
+    - [Cart Page 1 - Tablet Display](https://i.ibb.co/qkgRY0v/tablet-cart-page-1.png)
+    - [Checkout Page 1 - Tablet Display](https://i.ibb.co/brCqBnS/tablet-checkout-page-1.png)
+    - [Checkout Page 2 - Tablet Display](https://i.ibb.co/vw6Ysnw/tablet-checkout-page-2.png)
+    - [Successful Payment Page Page 1 - Tablet Display](https://i.ibb.co/G0ThhVm/tablet-successful-payment-page-1.png)
+    - [Profile Page 1 - Tablet Display](https://i.ibb.co/Xk1Yx1Y/tablet-profile-page-1.png)
+    - [Profile Page 2 - Tablet Display](https://i.ibb.co/ZdMLHDS/tablet-profile-page-2.png)
  
 - #### Mobile Wireframes
