@@ -151,6 +151,19 @@ Wireframes were made using [Balsamiq](https://balsamiq.com/) for a clean looking
 - #### Desktop Wireframes
 
     - [Home Page 1 - Desktop Display](https://i.ibb.co/vHdd0Zt/desktop-home-page-1.png)
+    - [Home Page 2 - Desktop Display](https://i.ibb.co/w03kDsX/desktop-home-page-2.png)
+    - [Product Page 1 - Desktop Display](https://i.ibb.co/BfQvKL1/desktop-product-page-1.png)
+    - [Product Page 2 - Desktop Display](https://i.ibb.co/N3N3RjC/desktop-product-page-2.png)
+    - [Individual Product Page 1 - Desktop Display](https://i.ibb.co/9NVrCNB/desktop-individual-product-page-1.png)
+    - [Login Page 1 - Desktop Display](https://i.ibb.co/93VTTBk/desktop-login-page-1.png)
+    - [Registration Page 1 - Desktop Display](https://i.ibb.co/yQDHxQ0/desktop-register-page-1.png)
+    - [Password Reset Page 1 - Desktop Display](https://i.ibb.co/sCC7TDf/desktop-password-reset-page-1.png)
+    - [Cart Page 1 - Desktop Display](https://i.ibb.co/Zg1qJg9/desktop-cart-page-1.png)
+    - [Checkout Page 1 - Desktop Display](https://i.ibb.co/k1QGwm7/desktop-checkout-page-1.png)
+    - [Checkout Page 2 - Desktop Display](https://i.ibb.co/jbNyCZf/desktop-checkout-page-2.png)
+    - [Successful Payment Page Page 1 - Desktop Display](https://i.ibb.co/Sc1bGh7/desktop-successful-payment-page-1.png)
+    - [Profile Page 1 - Desktop Display](https://i.ibb.co/VVkMhc2/desktop-profile-page-1.png)
+    - [Profile Page 2 - Desktop Display](https://i.ibb.co/kK7Jhph/desktop-profile-page-2.png)
 
 - #### Tablet Wireframes
 
