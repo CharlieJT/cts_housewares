@@ -316,3 +316,9 @@ Every feature must react to it's intended purpose.
 
 - **Cart** - When a user has placed something in there cart, it will show the cart items on the cart page which will consist of an image, item number, description, price, quantity, line total & option to remove. Quantity can be adjusted by selecting how what you want to change the quantity to & clicking on the refresh button. You can also remove an item from the basket by clicking the remove button. Your line total will be your quantity * your price. Total will be to total of all products in the cart & their overall price.
 
+
+#### Checkout Page:
+
+- **Progress Bar** - A progress bar will appear at the top of the page which contains 3 steps, Cart, Checkout & Payment. Depending on what stage the user is there in their progress, the number will show in blue at the stage that they are at.
+
+- **Checkout Form** - A Checkout form has been added so that the user where somewhere to checkout their items for payment. The fields consist of First Name, Last Name, Address Line 1, Address Line 2, Address Line 3, Town or city, Postcode, Country, Phone Number, Credit Card Number, Secury Code (CVV), Month & Year. An Asterisk has been placed next to the name of a required field & if you leave it blank, you will be flagged. You must enter the details corrently to make a successful payment.
