@@ -303,3 +303,7 @@ Every feature must react to it's intended purpose.
 #### Login Page:
 
 - **Login Form** - A Login form has been added so that the user has somewhere to login to the website. The has a section where you can navigate to the register page & also has the fields where you can enter "Username" &  "Password" to login to the website. If a user enter invalid credentials, you will get flagged. Also both fields are required so if the user leaves any of the fields empty, they will also get flagged.
+
+#### Registration Page:
+
+- **Registration Form** - A Registration form has been added so that the user where somewhere to register for an account. There are six required fields, Username, First Name, Last Name, Email Address, Password & Confirm Password. All fields must be filled before you can successfully register, if a user does not adhere to the statement written underneath Username, they will get notified. Also Password & Confirm Password fields must match before a user can successfully register. If registered successfully, You will be notified & logged in to the account you have just created.
