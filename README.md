@@ -393,9 +393,13 @@ Every feature must react to it's intended purpose.
 
 #### User
 
-User already comes as standard through `django.contrib.auth.models`.
+The User Model already comes as standard through `django.contrib.auth.models`.
 
-#### Banners
+#### Home App Model
+
+The Home App Model contains a banner model which stores all of the banners used on the home page, this contains a banner name, link & a banner for mobile, tablet & desktop. This will show a different banner depending on whether the website is being viewed on a mobile, tablet or desktop.
+
+**Banner model**
 
 | Name | Key in db | Validation | Field Type |
 --- | --- | --- | ---
@@ -404,3 +408,41 @@ Link | link | max_length=200 | CharField
 Image 1 | product_image1 | upload_to='images' | ImageField
 Image 2 | product_image2 | upload_to='images' | ImageField
 Image 3 | product_image3 | upload_to='images' | ImageField
+
+#### Product App Model
+
+The Product App Model contains a product model which is responsible for holding the information for each product on the website. This also contains two other models which are the image model (responsible for holding all of the images for a specific product) & the specification model (responsible for holding the product specifications).
+
+**Product model**
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Item Number | item_number | max_length=150 | CharField
+Description | description | max_length=250 | CharField
+Brand | brand | max_length=100 | CharField
+About Product | about_product | null=True, blank=True | TextField
+Price | price | max_digits=1000, decimal_places=2 | DecimalField
+Stock | stock | blank=True, null=True | IntegerField
+Item Height | item_height | max_digits=1000, decimal_places=2, default=0.00 | DecimalField
+Item Length | item_length | max_digits=1000, decimal_places=2, default=0.00 | DecimalField
+Item Width | item_width | max_digits=1000, decimal_places=2, default=0.00 | DecimalField
+Package Height | package_height | max_digits=1000, decimal_places=2, default=0.00 | DecimalField
+Package Length | package_length | max_digits=1000, decimal_places=2, default=0.00 | DecimalField
+Package Width | package_width | max_digits=1000, decimal_places=2, default=0.00 | DecimalField
+
+
+**Image model**
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Product | product | Product, null=False, on_delete=models.CASCADE | ForeignKey
+Image | image | upload_to='images', blank=True, null=True | ImageField
+
+**Specification model**
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Product | product | Product, null=False, on_delete=models.CASCADE | ForeignKey
+Specification | specification | max_length=250 | CharField
+
+
