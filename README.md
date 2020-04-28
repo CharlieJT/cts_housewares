@@ -228,18 +228,18 @@ Every feature must react to it's intended purpose.
     <img src="https://i.ibb.co/ysgyfs3/cts-housewares-navbar.png" alt="CT's Housewares navbar for desktop" aria-label="CT's Housewares navbar for desktop" />
 </div>
 
-- The navbar is features on every page of the website which has been made sticky so that when you scroll down the page, it will not dissapear, also when scroll down more than 50px from the top of the page, the navbar logo will loose the CT's Housewares text & shrink in size, this is so that it's not taking up too much room at the top of the page.
+- The navbar is featured on every page of the website which has been made sticky so that when you scroll down the page, it will not disappear, also when scrolled down more than 50px from the top of the page, the navbar logo will lose the CT's Housewares text & shrink in size, this is so that it's not taking up too much room at the top of the page.
 
 
-- **Desktop** In the top left hand corner, a "CT's Housewares logo has been added which will navigate you back to the home page when clicked.
+- **Desktop** In the top left-hand corner, a "CT's Housewares logo has been added which will navigate you back to the home page when clicked.
 
-- In the center on the left, there is a dropdown of product. The options you can pick from are to view all of the products & to view particular brands of your choice.
+- In the centre on the left, there is a dropdown of product. The options you can pick from are to view all of the products & to view particular brands of your choice.
 
-- In the center on the right, there is a search bar which will link you to the products & use the search filter to filter products due to the key word that was entered, it will query the search for words found in item number, brand, description & about.
+- In the centre on the right, there is a search bar which will link you to the products & use the search filter to filter products due to the keyword that was entered, it will query the search for words found in the item number, brand, description & about.
 
 - On the right hand, you will find cart which will navigate you to the cart. Also when there is a product in the cart, a red circle will appear just above & to the left of the link to notify how many products are in the cart. This will how many 'products' there are & not the total amount of quantity.
 
-- Also on the right hand side you will the 'login' link & the 'register' link. You can click each one of those which will take you to their respective page.
+- Also on the right-hand side, you will the 'login' link & the 'register' link. You can click each one of those which will take you to their respective page.
 
 - When a user is logged in, instead of there being 'login' & 'register', you will see 'profile' & 'logout'. Clicking the link will navigate you to their respective page.
 
@@ -251,3 +251,42 @@ Every feature must react to it's intended purpose.
 - **Tablet & Mobile** In the top left hand corner, a "CT's Housewares logo has been added which will navigate you back to the home page when clicked.
 
 - In the top right hand corner, a burger icon is shown which when clicked will animate into a close symbol & slide out a side drawer, It will also create a darkened overlay on the rest of the page & when clicked, it will slide the side drawer closed again. The links found in the side drawer are the same which are seen in the desktop nabvar.
+
+
+#### Footer:
+
+<div align="center">
+    <img src="https://i.ibb.co/Q6YLXX7/cts-housewares-footer.png" alt="CT's Housewares footer for desktop" aria-label="CT's Housewares footer for desktop" />
+</div>
+
+- The navbar is featured on every page & have 2 section, the first section is to give the use a breif overview of what the website is, how it works & what you expect to find when browsing through.
+
+- The second section a list of the product brand which will link you to their respective brand.
+
+
+#### Up Arrow:
+
+<div align="center">
+    <img src="https://i.ibb.co/3RHXVMx/cts-housewares-up-arrow.png" alt="CT's Housewares up arrow" aria-label="CT's Housewares up arrow" />
+</div>
+
+- The up arrow will appear in the bottom left-hand corner when you scroll 50px from the top of the page. When hovered over, the icon will do a 360° rotation & change colour to blue. When clicked, you will taken back to the top of the page with a smooth scrolling effect.
+
+
+#### Home Page:
+
+- **Brand Carousel** - The first thing you are presented with on the home page is a brand carousel where you will find banners with brands you can view throughout the website. These are responsive & will change size due to one device they are viewed on. Carousel autoplays after a set time but you can flick from left to right to view different brands. Each image is also clickable & will take you to that partilcular brand's products when clicked on.
+
+- **Brief Statement** - Underneath the carousel, you will find a brief statement which is essencially a sales pitch letting you know what you are going to find when browsing throughout the website.
+
+
+#### Product Page:
+
+- **Brand Selector** - At the top of the brands page, you have the option to select a brand from the select dropdown, simply choose which brand you'd like to view & click "Go!".
+
+- **Pagination** - - Pagination has been included in the products page to keep data cleaner & to limit the amount of data shown at one time, this can help quite substantially with loading time if there are lots of products. Simply flick from page to page to view more products. When a new brand or search query has been made, you still begin at page 1. If a user is on page 1, the first & previous buttons will not be visible & if the user is on the last page, the next & last buttons will not be visible. Also, the current page has been coloured blue to signify which page the user is on.
+
+- **Product Cards** - Each product has it's own card which will consist of an image of the product, product description, price & the option to add to cart. If a product is out of stock, instead of there being add to cart, there will be item out of stock.
+
+- **Quick Add to Cart** - Add to cart has been added to each of the cards to speed up the process of adding to cart. You also have a quantity selector which will go as high as the quantity in stock. If a user was the add a product to the cart which was already in the cart, it will simply add the number you add to the number of items already in the cart of that product. You cannot add more than the stock quantity to the basket & if the items you add to the cart + the amount of items you already have in your cart of that particular item comes to more than the overall quantity of that item, you will get notified that you can not add that may items to the cart.
+
