@@ -145,7 +145,7 @@ The design of the website was to give a clean & intuitive look & feel ensuring t
 
     - **Order History Accordion -** After a user has placed a successful order, an Order History will appear in the user profile allowing the user to be able to see the date & time the order was placed. If a user clicks one of the headings in the accordion, they can see what items were purchased with quantity, price, line total & total.
 
-     - **Payment Progress Bar -** A user will notice that in the cart, checkout & successful payment pages, when an item is in the basket, a progress bar will appear at the top which will highlight '1' when on the cart page, '2' when on the checkout page & '3' when a successful order has been made. This has been added so that the user has a good understanding of the steps it takes to go from start to finish in placing an order.
+     - **Payment Progress Bar -** A user will notice that in the cart, checkout & successful payment pages, when an item is in the cart, a progress bar will appear at the top which will highlight '1' when on the cart page, '2' when on the checkout page & '3' when a successful order has been made. This has been added so that the user has a good understanding of the steps it takes to go from start to finish in placing an order.
 
 
 ### Wireframes
@@ -288,14 +288,14 @@ Every feature must react to it's intended purpose.
 
 - **Product Cards** - Each product has it's own card which will consist of an image of the product, product description, price & the option to add to cart. If a product is out of stock, instead of there being "add to cart", there will be "item out of stock".
 
-- **Quick Add to Cart** - Add to cart has been added to each of the cards to speed up the process of adding to cart. You also have a quantity selector which will go as high as the quantity in stock. If a user was to add a product to the cart which was already in the cart, it will simply add the number you add to the number of items already in the cart of that product. You cannot add more than the stock quantity to the basket & if the items you add to the cart + the amount of items you already have in your cart of that particular item comes to more than the overall quantity of that item, you will get notified that you can not add that may items to the cart. 
+- **Quick Add to Cart** - Add to cart has been added to each of the cards to speed up the process of adding to cart. You also have a quantity selector which will go as high as the quantity in stock. If a user was to add a product to the cart which was already in the cart, it will simply add the number you add to the number of items already in the cart of that product. You cannot add more than the stock quantity to the cart & if the items you add to the cart + the amount of items you already have in your cart of that particular item comes to more than the overall quantity of that item, you will get notified that you can not add that may items to the cart. 
 
 
 #### Individual Product Page:
 
 - **Product Slider** - When there is more than on image on a page, there will be an image slider implemented so that the user can flick between images to see more examples of the product, There are smaller images you can click below the main image to choose from. Also, when you hover over the large image, it will zoom in so you can get a better look at the product.
 
-- **Add to Cart** - Add to cart has been added so that the user can add products to the cart. If a user was to add a product to the cart which was already in the cart, it will simply add the number you add to the number of items already in the cart of that product. You cannot add more than the stock quantity to the basket & if the items you add to the cart + the amount of items you already have in your cart of that particular item comes to more than the overall quantity of that item, you will get notified that you can not add that may items to the cart.
+- **Add to Cart** - Add to cart has been added so that the user can add products to the cart. If a user was to add a product to the cart which was already in the cart, it will simply add the number you add to the number of items already in the cart of that product. You cannot add more than the stock quantity to the cart & if the items you add to the cart + the amount of items you already have in your cart of that particular item comes to more than the overall quantity of that item, you will get notified that you can not add that may items to the cart.
 
 - **Tab Section** - A Tab section has been added for each product so that the user can flick between "About", "Specifications" & "Dimensions" of the product. This helps so that everything is all clumped together & gives the page a more styled look.
 
@@ -304,6 +304,15 @@ Every feature must react to it's intended purpose.
 
 - **Login Form** - A Login form has been added so that the user has somewhere to login to the website. The has a section where you can navigate to the register page & also has the fields where you can enter "Username" &  "Password" to login to the website. If a user enter invalid credentials, you will get flagged. Also both fields are required so if the user leaves any of the fields empty, they will also get flagged.
 
+
 #### Registration Page:
 
 - **Registration Form** - A Registration form has been added so that the user where somewhere to register for an account. There are six required fields, Username, First Name, Last Name, Email Address, Password & Confirm Password. All fields must be filled before you can successfully register, if a user does not adhere to the statement written underneath Username, they will get notified. Also Password & Confirm Password fields must match before a user can successfully register. If registered successfully, You will be notified & logged in to the account you have just created.
+
+
+#### Cart Page:
+
+- **Progress Bar** - After a user has successfully logged in & added items to the cart, a progress bar will appear at the top of the page which contains 3 steps, Cart, Checkout & Payment. Depending on what stage the user is there in their progress, the number will show in blue at the stage that they are at.
+
+- **Cart** - When a user has placed something in there cart, it will show the cart items on the cart page which will consist of an image, item number, description, price, quantity, line total & option to remove. Quantity can be adjusted by selecting how what you want to change the quantity to & clicking on the refresh button. You can also remove an item from the basket by clicking the remove button. Your line total will be your quantity * your price. Total will be to total of all products in the cart & their overall price.
+
