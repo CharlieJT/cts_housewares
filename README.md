@@ -344,7 +344,7 @@ Every feature must react to it's intended purpose.
 
 - Additional would be nice to implement on the website such as colour, item type & Sort By sections. This could be a filter bar that could be put down the left side of the products page. This would help the user really narrow down their search.
 
-1. #### Extra Filtering
+1. #### Product Rating
 
 - A rating's section would be nice to implent as it gives the user a good understanding of what products are selling well.
 
