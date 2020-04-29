@@ -113,38 +113,45 @@ The design of the website was to give a clean & intuitive look & feel ensuring t
 
 - #### Colours
 
-    - <div style="background-color: #666666; width: 50px; height: 50px; border: 1px solid #000;"><div>
+    <div>
+    <img src="https://i.ibb.co/87FfdVT/666666.png" alt="Colour #666666;" border="0">
+    </div>
+    
     <b>Hex Value: #666666;</b>
-
     This colour was used for the icons & text in the navbar.
+    <br>
 
+    <div>
+    <img src="https://i.ibb.co/3skv4wk/53a5e7.png" alt="Colour #53a5e7;" border="0">
+    </div>
 
-    - <div style="background-color: #53a5e7; width: 50px; height: 50px; border: 1px solid #000;"><div>
-
-   <b>Hex Value: #53a5e7;</b>
-
+    <b>Hex Value: #53a5e7;</b>
     This colour was used for the logo, the footer, the payment progress bar & some of the buttons throughout the website. It was also used to colour the back to top button when you hover over it.
+    <br>
 
-
-    - <div style="background-color: #218838; width: 50px; height: 50px; border: 1px solid #000;"><div>
+    <div>
+    <img src="https://i.ibb.co/KFb2zn5/218838.png" alt="Colour #218838;" border="0">
+    </div>
 
    <b>Hex Value: #218838;</b>
-
     This colour was used the "add to cart" button & the "checkout" button.
+    <br>
 
+    <div>
+    <img src="https://i.ibb.co/yVSqs25/ff0000.png" alt="Colour #ff0000;" border="0">
+    </div>
 
-     - <div style="background-color: #ff0000; width: 50px; height: 50px; border: 1px solid #000;"><div>
-
-   <b>Hex Value: #ff0000;</b>
-
+    <b>Hex Value: #ff0000;</b>
     This is used for the text when an item is out of stock & also used for the notification of how many items there are in your cart.
+    <br>
 
+    <div>
+    <img src="https://i.ibb.co/hWVj1fp/fff.png" alt="Colour #fff;" border="0">
+    </div>
 
-    - <div style="background-color: #fff; width: 50px; height: 50px; border: 1px solid #000;"><div>
-
-   <b>Hex Value: #fff;</b>
-
+    <b>Hex Value: #fff;</b>
     This colour was used for the rest of the website including backgrounds & text when needed to contrast with backgrounds.
+    <br>
     
 - #### Styling
     
