@@ -42,7 +42,7 @@ I needed to remove jinja to ensure this first.
 Django testing was implemented into the project to test to ensure that the business logic of the project was all working as intended.
 
 As this was the first time, I was doing Django testing, I decided to do my testing after writing my code.
-As it wasn't possible to tests every single function in my app.py, I tested around 60% of my function.
+As it wasn't possible to tests every single function in my app.py, I tested around 80% of my functionality using the Pareto Principle.
 
 An import called 'TestCase' was used to carry out the testing.
 
@@ -456,6 +456,5 @@ I checked that:
 
 ## Further Testing
 
-- Friends, family and fellow students were asked to check the website on all devices they had, they tested functionality and layout,
-positive and constructive criticism was provided.
+- Friends, family and fellow students were asked to check the website on all devices they had, they tested functionality and layout, positive and constructive criticism was provided.
 - Tested in Chrome DevTools on all different devices and by scrolling up and down in the responsive setting.    
