@@ -372,3 +372,84 @@ I checked that:
 - If a user has no orders, the order history section will not be shown.
 - If a user has made at least 1 order, the order history section will be shown with the correct date(s) & time(s).
 - When you click on one of the order history accordion items, it will show you the complete order with the correct information.
+
+## Bugs Found
+
+### Bugs Solved
+
+1. #### Issues with brand string & search string.
+
+    A string needed to be added to the url depending whether you were doing a search or you were doing a brand query.
+    
+    **How it was fixed**:
+
+    - To get around this issue, i set a variable to check whether brand was true, if so then I set a variable with the correct string, if not then I set the string to empty.
+
+    ``` python
+    brand = request.GET.get('brand', '')
+    if brand:
+        products = Product.objects.filter(Q(brand__icontains=brand))
+        page_request_var = "brand={}&".format(brand)
+    else:
+        products = Product.objects.all()
+        page_request_var = ''
+    ```
+
+2. #### Getting cart to update without going over the stock count.
+
+    When an item was in the cart & you wanted to update the cart, with the way it's currently working it will add the amount requested to the currently total quantity of that item. You will only let you to add as many items there are in stock to the cart but it did not do a check to see if there were items already in the cart. 
+    
+    **How it was fixed**:
+
+    - To get around this issue, I did a check to make sure that the quantity of the item which was already in the cart plus the amount of items that were requested to put in the basket did not go over the amount of items there are of that product in stock, if so, then an error will occur.
+
+    ``` python
+    def add_to_cart(request, id):
+    """ This will add a specific product to the basket """
+    quantity=int(request.POST.get('quantity'))
+    
+    product = get_object_or_404(Product, pk=id)
+    id = str(id)
+
+    cart = request.session.get('cart', {})
+    if cart.get(id, None):
+        if cart[id] + quantity > product.stock:
+            messages.error(request, "Unable to add an extra '{}' of this item to your cart as it will exceed the number of stock!".format(quantity)) 
+        else:
+            cart[id] = int(cart[id]) + quantity
+            messages.success(request, "Added '{}' extra item(s) of '{}' to your cart!".format(quantity, product.description)) 
+    else:
+        cart[id] = cart.get(id, quantity)
+        messages.success(request, "Added '{}' item(s) of '{}' to your cart!".format(quantity, product.description))
+
+    request.session['cart'] = cart
+    ```
+
+### Bugs Unsolved
+
+1. #### Smooth scrolling in Safari not working.
+
+    When in safari, smooth scrolling does not work when clicking on the upwards chevron & the
+    downwards chevron.
+    
+    Unfortunately, I could not figure a way around this issue. I tried searching the internet, but
+    I couldn't find the answer.
+    
+2. #### Glitchy upwards chevron.
+
+    At times, the upwards chevron can become glitchy & will animate on click instead of hover.
+    
+    I did try to look for the answer to this, but I didn't see this as a major issue as the
+    chevron was still working as it should.
+    
+3. #### Progress Bar showing up really ugly in mobile.
+
+    At times, the progress bar will show up really ugly on mobile devices such as apple devices.
+
+    I tried looking for the asnwer & I also asked on slack to see if somebody had the answer but nobody could find the answer to the issue.
+
+## Further Testing
+
+- Friends, family and fellow students were asked to check the website on all devices they had, they tested functionality and layout,
+positive and constructive criticism was provided.
+- Tested in Chrome DevTools on all different devices and by scrolling up and down in the responsive setting.    
