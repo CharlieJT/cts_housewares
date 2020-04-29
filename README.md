@@ -59,8 +59,8 @@ Full Stack Frameworks - Milestone Project 4 - CT's Housewares - Charlie Tipton
 5. [**Testing**](#testing)
 
 6. [**Deployment**](#deployment)
-        - [**To run on your local IDE**](#to-run-on-your-local-ide)
-        - [**Deploy to Heroku**](#deploy-to-heroku)
+    - [**To run on your local IDE**](#to-run-on-your-local-ide)
+    - [**Deploy to Heroku**](#deploy-to-heroku)
 
 
 ## UX
