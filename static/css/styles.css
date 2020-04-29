@@ -609,15 +609,16 @@ body {
 
 /* --------- Successful Payment -------- */
 
-.successful-payment-icon {
+.successful-payment-icon,
+.password-reset-success-icon {
     font-size: 4rem;
     color: #6bc527;
 }
 
-.view-orders-button>a {
+.view-orders-button>a,
+.password-done-button>a {
     color: #fff;
 }
-
 
 /* --------- Media Queries -------- */
 

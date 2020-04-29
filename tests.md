@@ -120,7 +120,8 @@ I checked that:
 & when it's clicked.
 - The navbar is correctly animating so the main logo is decreasing in size when scrolled down.
 - The footer was properly sitting at the bottom of the page as I added a sticky footer to the bottom.
-- The navbar search bar is working corrently
+- The navbar search bar is working corrently.
+- A notification will show up next to the cart link if there is 1 or more items in the cart.
 
 #### 2. Home Page
 
@@ -178,4 +179,65 @@ I checked that:
 - The correct creditials must be entered for the user to successfully log in & if at any time the user is unable to log in, the user will be notified.
 - If a user successfully logs in, they are taken back to the home page & notified that they are logged in.
 - Links to the registration & the forgotten password pages are working correctly.
+
+#### 6. Registration Page
+
+I checked that:
+
+- All links are working in the breadcrumb.
+- All fields are sitting corrently on the page.
+- All required fields are shown with an asterisk.
+- All fields must be filled in before the user can successfully register.
+- The correct creditials must be entered for the user to successfully regsister & if at any time the user is unable to register, the user will be notified.
+- If a user successfully registers, they are taken back to the home page & notified that they have successfully registered & are logged in.
+- Links to the login page is working correctly.
+
+#### 7. Cart Page
+
+I checked that:
+
+- All links are working in the breadcrumb.
+- When there are no items in the cart & the user is not logged, it will say there in no items & ask you to login to checkout.
+- When there are no items in the cart & the user is logged in, it will say that there are no item to chekout.
+- When there are items in the cart & a user is not logged in, no progress bar is shown & you will not be able to go to checkout.
+- When there are items in the cart & a user is logged in, a progress bar will be shown & you will be allowed to checkout your items, the progress bar will only show first circle highlighted.
+- When amending the quantity of an item, you first change the quantity & the click the button to update your cart & update the correct item.
+- When you click the remove button, it will remove the correct item from the cart.
+- Everything sitting correctly on the page.
+
+#### 8. Checkout Page
+
+I checked that:
+
+- Page can only be accessed if a user is logged in. If not, they will be navigated to the login page.
+- All links are working in the breadcrumb.
+- All fields are sitting corrently on the page.
+- All required fields are shown with an asterisk.
+- All required fields must be filled in before the user can successfully submit payment.
+- The correct creditials must be entered for the user to successfully pay & if at any time the user is unable to pay, the user will be notified.
+- If a user successfully pays, they are taken to the successful payment page.
+- A progress bar will be shown which will only show the first & second circle being highlighted.
+
+#### 9. Successful Payment Page
+
+I checked that:
+
+- Page can only be accessed if a user is logged in. If not, they will be navigated to the login page.
+- All links are working in the breadcrumb.
+- A progress bar will be shown which will only show the all of the circles being highlighted.
+- Navigation to the profile page works & that the order has successfully been updated.
+- The select brand drop down is working correctly & when selected, it will navigate you to the product page with the correct brand & you will start back at page 1.
+- Link back to the home page is working.
+
+#### 10. Profile Page
+
+I checked that:
+
+- Page can only be accessed if a user is logged in. If not, they will be navigated to the login page.
+- All links are working in the breadcrumb.
+- All information is coming through, Username, Name, Email Address & Account Created.
+- If a user has no orders, the order history section will not be shown.
+- If a user has made at least 1 order, the order history section will be shown with the correct date(s) & time(s).
+- When you click on one of the order history accordion items, it will show you the complete order with the correct information.
+
 
