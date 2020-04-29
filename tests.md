@@ -100,3 +100,82 @@ A total of 35 tests were run & all were passing.
     - ### I have all of the relevant information given to me at the appropriate time.
         - When a user is not logged in, they will see Cart, Login & Register in the top right-hand corner & when a user is logged in, they will see Cart, Profile & Logout in the top right-hand corner.
         - Login & Registration pages will not be able to be viewed when the user is logged in & profile, checkout will not be able to be viewed when a user is logged out.
+
+## Manual Testing
+
+A number of manual tests were done to ensure the website was working with its intended purpose and use.
+
+### Testing on Desktop
+
+The website was tested numerous times in Browsers: Chrome, Safari, FireFox and Internet Explorer
+on a Laptop, Macbook & Desktop PC.
+
+#### 1. Dashboard
+
+I checked that:
+
+- There is no upwards chevron in the bottom right-hand corner until the page has been scrolled down.
+- The Favicon is loading correctly.
+- The upwards chevron is appearing when scrolled down the page & that it's animating correctly when hovered over
+& when it's clicked.
+- The navbar is correctly animating so the main logo is decreasing in size when scrolled down.
+- The footer was properly sitting at the bottom of the page as I added a sticky footer to the bottom.
+- The navbar search bar is working corrently
+
+#### 2. Home Page
+
+I checked that:
+
+- The brand carousel is loading properly, is 100 view width & there are no issues with the height or width.
+- Each Carousel is responsive & changes depending on which display the user is looking at the website on.
+- Each Carousel item is linking correctly to their respective brand on the products page.
+
+#### 3. Product Page
+
+I checked that:
+
+- All links are working in the breadcrumb.
+- Data is coming through & is only showing 12 items per page.
+- Ensure Pagination is working correctly & clicking between pages is working, the active page is coloured blue, previous & first page is not being shown on the first page & the next & last page is not being shown on the last page.
+- Images & data are sitting corrently in their brand card.
+- "Item out of stock" is being shown on the product card when the stock is 0.
+- If a brand is selected, the brand is active in the select brand dropdown.
+- The select brand drop down is working correctly & when selected, you will start back at page 1.
+- When an item is added to the cart, you are notified.
+- When an item that is already in the cart is added to the cart, it will add the extra items to your current cart items & you will be notified.
+- You cannot add more stock than what is in stock.
+- If you have an item in the cart & you add more to it & the total of the amount in the cart & the amount you have added comes to more than the stock, it won't let you add it to the cart & you will be notified.
+- All items are shown if the url is `/product`.
+- The page of the top of the page matches the active page in pagination.
+- Total amount of items plud the query is shown at the top of the page.
+- Search/Brand query does not interfere with pagination functionality.
+- There is a hover effect when hovering over each of the product cards.
+- Images & product descriptions are links to the individual page of that particular product.
+
+#### 4. Individual Product Page
+
+I checked that:
+
+- All links are working in the breadcrumb.
+- Product slider is picking all of the relevent images & each one is sliding correctly.
+- Is there is only 1 image, it will not show that image below.
+- Images are zooming in correctly & even working when mouse is moved.
+- "Item out of stock" is being shown on the product card when the stock is 0.
+- When an item is added to the cart, you are notified.
+- When an item that is already in the cart is added to the cart, it will add the extra items to your current cart items & you will be notified.
+- You cannot add more stock than what is in stock.
+- If you have an item in the cart & you add more to it & the total of the amount in the cart & the amount you have added comes to more than the stock, it won't let you add it to the cart & you will be notified.
+- Tab is working correctly & clicking each of the section headings takes you to that section.
+
+#### 5. Login Page
+
+I checked that:
+
+- All links are working in the breadcrumb.
+- All fields are sitting corrently on the page.
+- All required fields are shown with an asterisk.
+- All fields must be filled in before the user can successfully log in.
+- The correct creditials must be entered for the user to successfully log in & if at any time the user is unable to log in, the user will be notified.
+- If a user successfully logs in, they are taken back to the home page & notified that they are logged in.
+- Links to the registration & the forgotten password pages are working correctly.
+
