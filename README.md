@@ -58,6 +58,8 @@ Full Stack Frameworks - Milestone Project 4 - CT's Housewares - Charlie Tipton
 
 5. [**Testing**](#testing)
 
+6. [**Deployment**](#deployment)
+
 
 ## UX
 
@@ -505,32 +507,30 @@ Quantity | quantity | blank=False | IntegerField
 - [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) to enables developers to create, configure, and manage AWS services.
 - [AWS S3 Bucket](https://aws.amazon.com/) to store all images that are on the website.
 - [PIP](https://pip.pypa.io/en/stable/installing/) used to install requirements into the project.
-- [Gunicorn](https://pypi.org/project/gunicorn/) is a Python Web Server Gateway Interface HTTP server which is used to help deployment of a Django project in heroku.
-- [Coverage](https://coverage.readthedocs.io/en/v4.5.x/) to measure code coverage of python unittests.
+- [Gunicorn](https://pypi.org/project/gunicorn/) is a Python Web Server Gateway Interface HTTP server which is used to help the deployment of a Django project in Heroku.
 - [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) is used to create nicely styled forms.
 - [Psycopg2](https://pypi.org/project/psycopg2/) is a PostgreSQL database adapter for the Python programming language.
 - [Pillow](https://pillow.readthedocs.io/en/stable/) is used to help the uploading of images in the database.
-- [Django Heroku](https://pypi.org/project/django-heroku/) is used to to view the deployed project.
+- [Django Heroku](https://pypi.org/project/django-heroku/) is used to view the deployed project.
 - [Django Storages](https://django-storages.readthedocs.io/en/latest/) works with boto3 and AWS S3 to build a collection of custom storage backends with Django.
 - [Imgbb](https://imgbb.com) used to store images mainly for readme.
-- [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) to handle version control.
+- [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) to handle version control of the website.
 - [GitHub](https://github.com/) is used as a remote backup of code used in the project & used to showcase code remotely.
-- [Math Filters](https://pypi.org/project/django-mathfilters/) used for adding commas to pricing throughout the website.
-- [Browserstack](https://www.browserstack.com/) to test functionality on all browsers and devices.
-- Heroku for deployment
-- [Balsamiq](https://balsamiq.com/) to create the wireframes for this project.
+- [Math Filters](https://pypi.org/project/django-mathfilters/) was used for adding commas to pricing throughout the website.
+- [Browserstack](https://www.browserstack.com/) was used to test the website on all different browsers.
+- [Balsamiq](https://balsamiq.com/) was used to create wireframes to show the layout of the website.
 
 
 ### Databases
 
-- [SQlite3](https://www.sqlite.org/index.html) is installed with Django as default so that was the choice of database to work with in development.
+- [SQlite3](https://www.sqlite.org/index.html) is installed with Django as default so that was the choice of database to use in development.
 - [PostgreSQL](https://www.postgresql.org/) is the database I used which was provided by Heroku & this was used when my project was deployed to Heroku.
 
 
 ### Libraries
 - [JQuery](https://jquery.com) has been used to simplify DOM manipulation.
 - [AutoPrefixer](https://autoprefixer.github.io/) is used to ensure all CSS prefixes are running with the most up to date versions.
-- [Bootstrap](https://www.bootstrapcdn.com/) to assist with website laylout & styling.
+- [Bootstrap](https://www.bootstrapcdn.com/) to assist with website layout & styling.
 - [FontAwesome](https://www.bootstrapcdn.com/fontawesome/) to apply informative icons used throughout the website.
 - [Google Fonts](https://fonts.google.com/) is used to provide a **'Roboto'** font which is used throughout the website.
 
@@ -541,3 +541,113 @@ Quantity | quantity | blank=False | IntegerField
 
 ## Testing
 A full testing process can be found in a separate [tests.md](tests.md) file.
+
+
+## Deployment
+
+### To run on your local IDE
+
+The project was built using [Visual Studio Code](https://code.visualstudio.com/), through a built-in function called 'Git', I could commit
+
+- You must ensure that the following are installed on your machine before you can work with it in your IDE.
+    - [PIP](https://pip.pypa.io/en/stable/installing/)
+    - [Python 3](https://www.python.org/downloads/)
+    - [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
+
+- You need to create an account for each of these t be able to get the website functioning properly
+    - [Stripe](https://dashboard.stripe.com/register)
+    - [emailjs](https://www.emailjs.com/)
+    - [AWS](https://aws.amazon.com/) which you want to set up an [S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)
+
+#### Instructions
+
+1. Go to https://github.com/CharlieJT/cts_housewares and click the 'Clone or download' button and then click 'Download ZIP'
+& extract to a folder of your choice. Ensuring you have Git installed on your system, you can clone the project into
+your IDE through running the following command in the terminal
+```console
+git clone https://github.com/*username*/*repository*
+```
+
+2. Ensure you have open a terminal (Some IDE's such as Cloud9 & VSCode have a built-in terminal but if not, you may need to open one up on your desktop), cd to the correct location to where you have your ZIP file.
+
+3. if running in Cloud9, you won't need to do this step as it comes with a built-in virtual environment but if it doesn't,
+you need to run the following command to build a virtual environment:
+```
+python -m .venv venv
+```
+
+4. Should you need to the latest version of pip, you can get it by running the following command.
+```
+pip install --upgrade pip
+```
+
+5. If your IDE requires a virtual environment, run the following command to activate it:
+```
+source venv\Scripts\activate 
+```
+_This may vary so be sure to check the [Python Documentation on virtual environments](https://docs.python.org/3/library/venv.html) to make sure you're sure._
+
+6. Install a requirements.txt file with of the correct packages that you need for the project with: 
+```
+pip -r requirements.txt
+```
+_Check to ensure that you have all of the required packages you need for the project._
+
+7. You then need to set up environment variables, the following steps:
+- Create an env.py file & a .gitignore on the root level of your project & add the text env.py to your .gitignore file.
+- In your env.py file, add import os on the top line & create environment variables like this... os.environ["YOUR_VARIABLE_NAME"] = "Value goes in string here"
+
+```
+import os
+
+os.environ["SECRET_KEY"] = "<secret key here>"
+os.environ["DEVELOPMENT"] = "1"
+os.environ["EMAIL_ADDRESS"] = "<email address here>"
+os.environ["EMAIL_PASSWORD"] = "<email address password here>"
+os.environ["STRIPE_PUBLISHABLE"] = "<stripe publishable key here>"
+os.environ["STRIPE_SECRET"] = "<stripe secret key here>"
+os.environ["DATABASE_URL"] = "<data url which can be found in heroku after you have deployed the project>"
+os.environ["AWS_ACCESS_KEY_ID"] = "access key id here>"
+os.environ["AWS_SECRET_ACCESS_KEY"] = "<secret access key here>"
+```
+
+- ^ Add that to your settings.py file under where you import os & then say for secret key, it should be SECRET_KEY = os.environ.get('SECRET_VARIABLE_SET_IN_env.py')
+Then you can do a print(os.environ.get('SECRET_VARIABLE_SET_IN_env.py'))
+
+- If you are using an IDE that has a `bashrc` file. Open that file & add variables that are listed above in this format:
+```
+SECRET_KEY = "<secret key here>"
+DEVELOPMENT = "1"
+EMAIL_ADDRESS = "<email address here>"
+EMAIL_PASSWORD = "<email address password here>"
+STRIPE_PUBLISHABLE = "<stripe publishable key here>"
+STRIPE_SECRET = "<stripe secret key here>"
+DATABASE_URL = "<data url which can be found in Heroku after you have deployed the project>"
+AWS_ACCESS_KEY_ID = "access key id here>"
+AWS_SECRET_ACCESS_KEY = "<secret access key here>"
+```
+
+- `DEVELOPMENT` environment variable is only in development. It will not be shown in deployment so you can use this for things such as setting DEBUG mode to True in development & False if it's on the deployed website.
+
+8. Restart your machine & reactivate your environment variable, use the command used in step 5.
+
+9. Migrate all of the models & creating an SQLite database by using the commands:
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+10. Create a superuser to be able to gain access to the admin panel. You can do this by typing the following command & following the instructions
+
+```
+python manage.py createsuperuser
+```
+
+11. Run the project on your local machine using the command:
+ ```
+python manage.py runserver
+```
+
+12. You will now have the project up & running. At the end of the URL add `/admin` & login with the superuser credentials you created to get access, if you want to view products & banners on the website, you can start adding information into the models.
+
+13. You should now be good to go. If you get stuck at any point, go back through all of the previous steps.
