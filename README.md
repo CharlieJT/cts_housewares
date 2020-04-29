@@ -59,6 +59,8 @@ Full Stack Frameworks - Milestone Project 4 - CT's Housewares - Charlie Tipton
 5. [**Testing**](#testing)
 
 6. [**Deployment**](#deployment)
+        - [**To run on your local IDE**](#to-run-on-your-local-ide)
+        - [**Deploy to Heroku**](#deploy-to-heroku)
 
 
 ## UX
@@ -623,7 +625,7 @@ EMAIL_PASSWORD = "<email address password here>"
 STRIPE_PUBLISHABLE = "<stripe publishable key here>"
 STRIPE_SECRET = "<stripe secret key here>"
 DATABASE_URL = "<data url which can be found in Heroku after you have deployed the project>"
-AWS_ACCESS_KEY_ID = "access key id here>"
+AWS_ACCESS_KEY_ID = "<access key id here>"
 AWS_SECRET_ACCESS_KEY = "<secret access key here>"
 ```
 
@@ -651,3 +653,65 @@ python manage.py runserver
 12. You will now have the project up & running. At the end of the URL add `/admin` & login with the superuser credentials you created to get access, if you want to view products & banners on the website, you can start adding information into the models.
 
 13. You should now be good to go. If you get stuck at any point, go back through all of the previous steps.
+
+### Deploy to Heroku
+
+1. If you haven't already, install a requirements.txt file with of the correct packages that you need for the project with: 
+```
+pip -r requirements.txt
+```
+
+2. You need to run the command `echo web: python app.py > Procfile` which will create a Procfile.
+
+3. Use `git add .` to stage all of your files `git commit -m "<message here>"` to commit the changes ready to push to GitHub.
+
+4. You must then create a repository in GitHub & follow the instructions in order to push your work up to GitHub.
+
+5. Using `git push` & inputting your email & password when instructed, this will push all of the files.
+that have been committed up to GitHub.
+_Note that the password field will not change when you are inserting text_
+
+6. Go to heroku [here](https://dashboard.heroku.com/) & ensure you are signed up.
+
+7. Go to your Heroku dashboard & click "New" & click "Create New App".
+
+8. Give any name you like & set the region to "Europe".
+
+9. Ensure you link the Heroku application to the correct GitHub repository.
+
+10. From the dashboard, go to "Settings" & click on "Reveal Config Vars"
+
+11. Set the following Config Vars to:
+
+| Key | Value|
+--- | ---
+SECRET_KEY | `<secret key here>`
+DEVELOPMENT | `1`
+EMAIL_ADDRESS | `<email address here>`
+EMAIL_PASSWORD | `<email address password here>`
+STRIPE_PUBLISHABLE | `<stripe publishable key here>`
+STRIPE_SECRET | `<stripe secret key here>`
+DATABASE_URL | `<data url which can be found in Heroku after you have deployed the project>`
+AWS_ACCESS_KEY_ID | `<access key id here>`
+AWS_SECRET_ACCESS_KEY | `<secret access key here>`
+
+
+12. Go to the command line on your local IDE:
+    - Add Heroky postres shell
+    - migrate all of the data models using the following command:
+    ```
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
+    - Create a superuser for your new database
+
+    Click on [heroku devcenter documentation](https://devcenter.heroku.com/articles/heroku-postgresql) to find steps on how this is done.
+
+13. Go back to your Heroku & go to Deploy, Scroll down the page to find "Manually Deploy", select master & click "Deploy Branch".
+
+14. Wait until the build is complete & click on "View".
+
+15. You will now have the project up & running in Heroky. At the end of the URL add `/admin` & login with the superuser credentials you created to get access, if you want to view products & banners on the website, you can start adding information into the models.
+
+16. You should now be good to go. If you get stuck at any point, go back through all of the previous steps.
+
