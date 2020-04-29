@@ -42,10 +42,19 @@ Full Stack Frameworks - Milestone Project 4 - CT's Housewares - Charlie Tipton
         - [Discount Codes](#discount-codes)
 
 
-3. [**Database**](database)
+3. [**Database**](#database)
     - [**Database Choice**](#database-choice)
     - [**Database Tables**](#database-tables)
         - [User](#user)
+        - [Home App Model](#home-app-model)
+        - [Product App Model](#product-app-model)
+        - [Checkout App Model](#checkout-app-model)
+
+3. [**Technologies Used**](#technologies-used)
+    - [**Tools**](#tools)
+    - [**Databases**](#databases)
+    - [**Libraries**](#libraries)
+    - [**Languages**](#languages)
 
 
 ## UX
@@ -481,4 +490,50 @@ Order | order | Order, null=False, on_delete=models.CASCADE | ForeignKey
 Product | product | Product, null=False, on_delete=models.CASCADE | ForeignKey
 Price | price | max_digits=1000, decimal_places=2 | DecimalField
 Quantity | quantity | blank=False | IntegerField
+
+
+## Technologies Used
+
+### Tools
+- [Visual Studio Code](https://code.visualstudio.com/) This was the choice of IDE for this project. 
+- [Django](https://www.djangoproject.com/) was used as part of the credentials for this project as it's a python web framework is used for accelerated custom web application development.
+- [Travis](https://travis-ci.org/) for a continuous integration service for testing the project in Github.
+- [Stripe](https://stripe.com) is used for easy & secure payment.
+
+- [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) to enables developers to create, configure, and manage AWS services.
+- [AWS S3 Bucket](https://aws.amazon.com/) to store all images that are on the website.
+- [PIP](https://pip.pypa.io/en/stable/installing/) used to install requirements into the project.
+- [Gunicorn](https://pypi.org/project/gunicorn/) is a Python Web Server Gateway Interface HTTP server which is used to help deployment of a Django project in heroku.
+- [Coverage](https://coverage.readthedocs.io/en/v4.5.x/) to measure code coverage of python unittests.
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) is used to create nicely styled forms.
+- [Psycopg2](https://pypi.org/project/psycopg2/) is a PostgreSQL database adapter for the Python programming language.
+- [Pillow](https://pillow.readthedocs.io/en/stable/) is used to help the uploading of images in the database.
+- [Django Heroku](https://pypi.org/project/django-heroku/) is used to to view the deployed project.
+- [Django Storages](https://django-storages.readthedocs.io/en/latest/) works with boto3 and AWS S3 to build a collection of custom storage backends with Django.
+- [Imgbb](https://imgbb.com) used to store images mainly for readme.
+- [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) to handle version control.
+- [GitHub](https://github.com/) is used as a remote backup of code used in the project & used to showcase code remotely.
+- [Math Filters](https://pypi.org/project/django-mathfilters/) used for adding commas to pricing throughout the website.
+- [Browserstack](https://www.browserstack.com/) to test functionality on all browsers and devices.
+- Heroku for deployment
+- [Balsamiq](https://balsamiq.com/) to create the wireframes for this project.
+
+
+### Databases
+
+- [SQlite3](https://www.sqlite.org/index.html) is installed with Django as default so that was the choice of database to work with in development.
+- [PostgreSQL](https://www.postgresql.org/) is the database I used which was provided by Heroku & this was used when my project was deployed to Heroku.
+
+
+### Libraries
+- [JQuery](https://jquery.com) has been used to simplify DOM manipulation.
+- [AutoPrefixer](https://autoprefixer.github.io/) is used to ensure all CSS prefixes are running with the most up to date versions.
+- [Bootstrap](https://www.bootstrapcdn.com/) to assist with website laylout & styling.
+- [FontAwesome](https://www.bootstrapcdn.com/fontawesome/) to apply informative icons used throughout the website.
+- [Google Fonts](https://fonts.google.com/) is used to provide a **'Roboto'** font which is used throughout the website.
+
+
+### Languages
+- The languages used throughout the website are HTML, CSS, JavaScript & Python.
+
 
