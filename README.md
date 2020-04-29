@@ -62,6 +62,12 @@ Full Stack Frameworks - Milestone Project 4 - CT's Housewares - Charlie Tipton
     - [**To run on your local IDE**](#to-run-on-your-local-ide)
     - [**Deploy to Heroku**](#deploy-to-heroku)
 
+7. [**Credits**](#credits)
+    - [**Contents**](#contents)
+    - [**Media**](#media)
+    - [**Help with code**](#help-with-code)
+    - [**Acknowledgements**](#acknowledgements)
+
 
 ## UX
 
@@ -715,3 +721,49 @@ AWS_SECRET_ACCESS_KEY | `<secret access key here>`
 
 16. You should now be good to go. If you get stuck at any point, go back through all of the previous steps.
 
+## Credits
+
+### Contents
+
+- All Content has been thought of and written by the Developer.
+
+- #### Images
+    - The CT's Housewares logo & favicon was created [here](https://www.brandcrowd.com/maker/tag/name).
+    - Images for the website were used with permission from the [RKW ltd website](https://rkwltd.com/#/) such as banners & products.
+
+### Help with code
+
+- Ideas on how to write out the code for the Up Arrow: [Up Arrow](https://freefrontend.com/css-arrows).
+- Ideas on how to apply the functionality for an action taking place when scrolled down from top:
+[How TO - Scroll Back To Top Button](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp).
+- Ideas on how to add a sticky footer, ensuring it will stay at the bottom of the page at all times:
+[Sticky Footer, Five Ways](https://css-tricks.com/couple-takes-sticky-footer/)
+
+The code learned from the snippet was not copied into the project, they were used as help and guidance to be interpreted in a different and unique way.
+
+### Acknowledgements
+
+A huge thank you to:
+
+- Spencer Barriball (spence_mentor) - For helping me with planning & preparation as well as providing me with
+useful tips & tricks to use in my project, also helping me with issues along the way.
+
+- Stephen (Code Institute) - For helping me with a payment issue I was having with stripe.
+
+- Xavier (Code Institute) - For helping me with a password reset issue I was having.
+
+- Tim (Code Institute) - For helping with issues I was having with my static files.
+
+- Anna (Code Institute) - For useful tips on how to get set up with my environment variables.
+
+- Kevin (Code Institute) - For helping me with an issue I was having with my login form.
+
+- Samantha (Code Institute) - For helping me with an issue I was having with my product.
+
+- Haley (Code Institute) - For helping me with an issue I was having getting a virtual environment properly working in my project.
+
+- Slack - I won't be able to name every person on here but this is a big shout out to everything who has taken the time to help me with issues I've been having.
+
+## Disclaimer
+
+All content on the website, including images, are used for educational purposes only.
