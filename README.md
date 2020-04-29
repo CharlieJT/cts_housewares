@@ -474,3 +474,4 @@ Order | order | Order, null=False, on_delete=models.CASCADE | ForeignKey
 Product | product | Product, null=False, on_delete=models.CASCADE | ForeignKey
 Price | price | max_digits=1000, decimal_places=2 | DecimalField
 Quantity | quantity | blank=False | IntegerField
+
