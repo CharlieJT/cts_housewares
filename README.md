@@ -50,11 +50,13 @@ Full Stack Frameworks - Milestone Project 4 - CT's Housewares - Charlie Tipton
         - [Product App Model](#product-app-model)
         - [Checkout App Model](#checkout-app-model)
 
-3. [**Technologies Used**](#technologies-used)
+4. [**Technologies Used**](#technologies-used)
     - [**Tools**](#tools)
     - [**Databases**](#databases)
     - [**Libraries**](#libraries)
     - [**Languages**](#languages)
+
+5. [**Testing**](#testing)
 
 
 ## UX
@@ -537,3 +539,5 @@ Quantity | quantity | blank=False | IntegerField
 - The languages used throughout the website are HTML, CSS, JavaScript & Python.
 
 
+## Testing
+A full testing process can be found in a separate [tests.md](tests.md) file.
