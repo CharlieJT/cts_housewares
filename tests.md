@@ -36,3 +36,67 @@ Validation services were used to ensure that code was valid code used to develop
 I needed to remove jinja to ensure this first.
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to test CSS code to ensure it was valid code.
 - [Code Beautify JavaScript Validator](https://codebeautify.org/jsvalidate) was used to test JavaScript code to ensure it was valid code.
+
+### Django Testing
+
+Django testing was implemented into the project to test to ensure that the business logic of the project was all working as intended.
+
+As this was the first time, I was doing Django testing, I decided to do my testing after writing my code.
+As it wasn't possible to tests every single function in my app.py, I tested around 60% of my function.
+
+An import called 'TestCase' was used to carry out the testing.
+
+The functions that were tested were as follows:
+
+- Home App
+    - Models
+    - Views
+- Product App
+    - Models
+    - URLs
+    - Views
+- Search App
+    - URLs
+- Checkout App
+    - Forms
+    - Models
+    - URLs
+    - Views
+- Account App
+    - Forms
+    - URL's
+
+A total of 35 tests were run & all were passing.
+
+## User Stories Testing
+
+- ### As a user, I'd like to see:
+    - ### A professional and strong looking website to draw the user into using the website.
+        - Banners & images have been made to look professionl to draw the user in.
+        - Bootstrap was used as CSS framework to help with layout & styling & include features such as navbars, accordions, buttons.
+        - Font Awesome icons were used to give buttons & links better indication of thei purpose.
+        - A colour template was adhered to to give it a more styled look.
+        - Pagination was included to help seperate products & also helps with loading time.
+        - A progress bar was added to the cart, checkout & successful payment pages to give the user an indication of how far they are through the payment process.
+    - ### Navigations which are simple & informative which don't leave the user unsure of how to get to the page they want to get to.
+        - You will find a navigation link on every page of website.
+        - The CT's Housewares will navigate you back to the home page.
+        - Breadcrumbs have been added to all pages which are necessary to jump back to specific pages with
+        the name of the page that is linked this helps a lot with the website navigation.
+    - ### Images of the products that are available on the website as soon as a user goes to the website.
+        - Banners have been included in a carousel on the home page which you can click left or right to views, also when you click the image, it will take your to the products with that specific brand.
+    - ### Buttons which are simple but informative & give a good indication of their purpose.
+        - Button have been labelled correctly with their accordance.
+        - They have been given the appropriate colour for either purpose.
+        - Icons have been added to most of the button to give a better indication of their purpose.
+    - ### Subtle animations to not overcomplicate the website, but to give a strong professional look & feel.
+        - A back to top chevron has a nice animation when you hover over it, it will transform to blue from white &
+        rotate.
+        - A side drawer animation is given when the user clicks on the burger icon on mobile display, the burger icon will transform into a times symbol & the side drawer will slide into vision when clicked & a backdrop will appear over the background. When the backdrop is clicked or when the times symbol is clicked, the side drawer will slide back out of vision & the times symbol will transform back to a burgon icon.
+        - An Image slider has been included on the individual product page so that the user can choose between images they would like to see more of. Also when the main image is hovered over, it will zoom in on the image so the user can get a better look at the image.
+    - ### Icons that give the user a better indication of what their specific action is.
+        - Icons have been added to most of the button to give a better indication of their purpose.
+        - Icons have been added to each of the links in the navbar to give a better indication of their purpose.
+    - ### I have all of the relevant information given to me at the appropriate time.
+        - When a user is not logged in, they will see Cart, Login & Register in the top right-hand corner & when a user is logged in, they will see Cart, Profile & Logout in the top right-hand corner.
+        - Login & Registration pages will not be able to be viewed when the user is logged in & profile, checkout will not be able to be viewed when a user is logged out.
