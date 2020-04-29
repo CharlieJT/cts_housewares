@@ -147,28 +147,24 @@ The design of the website was to give a clean & intuitive look & feel ensuring t
     This colour was used for the rest of the website including backgrounds & text when needed to contrast with backgrounds.
     
 - #### Styling
-
-    Styles have been made to give a professional, strong look. With the help of the CSS framework
-    [Materialize!](https://materializecss.com/), I was able to implement a nice looking & well animated
-    website without going over the top.
     
     **Special styles include:**
     
-    - **Buttons** Buttons have been styled using bootstrap & colours have been picked using the bootstrap colour scheme.
+    - **Buttons -** Buttons have been styled using bootstrap & colours have been picked using the bootstrap colour scheme.
     
-    - **Pagination** Pagination consists of a "First Page" Button, "Previous Page" Button, "Next Page" Button, "Last Page" Button, "Current Page" Button & page numbers of pages if the page exists 2 before or 2 after Button. These have been styled so that the previous & first page indicator will not show is a user is on the first page & the last & next page indicators will not show if a user is on the last page. The previous & next page indicators have been styled grey with black text & the current page indicator has been styled blue with white text to give a better indicator of which page the user is currently on.
+    - **Pagination -** Pagination consists of a "First Page" Button, "Previous Page" Button, "Next Page" Button, "Last Page" Button, "Current Page" Button & page numbers of pages if the page exists 2 before or 2 after Button. These have been styled so that the previous & first page indicator will not show is a user is on the first page & the last & next page indicators will not show if a user is on the last page. The previous & next page indicators have been styled grey with black text & the current page indicator has been styled blue with white text to give a better indicator of which page the user is currently on.
     
     - **Up chevron -** When a user scrolls 50 pixels down from the top of any page, an 'up' chevron will appear in the bottom left-hand corner of the screen. When hovered over on desktop, it will rotate 360° & border & chevron colour will change to blue. When clicked on mobile & tablet, it will perform the animation as the page is scrolling back to the top. When clicked it will smooth scroll back to the top & the icon will disappear. The logic behind it can be found [here!](https://freefrontend.com/css-arrows/).
     
     - **Navbar shrinking -** When a user scrolls 50 pixels down from the top of any page, the user will notice that the logo will shrink in size and the background of the navbar be sticky and have a dark background, this is to make sure it doesn't take up too much space & so it can still be seen by the user.
 
-    - **Product Images -** When a user has clicked on an individual product page, they will be presented with an image slider which will allow the user to select an image if there is more than one image. Also, if a user hovers over the image that has been selected, it will zoom in on the picture allowing them to get a better look at the product.
+    - **Product Slider -** When a user has clicked on an individual product page, they will be presented with an image slider which will allow the user to select an image if there is more than one image. Also, if a user hovers over the image that has been selected, it will zoom in on the picture allowing them to get a better look at the product.
 
     - **Product Tabs -** When a user has clicked on an individual product page, they will be presented with a tab section where they can view a brief description of the product, a specifications section & a dimensions section.
 
     - **Order History Accordion -** After a user has placed a successful order, an Order History will appear in the user profile allowing the user to be able to see the date & time the order was placed. If a user clicks one of the headings in the accordion, they can see what items were purchased with quantity, price, line total & total.
 
-     - **Payment Progress Bar -** A user will notice that in the cart, checkout & successful payment pages, when an item is in the cart, a progress bar will appear at the top which will highlight '1' when on the cart page, '2' when on the checkout page & '3' when a successful order has been made. This has been added so that the user has a good understanding of the steps it takes to go from start to finish in placing an order.
+    - **Payment Progress Bar -** A user will notice that in the cart, checkout & successful payment pages, when an item is in the cart, a progress bar will appear at the top which will highlight '1' when on the cart page, '2' when on the checkout page & '3' when a successful order has been made. This has been added so that the user has a good understanding of the steps it takes to go from start to finish in placing an order.
 
 
 ### Wireframes
@@ -254,7 +250,8 @@ Every feature must react to it's intended purpose.
 - The navbar is featured on every page of the website which has been made sticky so that when you scroll down the page, it will not disappear, also when scrolled down more than 50px from the top of the page, the navbar logo will lose the CT's Housewares text & shrink in size, this is so that it's not taking up too much room at the top of the page.
 
 
-- **Desktop** In the top left-hand corner, a "CT's Housewares logo has been added which will navigate you back to the home page when clicked.
+**Desktop** 
+- In the top left-hand corner, a "CT's Housewares logo has been added which will navigate you back to the home page when clicked.
 
 - In the centre on the left, there is a dropdown of product. The options you can pick from are to view all of the products & to view particular brands of your choice.
 
@@ -271,7 +268,9 @@ Every feature must react to it's intended purpose.
     <img src="https://i.ibb.co/PGc9F8M/cts-housewares-navbar-mobile.png" alt="CT's Housewares navbar for tablet & mobile" aria-label="CT's Housewares navbar for tablet & mobile" />
 </div>
 
-- **Tablet & Mobile** In the top left hand corner, a "CT's Housewares logo has been added which will navigate you back to the home page when clicked.
+**Tablet & Mobile**
+
+- In the top left hand corner, a "CT's Housewares logo has been added which will navigate you back to the home page when clicked.
 
 - In the top right hand corner, a burger icon is shown which when clicked will animate into a close symbol & slide out a side drawer, It will also create a darkened overlay on the rest of the page & when clicked, it will slide the side drawer closed again. The links found in the side drawer are the same which are seen in the desktop nabvar.
 
@@ -320,7 +319,7 @@ Every feature must react to it's intended purpose.
 
 - **Add to Cart** - Add to cart has been added so that the user can add products to the cart. If a user was to add a product to the cart which was already in the cart, it will simply add the number you add to the number of items already in the cart of that product. You cannot add more than the stock quantity to the cart & if the items you add to the cart + the amount of items you already have in your cart of that particular item comes to more than the overall quantity of that item, you will get notified that you can not add that may items to the cart.
 
-- **Tab Section** - A Tab section has been added for each product so that the user can flick between "About", "Specifications" & "Dimensions" of the product. This helps so that everything is all clumped together & gives the page a more styled look.
+- **Tab Section** - A Tab section has been added for each product so that the user can flick between "About", "Specifications" & "Dimensions" of the product. This helps so that everything is nicely separated & gives the page a more styled look.
 
 
 #### Login Page:
@@ -446,3 +445,32 @@ Product | product | Product, null=False, on_delete=models.CASCADE | ForeignKey
 Specification | specification | max_length=250 | CharField
 
 
+#### Checkout App Model
+
+The Checkout App Model contains an Order Model which is responsible for placing an order, if the fields have been filled in correctly, the "Order Line Item" model will be updated with the order that has been successfully created.
+
+**Order model**
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+User ID | user_id | User, null=False, on_delete=models.CASCADE | ForeignKey
+First Name | first_name | max_length=100, blank=False | CharField
+Last Name | last_name | max_length=100, blank=False | CharField
+Address Line 1 | address_line_1 | max_length=100, blank=False | CharField
+Address Line 2 | address_line_2 | max_length=100, blank=True | CharField
+Address Line 3 | address_line_3 | max_length=100, blank=True | CharField
+Town or City | town_or_city | max_length=40, blank=False | CharField
+Postcode | postcode | max_length=20, blank=False | CharField
+Country | country | max_length=40, blank=False | CharField
+Phone Number | phone_number | max_length=20, blank=False | CharField
+Date | date | auto_now_add=True | DateTimeField
+
+
+**Order Line Item model**
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Order | order | Order, null=False, on_delete=models.CASCADE | ForeignKey
+Product | product | Product, null=False, on_delete=models.CASCADE | ForeignKey
+Price | price | max_digits=1000, decimal_places=2 | DecimalField
+Quantity | quantity | blank=False | IntegerField
