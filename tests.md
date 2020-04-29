@@ -442,11 +442,17 @@ I checked that:
     I did try to look for the answer to this, but I didn't see this as a major issue as the
     chevron was still working as it should.
     
-3. #### Progress Bar showing up really ugly in mobile.
+3. #### Progress Bar showing up ugly in mobile.
 
-    At times, the progress bar will show up really ugly on mobile devices such as apple devices.
+    At times, the progress bar will show up ugly on mobile devices such as Apple devices.
 
-    I tried looking for the asnwer & I also asked on slack to see if somebody had the answer but nobody could find the answer to the issue.
+    I tried looking for the answer & I also asked on slack to see if somebody had the answer but nobody could find the answer to the issue.
+
+4. #### Clicking back when you are on an individual product.
+
+    When you click into a product individual page & add an item to the cart, you will have to do a double click on the breadcrumb to take you back to where you were on the product page.
+
+    I tried looking for the answer to see if there was an option to take you back to the page you were on previously, being on the correct page on pagination but I, unfortunately, could not find the answer.
 
 ## Further Testing
 
