@@ -9,8 +9,13 @@ html, body {
 }
 
 body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: relative;
     height: 100%;
     min-height: 100vh;
@@ -191,9 +196,15 @@ body {
 .cart-status-label,
 .checkout-status-label,
 .payment-status-label {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .progression-labels {
@@ -223,8 +234,8 @@ body {
 }
 
 .status-done {
-    background:-webkit-gradient(linear, left top, left bottom, from(#4ea5e8), to(#35688e));
     background:-o-linear-gradient(#4ea5e8, #35688e);
+    background:-webkit-gradient(linear, left top, left bottom, from(#4ea5e8), to(#35688e));
     background:linear-gradient(#4ea5e8, #35688e);
 }
 
@@ -329,8 +340,8 @@ body {
 /* --------- Footer -------- */
 
 .footer-upper-container {
-    background:-webkit-gradient(linear, left top, left bottom, from(#4ea5e8), to(#35688e));
     background:-o-linear-gradient(#4ea5e8, #35688e);
+    background:-webkit-gradient(linear, left top, left bottom, from(#4ea5e8), to(#35688e));
     background:linear-gradient(#4ea5e8, #35688e);
     color: #fff;
 }
@@ -442,8 +453,8 @@ body {
 }
 
 .current-page {
-    background:-webkit-gradient(linear, left top, left bottom, from(#4ea5e8), to(#35688e));
     background:-o-linear-gradient(#4ea5e8, #35688e);
+    background:-webkit-gradient(linear, left top, left bottom, from(#4ea5e8), to(#35688e));
     background:linear-gradient(#4ea5e8, #35688e);
     color: #fff;
     padding: 8px 13px;
@@ -494,7 +505,9 @@ body {
 }
 
 .product-tab>li {
-    flex: 1 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1;
+            flex: 1 1;
 }
 
 .product-nav-link {
