@@ -68,6 +68,7 @@ Full Stack Frameworks - Milestone Project 4 - CT's Housewares - Charlie Tipton
     - [**Help with code**](#help-with-code)
     - [**Acknowledgements**](#acknowledgements)
 
+8. [**Disclaimer**](#disclaimer)
 
 ## UX
 
